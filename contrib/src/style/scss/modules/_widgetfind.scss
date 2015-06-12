@@ -1,0 +1,53 @@
+.widget-find {
+	z-index: 200;
+	width: 430px;
+	height: 300px;
+	padding:$gutter;
+	border-radius:15px;
+	color:#fff;
+	background: $pink;
+	line-height: 1.8;
+	
+	ul {
+		margin-bottom: 10px;
+		> li {
+			margin-top: 12px;
+			@include display(flex);
+			flex-direction: row ;
+			
+			input,
+			.style-select {
+				flex-grow: 2;
+				margin-left:15px;
+			}
+		}
+	}
+	
+	.style-select {
+		vertical-align: middle;
+		height: 30px;
+		clear: none;
+		border:0;
+		&:before {
+			margin-top:-7px;
+		}
+		select {
+			width: 100%;
+			font-size: em(12);
+		}
+	}
+	
+	input[type="text"] {
+		height: 30px;
+		padding:3px 10px;
+		font-size: em(12);
+		border:0;
+	}
+	
+	label {display: inline-block;font-size: em(15);}
+	
+	
+	.btn {
+		margin:$gutter 0;
+	}
+}

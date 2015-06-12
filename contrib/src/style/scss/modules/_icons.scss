@@ -1,0 +1,27 @@
+.icon:before,
+.icon:after {
+	@extend %icon-fa;
+}
+
+.icon-only {
+	text-indent: 200px;
+	white-space: nowrap;
+	
+	&:before {
+		text-indent: 0;
+		position: absolute;
+		top:5px;
+		width: 100%;
+		text-align: center;
+		left: 0;
+		font-size: em(18);
+	}
+}
+
+.icon-check:before {content:$fa-var-check;}
+.icon-arrow-right:before {content:$fa-var-arrow-right;}
+
+.icon-facebook:before {content:$fa-var-facebook;}
+.icon-twitter:before {content:$fa-var-twitter;}
+.icon-youtube:before {content:$fa-var-youtube;}
+.icon-linkedin:before {content:$fa-var-linkedin;}

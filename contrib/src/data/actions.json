@@ -1,0 +1,38 @@
+[
+	{
+		"id": 239,
+		"title":"Dienst lorem",
+		"text":"lorem",
+		"teaser-title":"Dienst lorem",
+		"teaser-price":"10% korting",
+		"teaser-img":"../images/action1.jpg",
+		"uri":"leden-detail.html"	
+	},
+	{
+		"id": 240,
+		"title":"Dienst lorem",
+		"text":"lorem",
+		"teaser-title":"Dienst lorem",
+		"teaser-price":"14% korting",
+		"teaser-img":"../images/action1.jpg",
+		"uri":"leden-detail.html"
+	},
+	{
+		"id": 250,
+		"title":"Dienst lorem",
+		"text":"lorem",
+		"teaser-title":"Dienst lorem",
+		"teaser-price":"11% korting",
+		"teaser-img":"../images/action1.jpg",
+		"uri":"leden-detail.html"
+	},
+	{
+		"id": 250,
+		"title":"Dienst lorem",
+		"text":"lorem",
+		"teaser-title":"Dienst lorem",
+		"teaser-price":"18% korting",
+		"teaser-img":"../images/action1.jpg",
+		"uri":"leden-detail.html"
+	}
+]

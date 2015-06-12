@@ -1,0 +1,37 @@
+{{!--
+Variables: <br />
+page.dest: {{page.dest}} <br/>
+relative page.dest: {{relative page.dest this.dest}} <br/>
+page.pagename: {{page.pagename}} <br/>
+page.dest: {{page.dest}} <br/>
+this.dest: {{this.dest}} <br/>
+this.title: {{this.title}} <br/>
+<br/>
+Data project title: {{setup.project}}<br/>
+package project title: {{package.name}}
+<br/>
+--}}
+
+{{> site-header}}
+
+{{#if pagetype}}
+	{{> ledensite-topNav}}
+{{else}}
+	{{#isnt page.title "Home"}}
+		{{> site-topNav}}
+	{{/isnt}}
+	
+{{/if}}
+
+{{> body}}
+
+{{#if pagetype}}
+	
+{{else}}
+	{{> site-footer}}
+{{/if}}
+
+<!-- <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script> -->
+<script src="../scripts/production/script.min.js"></script>
+</body>
+</html>

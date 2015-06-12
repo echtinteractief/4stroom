@@ -1,0 +1,22 @@
+.icon-svg-sprite {
+	background-image: url('../gfx/icons-vierstroom-prod.svg');
+	background-position:0 0;
+	background-repeat: no-repeat;
+	background-size: 842px 596px;
+	width: 0;
+	height: 0;
+}
+
+.icon-svg {
+	position: relative;
+
+	&:before {
+		content:'';
+		display: inline-block;
+	}
+}
+
+.icon-svg.arrow:before {
+	background: url('#{$gfxMap}/svg/arrow-4stroom.svg') no-repeat top left;
+	background-size: auto 100%;
+}

@@ -1,0 +1,267 @@
+#{$all-text-inputs} {
+  border:2px solid lighten($grey,10%);
+  background-color: #fff;
+  outline: none;
+  padding:10px 15px;
+  font-size: .9em;
+  
+  @include placeholder {
+	  color:$grey;
+	  font-style: italic;
+  }
+  
+  &.error {
+	  color:$red;
+	  border-color:$red;
+  }  
+}
+
+#{$all-text-inputs-hover} {
+	border-color:#ddd;
+}
+
+#{$all-text-inputs-focus} {
+	color:$pink;
+	border-color:$pink;
+}
+
+#{$all-buttons} {
+	@extend %button;
+  //padding:10px 15px;
+  outline: none;
+  border: 0;
+  //border:2px solid #000;
+  //background: transparent;
+  //border-radius:10px;
+  
+  //box-shadow: 0px 2px 2px rgba(#000,.4);
+  cursor: pointer;
+  
+}
+
+textarea {
+	min-height: 150px;
+	color:inherit;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	display: none;
+
+	+ label {
+		cursor: pointer;
+		margin-right: 15px;
+
+		&:before {
+			@extend %icon-fa;
+			color: $grey;
+			font-size: em(20);
+			vertical-align: middle;
+			margin-right: 5px;
+			@include transition(border-color .3s ease-in-out);
+		}
+	}
+
+	&:checked + label:before {
+		color:$pink;
+	}
+}
+
+
+input[type="checkbox"] {
+
+	+ label:before {
+		margin-top:-2px;
+		margin-right: 10px;
+		line-height: 12px;
+		border:2px solid $grey;
+		
+		@include transition(border-color .3s ease-in-out);
+	}
+
+	&:checked + label:before {
+		content:$fa-var-check;
+		font-size: 10px;
+		text-align: center;
+		border-color:$pink;
+	}
+}
+
+input[type="radio"] {
+
+	+ label:before {
+		content:$fa-var-circle-o;
+		@include transition(color .3s ease-in-out);
+	}
+
+	&:checked + label:before {
+		content:$fa-var-dot-circle-o;
+	}
+}
+
+.search-box {
+	padding:0 0px 0 50px;
+	position: relative;
+	input[type="search"] {
+		width: 100%;
+		padding-right: 45px;
+		
+		&:focus + .btn--search {color:$pink;}
+	}
+	
+	.btn--search {
+		@extend %icon-fa;
+		position:absolute;
+		display: inline-block;
+		width: 45px;
+		height: 100%;
+		right: 0;
+		top:0;
+		background: transparent;
+		box-shadow: none;
+		color:$grey;
+		font-size: 20px;
+		&:hover {
+			background: transparent;
+		}
+		&:active {
+			box-shadow: none;
+			color:$pink;
+		}
+	}
+}
+
+.style-select {
+	height: 40px;
+	overflow: hidden;
+	//width: 240px;
+	border:2px solid lighten($grey,10%);
+	width: auto;
+	display: inline-block;
+	clear: both;
+	position: relative;
+	color:darken($grey,10%);
+	border-radius: 0;
+	background: #fff;
+	
+	&:hover {
+		color:$pink;
+		select {
+			border-color: inherit;
+		}
+	}
+	
+	&::before {
+		@extend %icon-fa;
+		position: absolute;
+		right: 10px;
+		top:10px;
+		color:inherit;
+		content:$fa-var-caret-down;
+		z-index: 10;
+	}
+	
+	select {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		-ms-appearance: none;
+		outline: none;
+		background: transparent;
+		border: none;
+		font-size: 14px;
+		height: 100%;
+		width: 100%;
+		padding: 5px 30px 5px 10px;
+		color:inherit;
+		position: relative;
+		z-index: 11;
+		
+		&:focus {
+			border-color:$pink;
+		}
+		
+	}
+}
+
+label {
+	&.required:after {
+		content:'*';
+		color:$pink;
+		font-size:em(14);
+		vertical-align: text-top;
+	}
+}
+
+.error {
+	color:$red;
+	
+	label:after {
+		color:inherit;
+	}
+}
+
+.message {
+	display: none;
+	font-size: em(12);
+	font-style: italic;
+	&.error {
+		display: block;
+		text-align: right;
+	}
+}
+
+.form {
+	padding:1.5*$gutter 0 $gutter $gutter;
+	//background:lighten($grey,20%);
+	//@include background-image(linear-gradient(to bottom, #fff, lighten($grey,20%)));
+	border:1px solid lighten($grey,10%);
+	border-width: 2px 0;
+	
+	label {
+		vertical-align: middle;
+		font-size: em(15);
+		padding-top: 5px;
+		text-align: right;
+	}
+	
+	#{$all-text-inputs},
+	textarea,
+	.style-select {
+		width: 100%;
+		
+	}
+	
+	legend {
+		font-size: em(18);
+		font-weight: 700;
+		margin:-10px 0 $gutter 0;
+		font-family: $header-font;
+		
+	}
+	
+	fieldset {
+		margin-top:$gutter;
+		> ul > li {
+			margin-bottom: 15px;
+			width: 100%;
+			display: block;
+			overflow: hidden;
+			min-height: 36px;
+			
+		}
+
+	}
+	
+	.btn {
+		min-width: 200px;
+		margin-left:.8*$gutter;
+	}
+	
+	.end-form {
+		padding-top: $gutter/2;
+	}
+	
+	.panel.note {
+		padding:10px;
+	}
+}

@@ -1,0 +1,96 @@
+.sub-nav {
+	.subnav-title {
+		font-size: em(18);
+		color:darken($grey,15%);
+		margin-bottom: $gutter;
+		color:$black;
+		
+		a {color:inherit;font-weight: 300;}
+	}
+	.subnav-list {
+		border-bottom:1px solid  darken(#fafafa,5%);
+		a {
+			color:inherit;
+			font-size: em(14);
+			font-weight: normal;
+			
+			
+			
+			&:before {
+				@extend %icon-fa;
+				font-weight: 100;
+				opacity: 1;
+				margin: 0 5px 0 0px;
+				color:inherit;
+				content:$fa-var-angle-right;
+				font-size: 12px;
+				vertical-align: middle;
+				
+				@include transition(all .2s linear);
+			}
+			
+			&:hover {
+				color:$black;
+				
+				&:before {
+					margin:0 5px 0 5px;
+					opacity: 1;
+					
+				}
+			}
+		}
+		
+		.menu-item {
+			color:darken($grey,30%);
+			//color:$pink;
+		}
+		
+		> .menu-item {
+			display: block;
+	
+			> a {
+				padding:12px 0;
+				border:1px solid darken(#fafafa,5%);
+				border-width: 1px 0 0 0px;
+				display: block;
+				width: 100%;
+			}
+		}
+		
+		.sub-menu {
+			margin-top:-5px;
+			border-left:2px solid darken(#fafafa,5%);
+			margin-bottom:15px;
+			padding-left:20px;
+			
+			.menu-item > a{
+				padding: 8px 0;
+				width: 100%;
+				display: block;
+				
+			}
+			
+			.sub-menu {
+				margin-top: 0;
+				margin-bottom: 5px;	
+			}
+		}
+		
+		.is--current {
+			color:$pink;
+			
+			> a {
+				font-weight: 700;
+				&:before {
+					content:$fa-var-arrow-right;
+					margin:0 5px 0 0;
+					opacity: 1;
+				}
+			}
+			
+			.menu-item {
+				//color:$black;
+			}
+		}
+	}
+}

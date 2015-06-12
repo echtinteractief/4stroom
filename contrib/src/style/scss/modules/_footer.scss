@@ -1,0 +1,97 @@
+.footer-page {
+	padding:2*$gutter;
+	@include background-image(linear-gradient(to bottom, lighten($pink,20%), lighten($pink,1%)));
+	//background-color:lighten($pink,20%);
+
+	input[type="text"] {
+		border-color: transparent;	
+	}
+	
+	a {	color:#fff;font-weight: 300;}
+	
+	.sitemap-subitem {
+		font-size: em(14);
+		font-weight: normal;
+	}
+	
+	.sitemap-item {
+		margin-bottom: $gutter;
+		> a {
+			margin-bottom: 10px;
+			display: inline-block;
+			font-weight: 500;
+		}
+		
+		a {
+			&:before {
+				@extend %icon-fa;
+				content:$fa-var-arrow-right;
+				margin:0 5px 10px -10px;
+				opacity: 0;
+				color:inherit;
+				font-size: 12px;
+				@include transition(all .2s linear);
+			}
+			
+			&:hover {
+				color:darken(#fff,5%);
+				&:before {
+					margin:0 5px 10px 5px;
+					opacity: 1;
+				}
+			}
+		}
+	}
+	
+	.widget {
+		margin-bottom: 2*$gutter;
+		color:#fff;
+		
+		.text {
+			font-size: em(14);
+		}
+		.widget-title {
+			color:inherit;
+			margin-bottom: 10px;
+			font-size: em(16);
+			font-weight: 500;
+		}
+		
+	}
+	
+	.social-follow-nav {
+		margin-bottom: 0;
+		.btn-round {
+			border:2px solid;
+			color:#fff;
+		}	
+		
+		ul > li {
+			display: inline-block;
+		}
+	}
+	
+	
+}
+
+.footer-page-end {
+	background-color: $pink;
+	color:lighten($pink, 30%);
+	font-size: em(12);
+	padding:$gutter 0;
+	
+	em {
+		&:before,
+		&:after {content:"'";}
+	}
+}
+
+
+.leden-footer {
+	padding:$gutter 0;
+	
+	.banner.action {
+		padding:0 $gutter;
+	}
+	
+}

@@ -1,0 +1,71 @@
+---
+title: "ZorgThuis"
+posted: 2015-05-28
+subnavdepth: false
+
+---
+
+<article>
+	
+	<div class="slider header-img">
+		<h1 class="hide">{{title}}</h1>
+		<div class="carousel" data-prevnext="false">
+			<ul class="wrapper">
+				<li class="item">
+					<article>
+						<figure class="crop" data-img="../images/hulpthuis.jpg">
+							
+						</figure>
+						<div class="row">
+							<div class="box ">
+								<div class="box-content">
+									<h1>Professionele zorg thuis<strong><br />Wij regelen het</strong></h1>						
+									<p class="small-text">
+										<strong>Ariel Oosterman, Zoetemeer</strong><br />
+										<em>Huishoudelijke hulp</em>
+									</p>
+								</div>
+							</div>
+						</div>
+						<a href="" class="box-link">Verder lezen</a>
+					</article>
+				</li>
+			</ul>
+		</div>
+	</div>
+	{{> site-menubar }}
+	<div class="row block-padding page-overview">
+		
+		
+		<section class="grid-8 content ">
+			<h1 class="page-heading">Zorg thuis</h1>
+			<div class="text">
+				<p class="intro">
+					ZorgThuis is hulp van een professionele verpleegkundige of verzorgende  hulp bij u thuis. ZorgThuis helpt u om (langer) zelfstandig te blijven wonen in uw eigen vertrouwde omgeving. De vele aanvullende diensten van Vierstroom helpen daarbij. 
+				</p>
+			</div>
+			<h2 class="page-heading">Onze ZorgThuis diensten zijn</h2>
+			<ul class="group-2 box">
+					
+					{{#each diensten.0.subdiensten }}
+					<li class="post post-text-in-image shadow">
+						<article>
+							<figure class="crop">
+								<img src="{{teaser-img}}" />
+							</figure>
+							<div class="text-block">
+								<h1>{{teaser-title}}</h1>
+								<p class="fixed-height"><em>{{teaser-text}}</em></p>
+							</div>
+							<a href="{{teaser-uri}}" class="box-link">Lees meer</a>
+						</article>
+					</li>
+					{{/each}}
+			</ul>
+			
+		</section>
+		<aside class="grid-4 sidebar">
+			{{> site-subnav }}
+		</aside>
+	</div>
+</article>

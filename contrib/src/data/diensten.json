@@ -1,0 +1,66 @@
+[
+	{
+		"id": 239,
+		"title":"Zorg thuis",
+		"text":"lorem",
+		"teaser-title":"ZorgThuis",
+		"teaser-text":"Verzorging en verpleging aan huis",
+		"teaser-img":"../images/zorgthuis.jpg",
+		"uri":"zorgthuis.html",
+		"subdiensten":[
+			{
+				"subid":2391,
+				"teaser-title":"Verpleging en verzorging thuis",
+				"teaser-text":"Een professionele verpleegkundige of verzorgende helpt u thuis",
+				"teaser-img":"../images/verplegingthus.jpg",
+				"teaser-uri":"verpleging-en-verzorging-thuis.html",
+				"subdiensten":[
+					{
+						"teaser-title":"Eigen bijdrage",
+						"teaser-text":"lorem"
+					},
+					{
+						"teaser-title":"Aanvragen",
+						"teaser-text":"lorem"
+					},
+					{
+						"teaser-title":"Klanttevredenheid",
+						"teaser-text":"lorem"
+					}
+				]
+			},
+			{
+				"subid":2392,
+				"teaser-title":"Medicijnen begeleiding",
+				"teaser-text":"Een handige ‘medicijndoos’ die een signaal geeft wanneer het tijd is om uw medicijnen te gebruiken en die u de juiste medicijnen aanreikt.",
+				"teaser-img":"../images/medicijnenbegeleiding.jpg",
+				"teaser-uri":"verpleging-en-verzorging-thuis.html"
+			},
+			{
+				"subid":2393,
+				"teaser-title":"Beeldscherm contact",
+				"teaser-text":"lorem",
+				"teaser-img":"../images/beeldschermzorg.jpg",
+				"teaser-uri":"verpleging-en-verzorging-thuis.html"
+			}
+		]
+	},
+	{
+		"id":240,
+		"title":"Hulp thuis",
+		"text":"lorem",
+		"teaser-title":"HulpThuis",
+		"teaser-text":"Huishoudelijke hulp voor iedereen",
+		"teaser-img":"../images/hulpthuis.jpg",
+		"uri":"hulpthuis.html"
+	},
+	{
+		"id":241,
+		"title":"Veilig thuis",
+		"text":"lorem",
+		"teaser-title":"VeiligThuis",
+		"teaser-text":"Hulp binnen handbereik via persoonlijk alarm",
+		"teaser-img":"../images/veiligthuis.jpg",
+		"uri":"veiligthuis.html"
+	}
+]

@@ -1,0 +1,36 @@
+.breadcrumb {
+	margin-bottom: $gutter;
+	@include media($mobile) {
+		display: none;
+	}
+	li {
+		display: inline;
+		padding:0;
+		font-size: .8em;
+		color:$grey;
+		
+		&:before {
+				@extend %icon-fa;
+				content:$fa-var-angle-right;
+				padding-right:5px;
+		}
+		&:first-child {
+			//padding:0 10px 0 0;
+			
+			&:before {
+				display: none;
+			}
+		}
+		
+		.active {
+			color:$pink;
+		}
+		
+		a {
+			color:$grey;
+			position: relative;
+			padding:0 5px 0 0;
+			
+		}
+	}
+}

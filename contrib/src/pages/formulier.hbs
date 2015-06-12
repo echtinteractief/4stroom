@@ -1,0 +1,151 @@
+---
+title: "Aanvraag specialistische verpleging thuis"
+posted: 2015-05-28
+subnavid: 2391
+subnavdepth: true
+---
+
+<article>
+	<div class="slider header-img">
+		<h1 class="hide">{{title}}</h1>
+		<div class="carousel" data-prevnext="false">
+			<ul class="wrapper">
+				<li class="item">
+					<article>
+						<figure class="crop" data-img="../images/action1.jpg">
+							
+						</figure>
+						<div class="row">
+							<div class="box box-list">
+								<div class="box-content">
+									<h1>{{title}}?<strong><br />Wij regelen:</strong></h1>						
+									<ul>
+										<li>Professionele hulp bij u thuis</li>
+										<li>Vaste contactpersoon</li>
+										<li>Hulp zoals u dat wilt</li>
+										<li>Geen wachtlijst</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						
+					</article>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	{{> site-menubar }}
+	<div class="row block-padding page-overview">
+		
+		
+		<div class="grid-8 content ">
+			
+			<h1 class="page-heading">{{title}}</h1>
+			<div class="text">
+				<p class="intro">
+					Een professionele verpleegkundige of verzorgende helpt u thuis. Bijvoorbeeld met douchen, aankleden, opstaan en naar bed gaan, verzorgen van uw wond, verwisselen van de katheter of andere verpleegkundige werkzaamheden.
+				</p>
+			</div>
+								
+				<div class="form">
+					<form>
+					<fieldset>
+						<legend class="page-heading">Uw gegevens</legend>
+						<ul>
+							<li>
+								<div class="grid-4">
+									<label class="required">Aanhef</label>
+								</div>
+								<div class="grid-8">
+									<input type="radio" id="warm" value="warm" name="douche" required="">
+									<label for="warm">Dhr.</label>
+									<input type="radio" id="koud" name="douche" value="koud">
+									<label for="koud">Mevr.</label>
+								</div>
+							</li>
+							<li class="error">
+								<span class="error message">Ongeldige naam</span>
+								<div class="grid-4">
+									<label class="required" for="name">Naam</label>
+								</div>
+								<div class="grid-8">
+									
+									<input type="text" class="input-text error" id="name" required="" />
+								</div>
+							</li>
+							<li>
+								<div class="grid-4">
+									<label for="boe" class="required">Onderwerp</label>
+								</div>
+								<div class="grid-8">
+									<div class="style-select">
+										
+									<select id="boe">
+										<option class="placeholder" disabled selected>Kies onderwerp</option>
+										<option value="bla">Diensten</option>
+										<option value="Sipsum">lorem</option>
+										<option value="Vlorem">ipsum</option>
+										
+									</select>
+									</div>
+								</div>
+							</li>
+							<li >
+								<div class="grid-4">
+									<label class="required" for="mail">Email</label>
+								</div>
+								<div class="grid-8">
+									
+									<input type="text" class="input-text" id="mail" required="" placeholder="Let op dat je een geldig e-mailadres invult anders kunnen wij geen contact met je opnemen" />
+								</div>
+							</li>
+							<li >
+								<div class="grid-4">
+									<label class="required" for="tel">Telefoonnummer</label>
+								</div>
+								<div class="grid-8">
+									
+									<input type="text" class="input-text" id="tel" required="" placeholder="" />
+								</div>
+							</li>
+							<li >
+								<div class="grid-4">
+									<label class="required" for="msg">Bericht</label>
+								</div>
+								<div class="grid-8">
+									
+									<textarea id="msg" required="" placeholder="" ></textarea>
+								</div>
+							</li>
+
+						</ul>
+					</fieldset>
+					<fieldset class="end-form">
+						<ul>
+							<li>
+								<div class="grid-8 right">
+								<input type="submit" value="versturen" class="btn" />
+								</div>
+							</li>
+						</ul>
+					</fieldset>	
+					<div class="panel note">
+					<p>* <em>zijn verplichte velden</em></p>
+					</div>
+				</form>
+				
+				</div>
+				
+				
+				
+
+			
+			
+		</div>
+		
+		<aside class="grid-4 sidebar">
+				{{> site-subnav }}
+		</aside>
+	</div>
+</article>
