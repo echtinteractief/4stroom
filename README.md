@@ -37,6 +37,9 @@ For installation instructions go to: neat.bourbon.io.
 Project installation:
 Go to the follow folder: src/style/scss/mixins and run 'neat install'. 
 
+##The firstime using source files in the contrib folder.
+Install all grunt packages. Run 'npm install' in the contrib folder. When finished run one of the taks here below. 
+
 Grunt tasks
 -----------
 
