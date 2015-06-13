@@ -17,7 +17,9 @@
 	?>
 	</head>
 	<body <?php body_class($page_slug); ?>>
-
+	
+		<?php  get_search_form();?>
+	
 
 	<?php get_footer(); ?>
 	</body>

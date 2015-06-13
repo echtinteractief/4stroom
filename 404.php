@@ -5,18 +5,12 @@
 <!--[if IE 9 ]><html class="ie ieLT ie9" lang="nl"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="nl">
-	<head>
+<head>
 	<?php
 		get_header();	
 	?>
-	
-	<?php
-		//body page class
-		$page_slug="";
-		if(is_page()) { $page_slug = 'page-'.$post->post_name; } 
-	?>
-	</head>
-	<body <?php body_class($page_slug); ?>>
+</head>
+	<body class="page_404">
 
 
 	<?php get_footer(); ?>
