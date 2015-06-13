@@ -15,7 +15,7 @@ Make sure you have the following tools installed:
 - **Bourbon** - Bourbon Sass Mixin libary
 - **Neat** - Neat symantic grid framework based on Bourbon
 
-# Installation Sass, Ruby and Compass. 
+# Installation Sass, Ruby, Bourbon and Neat. 
 
 ## Install Ruby
 If you're on OS X or Linux you probably already have Ruby installed; test with `ruby -v` in your terminal. 
