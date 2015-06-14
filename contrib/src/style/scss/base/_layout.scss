@@ -103,6 +103,10 @@ embed { height: 100%; }
 	font-weight: 300;
 	//padding-left:.9*$gutter;
 	
+	iframe, object, embed {
+		width: 100%;
+		min-height: 500px;
+	}
 	.entry-content img {
 	margin: 0 0 24px 0;
 	max-width: 640px;
