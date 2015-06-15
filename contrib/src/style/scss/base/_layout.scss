@@ -205,6 +205,11 @@ embed { height: 100%; }
 		dt {color:$header-color;font-weight: 700;}
 		dd {}
 	}
-	
+	ul.results {
+		margin:0;
+		> li {
+			list-style: none;
+		}
+	}	
 }
 

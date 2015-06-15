@@ -1,0 +1,122 @@
+---
+title: "Vacatures"
+posted: 2015-05-28
+subnavdepth: true
+mainnavhidden: true
+
+---
+
+<article>
+	
+	<div class="slider header-img">
+		<h1 class="hide">{{title}}</h1>
+		<div class="carousel" data-prevnext="false">
+			<ul class="wrapper">
+				<li class="item">
+					<article>
+						<figure class="crop" data-img="../images/action1.jpg">
+							
+						</figure>
+						<div class="row">
+							<div class="box box-list">
+								<div class="box-content">
+									<h1>Werken bij de vierstroom?<strong><br />Maak het verschil!</strong></h1>						
+								</div>
+							</div>
+						</div>
+						
+					</article>
+				</li>
+			</ul>
+		</div>
+	</div>
+	{{> site-menubar }}
+	<div class="row block-padding page-overview">
+		
+		
+		<div class="grid-8 content ">
+			<h1 class="page-heading">{{title}}</h1>
+			<div class="text">
+				<p class="intro">
+					<strong>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, quasi, rerum, minus placeat blanditiis porro vel aliquam tempore iste amet culpa labore modi quibusdam sit.
+					</strong>
+				</p>
+			
+				<section class="block list-block">
+					<h2 class="hide page-heading">Vacature overzicht:</h2>
+					
+					<div class="results-options">
+						<div class="sort-options right">
+							<div class="style-select">
+								<select id="boe">
+									<option class="placeholder" disabled selected>Sorteer op:</option>
+									<option value="bla">Diensten</option>
+									<option value="Sipsum">lorem</option>
+									<option value="Vlorem">ipsum</option>
+									
+								</select>
+							</div>
+						</div>
+					</div>
+					<ul class="results">
+						{{#each-limit vacatures 6 }}
+						<li class="post post-list">
+							<article>
+								<div class="text-block">
+									<h1 class="post-title">{{title}}</h1>
+									<ul class="post-meta">
+										<li class="icon icon-location">{{plaats}}</li>
+										{{!--
+										<li class="icon icon-date">{{date}}</li>
+										--}}
+									</ul>
+									<p class="post-text fixed-height"><em>{{text}}</em></p>
+									<a href="{{teaser-uri}}" class="post-link icon icon-arrow-right">Lees meer</a>
+								</div>
+								<a href="{{teaser-uri}}" class="box-link">Lees meer</a>
+								
+							</article>
+						</li>
+						{{/each-limit}}
+					</ul>
+					<nav class="pagination"><ul class="page-numbers">
+						<li><span class="page-numbers current">1</span></li>
+						<li><a class="page-numbers" href="#">2</a></li>
+						<li><a class="next page-numbers" href="#"></a></li>
+					</ul>
+					</nav>
+				</section>
+			</div>
+		</div>
+		<aside class="grid-4 sidebar">
+			<nav class=" sub-nav">
+				<h3 class="subnav-title"><a href="werkenbij.html">Werken bij de vierstroom</a></h3>
+				<ul class="subnav-list">
+					<li class="menu-item  is--current">
+						<a href="vacatures.html">Vacatures</a>
+						
+						{{#if this.subnavdepth}}
+							<ul class="sub-menu">
+								
+								
+								{{!-- <li class="menu-item"><a href="zorgthuis-diensten.html">Alle diensten</a></li> --}}
+								
+								<li class="menu-item"><a href="#">Huis houdelijke hulp <em>(15)</em></a></li>
+								<li class="menu-item"><a href="#">Helpende niveau 2 <em>(10)</em></a></li>
+								<li class="menu-item"><a href="#">Verzorgende niveau ag/ig <em>(5)</em></a></li>
+								
+								
+								
+							</ul>
+						{{/if}}
+					</li>
+					<li class="menu-item"><a href="#">Arbeidsvoorwaarden</a></li>
+					<li class="menu-item"><a href="#">Leren bij de vierstroom</a></li>					
+					<li class="menu-item"><a href="#">Vrijwillegerswerk</a></li>
+				</ul>
+			</nav>
+		</aside>
+
+	</div>
+</article>

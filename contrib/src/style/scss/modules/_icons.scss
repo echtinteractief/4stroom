@@ -1,3 +1,4 @@
+.icon {position: relative;}
 .icon:before,
 .icon:after {
 	@extend %icon-fa;
@@ -20,8 +21,9 @@
 
 .icon-check:before {content:$fa-var-check;}
 .icon-arrow-right:before {content:$fa-var-arrow-right;}
-
+.icon-location:before {content:$fa-var-map-marker;}
 .icon-facebook:before {content:$fa-var-facebook;}
 .icon-twitter:before {content:$fa-var-twitter;}
 .icon-youtube:before {content:$fa-var-youtube;}
 .icon-linkedin:before {content:$fa-var-linkedin;}
+
