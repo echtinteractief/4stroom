@@ -15,7 +15,7 @@
 	}
 	
 	.sitemap-item {
-		margin-bottom: $gutter;
+		margin-bottom: 1.5*$gutter;
 		> a {
 			margin-bottom: 10px;
 			display: inline-block;
@@ -79,6 +79,7 @@
 	color:lighten($pink, 30%);
 	font-size: em(12);
 	padding:$gutter 0;
+	text-align: center;
 	
 	em {
 		&:before,

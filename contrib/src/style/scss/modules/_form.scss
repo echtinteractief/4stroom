@@ -123,6 +123,7 @@ input[type="radio"] {
 		font-size: 20px;
 		&:hover {
 			background: transparent;
+			color:inherit;
 		}
 		&:active {
 			box-shadow: none;
