@@ -73,9 +73,6 @@
 }
 
 .list-block {
-	border-top:2px solid lighten($grey,15%);
-	padding-top: $gutter;
-	
 	.page-heading{margin-bottom: 1.5*$gutter;}
 }
 
@@ -105,7 +102,7 @@
 	margin-bottom: $gutter;
 	padding-bottom: $gutter;
 	float: left;
-	
+	border-bottom: 1px solid lighten($grey,20%);
 	
 	.post-title {
 		font-size: em(20);

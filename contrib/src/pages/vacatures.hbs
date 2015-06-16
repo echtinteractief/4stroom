@@ -47,10 +47,18 @@ mainnavhidden: true
 					<h2 class="hide page-heading">Vacature overzicht:</h2>
 					
 					<div class="results-options">
-						<div class="sort-options right">
+						<div class="search-box left">
+							<form role="search" method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+								<label class="hide screen-reader-text" for="s">Zoek op</label>
+								<input type="search" placeholder="Zoek vacature" class="search"  name="s" id="s" />
+								<input type="submit" id="searchsubmit" class="btn btn--search" value="&#xf002;" />
+							</form>
+						</div>
+						
+						<div class="sort-options left">
 							<div class="style-select">
 								<select id="boe">
-									<option class="placeholder" disabled selected>Sorteer op:</option>
+									<option class="placeholder" disabled selected>Kies functietype:</option>
 									<option value="bla">Diensten</option>
 									<option value="Sipsum">lorem</option>
 									<option value="Vlorem">ipsum</option>
@@ -58,6 +66,20 @@ mainnavhidden: true
 								</select>
 							</div>
 						</div>
+						
+						<div class="sort-options right">
+							<div class="style-select">
+								<select id="boe">
+									<option class="placeholder" disabled selected>Sorteer op</option>
+									<option value="bla">Datum</option>
+									<option value="Sipsum">A-Z</option>
+									<option value="Vlorem">Z-A</option>
+									
+								</select>
+							</div>
+						</div>
+
+						
 					</div>
 					<ul class="results">
 						{{#each-limit vacatures 6 }}
@@ -81,9 +103,10 @@ mainnavhidden: true
 						{{/each-limit}}
 					</ul>
 					<nav class="pagination"><ul class="page-numbers">
+						<li class="bpn-prev-link"><a class="prev page-numbers" href="#">prev</a></li>
 						<li><span class="page-numbers current">1</span></li>
 						<li><a class="page-numbers" href="#">2</a></li>
-						<li><a class="next page-numbers" href="#"></a></li>
+						<li class="bpn-next-link"><a class="next page-numbers" href="#">next</a></li>
 					</ul>
 					</nav>
 				</section>

@@ -1,0 +1,20 @@
+.results-options {
+	margin:$gutter 0;
+	padding:$gutter 0;
+	border-bottom:2px solid lighten($grey,18%);
+	overflow: hidden;
+	
+	.sort-options {
+		margin-left:5px;
+	}
+	
+	.search-box {
+		display: inline-block;
+		padding: 0;
+		width: 40%;
+	}
+	
+	.btn--search {
+		height: 41px;
+	}
+}

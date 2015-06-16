@@ -145,7 +145,8 @@ input[type="radio"] {
 	background: #fff;
 	
 	&:hover {
-		color:$pink;
+		color:$black;
+		border-color: inherit;
 		select {
 			border-color: inherit;
 		}
