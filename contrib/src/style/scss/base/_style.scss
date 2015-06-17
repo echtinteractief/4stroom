@@ -77,6 +77,8 @@
 }
 
 
+
+
 .link-to-page {
 	font-weight: 300;
 	position: relative;
@@ -119,9 +121,9 @@
 		
 		> li {
 			display:  inline-block;
-			margin:0 8px;
+			margin:0 4px;
 			
-			&:before {margin-right: 4px;font-size: 10px;vertical-align: middle;}
+			&:before {margin-right: 4px;font-size: 10px;display:inline-block;float:left;margin-top:2px;}
 			
 			&:first-child {
 				margin-left:0;
@@ -152,7 +154,8 @@
 	}
 	
 	&:hover {
-			.post-link:before {
+
+		.post-link:before {
 			@include wobble($duration:.9s);
 		}
 	}
