@@ -50,7 +50,7 @@ you will lose your changes.)
 - **grunt build**: development mode.  This will build the pages from
   `src/` into the `build/` directory.  You can open the pages in `build/pages/`
   and they will work.
-- **grunt serve**: same as watch but also starts a webserver on port 8080
+- **grunt serve**: same as watch but also starts a webserver on port 4000
 - **grunt production**: copy files to the libary folder and watch the scripts en sass files. For the first time, run always grunt build or grunt. 
 
 
