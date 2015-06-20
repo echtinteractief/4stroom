@@ -5,8 +5,8 @@ $img-padding:41.34%; //h800/w1900
 	background: #ccc;
 	top:0;
 	//padding-bottom:34.21%; //h650/w1900
-	
-	//height: 0;
+	padding-bottom:$img-padding; //h800/w1900
+	height: 0;
 	overflow: hidden;
 	width: 100%;
 	max-height: 750px;
@@ -22,7 +22,7 @@ $img-padding:41.34%; //h800/w1900
 	
 	.item {
 		position: absolute;
-		padding: 0 0 0px 0;
+		padding: 0;
 		opacity: 0;
 		z-index: 10;
 		width: 100%;
@@ -34,7 +34,6 @@ $img-padding:41.34%; //h800/w1900
 		&.green {background-color: $green;}
 		&.pink {background-color:$pink;}
 		&.purple {background-color: $purple;}		
-		
 		
 		&.active {
 			z-index: 12;
@@ -108,18 +107,15 @@ $img-padding:41.34%; //h800/w1900
 			
 		.crop {
 			position: absolute;
-			position: relative;
 			z-index: 10;
+			//bottom:50px;
 			width: 100%;
-			height: 0;
-			padding-bottom:$img-padding; //h800/w1900
-			top:-25px;
+			height: 100%;
+			top:-50px;
 			overflow: hidden;
 			img {
 				//width: 100%;
-				//height: 100%;
-				width: 100%;
-				
+				height: 100%;
 			}
 			
 			&:before {
@@ -142,9 +138,7 @@ $img-padding:41.34%; //h800/w1900
 			width: 100%;
 		}
 		.row {
-			position: absolute;
-			top:0;
-			width: 100%;
+			position: relative;
 			z-index: 11;
 			overflow: hidden;
 			height: 100%;
