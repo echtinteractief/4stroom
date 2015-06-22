@@ -1,14 +1,5 @@
 [	
 	{
-		"id":240,
-		"title":"Hulp thuis",
-		"text":"lorem",
-		"teaser-title":"HulpThuis",
-		"teaser-text":"Huishoudelijke hulp voor iedereen",
-		"teaser-img":"../images/hulpthuis.jpg",
-		"uri":"hulpthuis.html"
-	},
-	{
 		"id": 239,
 		"title":"Zorg thuis",
 		"text":"lorem",
@@ -53,6 +44,15 @@
 				"teaser-uri":"verpleging-en-verzorging-thuis.html"
 			}
 		]
+	},
+	{
+		"id":240,
+		"title":"Hulp thuis",
+		"text":"lorem",
+		"teaser-title":"HulpThuis",
+		"teaser-text":"Huishoudelijke hulp voor iedereen",
+		"teaser-img":"../images/hulpthuis.jpg",
+		"uri":"hulpthuis.html"
 	},
 	{
 		"id":241,
