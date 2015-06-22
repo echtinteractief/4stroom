@@ -6,7 +6,12 @@
 	margin: 0 auto;
 	
 	@include media($desktop-down) {
+		max-width: 90%;
+	}
+	
+	@include media(new-breakpoint(max-width 1290px)) {
 		max-width: 100%;
+		padding:0 5px;
 	}
 	
 	&.relative {

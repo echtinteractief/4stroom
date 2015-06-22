@@ -5,7 +5,7 @@
 		"text":"lorem",
 		"teaser-title":"HulpThuis",
 		"teaser-text":"Huishoudelijke hulp voor iedereen",
-		"teaser-img":"../images/hulpthuis.jpg",
+		"teaser-img":"../images/HulpThuis.jpg",
 		"uri":"hulpthuis.html"
 	},
 	{
@@ -14,14 +14,14 @@
 		"text":"lorem",
 		"teaser-title":"ZorgThuis",
 		"teaser-text":"Verzorging en verpleging aan huis",
-		"teaser-img":"../images/zorgthuis.jpg",
+		"teaser-img":"../images/ZorgThuis.jpg",
 		"uri":"zorgthuis.html",
 		"subdiensten":[
 			{
 				"subid":2391,
-				"teaser-title":"Verpleging en verzorging thuis",
+				"teaser-title":"Verpleging en verzorging",
 				"teaser-text":"Een professionele verpleegkundige of verzorgende helpt u thuis",
-				"teaser-img":"../images/verplegingthus.jpg",
+				"teaser-img":"../images/verplegingthuis.jpg",
 				"teaser-uri":"verpleging-en-verzorging-thuis.html",
 				"subdiensten":[
 					{
@@ -40,14 +40,14 @@
 			},
 			{
 				"subid":2392,
-				"teaser-title":"Medicijnen begeleiding",
+				"teaser-title":"Hulp bij gebruik medicijnen",
 				"teaser-text":"Een handige ‘medicijndoos’ die een signaal geeft wanneer het tijd is om uw medicijnen te gebruiken en die u de juiste medicijnen aanreikt.",
 				"teaser-img":"../images/medicijnenbegeleiding.jpg",
 				"teaser-uri":"verpleging-en-verzorging-thuis.html"
 			},
 			{
 				"subid":2393,
-				"teaser-title":"Beeldscherm contact",
+				"teaser-title":"Beeldcontact via iPad",
 				"teaser-text":"lorem",
 				"teaser-img":"../images/beeldschermzorg.jpg",
 				"teaser-uri":"verpleging-en-verzorging-thuis.html"
@@ -60,7 +60,7 @@
 		"text":"lorem",
 		"teaser-title":"VeiligThuis",
 		"teaser-text":"Hulp binnen handbereik via persoonlijk alarm",
-		"teaser-img":"../images/veiligthuis.jpg",
+		"teaser-img":"../images/VeiligThuis.jpg",
 		"uri":"veiligthuis.html"
 	}
 ]

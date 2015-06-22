@@ -68,6 +68,10 @@
 	background-size:cover;
 	margin-right: $gutter;
 	background-image: url('../gfx/logo-vierstroom.png');
+	
+	&:hover {
+		@include tada($duration:.8s);
+	}
 }
 
 .ledenPage .logo {
