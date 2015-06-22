@@ -2,13 +2,16 @@ ul.data-services {
 	@include outer-container;
 	background:lighten($grey,18%);
 	margin-bottom: $gutter;
+
 	
 	.data-service {
 		width: 33.33333%;
 		float: left;
 		border-left:3px solid #fff;
 		font-weight: 300;
-		
+
+
+			
 		&:first-child{border:0;}
 		
 		article {
@@ -30,6 +33,8 @@ ul.data-services {
 		
 		.info {
 			padding:$gutter $gutter 0 $gutter;
+			height: 4em;
+			overflow: hidden;
 		}
 		
 		.list-check {
