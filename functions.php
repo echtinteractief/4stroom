@@ -77,10 +77,10 @@ if ( ! isset( $content_width ) ) {
 
 // Thumbnail sizes
 // Thumbnail sizes 
-add_image_size( 'thumb-ident-homepage', 1900, 800, array('center','center' ));//homepage header img
-add_image_size( 'thumb-ident', 1900, 460, array('center','center' ));//default image header size
+add_image_size( 'header-slider', 1900, 800, array('center','center' ));//homepage header img
+add_image_size( 'header-img', 1900, 460, array('center','center' ));//default image header size
 add_image_size( 'thumb-square', 200, 200, true );//leden actie images
-add_image_size( 'thumb-400', 400, 160, true );//default diensten images
+add_image_size( 'thumb-600', 600, 280, true );//default diensten images
 add_image_size( 'thumb-280', 281, 199, true );//default adviseur
 
 
@@ -108,8 +108,9 @@ add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
 
 function bones_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        'bones-thumb-600' => __('600px by 150px'),
-        'bones-thumb-300' => __('300px by 100px'),
+        'header-slider' => __('1900px by 800px'),
+        'header-img' => __('1900px by 460px'),
+        'thumb-600' => __('600px by 280px')
     ) );
 }
 
