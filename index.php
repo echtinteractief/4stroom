@@ -38,8 +38,7 @@
 				)); ?>	
 			</nav>
 			<div class="search-box">
-				<input type="search" placeholder="zoeken" class="search" />
-				<input type="submit" class="btn btn--search" value="&#xf002;" />
+				<?php  get_search_form();?>
 			</div>
 			<nav class="topNav right">
 				<h1 class="hide">Top navigatie rechts</h1>
