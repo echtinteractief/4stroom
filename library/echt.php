@@ -145,7 +145,7 @@ function the_breadcrumb($split='') {
 
 
 /**------------------------------------------------------
-	remove default wp gallery for use in theme:
+	remove default wp gallery, for use in theme file:
 	
 	if ( has_shortcode( $post->post_content, 'gallery' ) ) { 
 		$post_content = $post->post_content;
@@ -175,6 +175,36 @@ function theme_remove_gallery_sc( $content = null ){
     return $content;
 }
 add_filter( 'the_content', 'theme_remove_gallery_sc' );
+
+
+/**------------------------------------------------
+	Set special sitemap class for the footer sitemap
+--------------------------------------------------*/
+class Footer_Sitemap_Nav extends Walker_Nav_Menu {
+   function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
+        $element->has_children = !empty( $children_elements[$element->ID] );
+        $element->classes[] = ($depth == 0) ? 'sitemap-item' : '';      
+       //$element->classes[] = ( $element->has_children ) ? 'has-subnav' : '';
+        //$element->classes[] = ( sizeof($children_elements)>1) ? 'has-dropdown-more' : 'has-dropdown-one';
+        
+        if($depth>=1):
+			$element->classes[] = 'sitemap-subitem';
+		endif;
+	
+        parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
+    }
+	
+    function start_el( &$output, $object, $depth = 0, $args = array(), $current_object_id = 0 ) {
+        $item_html = '';
+        parent::start_el( $item_html, $object, $depth, $args );	
+	    $output .= $item_html;
+	}
+	
+    function start_lvl( &$output, $depth = 0, $args = array() ) {
+        $output .= "\n<ul class=\"sitemap-subgroup\">\n";
+    }
+}
+
 
 	
 ?>

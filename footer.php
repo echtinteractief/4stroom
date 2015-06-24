@@ -55,9 +55,14 @@
 				 'after' => '',                                  // after the menu
 				 'link_before' => '',                            // before each link
 	             'link_after' => '',                             // after each link
-				 'depth' => 1,                                   // limit the depth of the nav
-				 'fallback_cb' => ''                             // fallback function (if there is one)
-			)); ?>	
+				 'depth' => 2,                                   // limit the depth of the nav
+				 'fallback_cb' => '',                             // fallback function (if there is one)
+				 'walker' => new Footer_sitemap_nav
+			)); 
+			
+						
+			
+			?>	
 		</div>
 		<div class="grid-4">
 			<div class="box newsletter-submit widget">
