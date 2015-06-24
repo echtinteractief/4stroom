@@ -1,49 +1,6 @@
 <footer class="footer-page">
 	<div class="row">
 		<div class="grid-8">
-<!--
-		<ul class="sitemap group-3">
-			
-			<li class="sitemap-item">
-				<a href="#">ZorgThuis</a>
-				
-				<ul class="sitemap-subgroup">
-					<li class="sitemap-subitem"><a href="#">Diensten ZorgThuis</a></li>
-					<li class="sitemap-subitem"><a href="#">Werkgebied ZorgThuis</a></li>
-					<li class="sitemap-subitem"><a href="#">Contact</a></li>
-				</ul>
-			</li>
-			<li class="sitemap-item">
-				<a href="#">HulpThuis</a>
-				
-				<ul class="sitemap-subgroup">
-					<li class="sitemap-subitem"><a href="#">link to</a></li>
-				</ul>
-			</li>
-			<li class="sitemap-item">
-				<a href="#">VeiligThuis</a>
-				
-				<ul class="sitemap-subgroup">
-					<li class="sitemap-subitem"><a href="#">link to</a></li>
-				</ul>
-			</li>
-			<li class="sitemap-item">
-				<a href="#">Leden</a>
-				
-				<ul class="sitemap-subgroup">
-					<li class="sitemap-subitem"><a href="#">link to</a></li>
-				</ul>
-			</li>
-			<li class="sitemap-item">
-				<a href="#">Vierstroom</a>
-				
-				<ul class="sitemap-subgroup">
-					<li class="sitemap-subitem"><a href="#">link to</a></li>
-				</ul>
-			</li>
-		</ul>
--->
-
 			
 			<?php wp_nav_menu(array(
 		         'container' => false,                           // remove nav container
@@ -59,8 +16,6 @@
 				 'fallback_cb' => '',                             // fallback function (if there is one)
 				 'walker' => new Footer_sitemap_nav
 			)); 
-			
-						
 			
 			?>	
 		</div>
@@ -80,10 +35,10 @@
 			<nav class="social-follow-nav widget">
 				<h1 class="widget-title">Volg ons op:</h1>
 				<ul>
-					<li><a href="#facebook" class="btn-round icon icon-only icon-facebook">Facebook</a></li>
-					<li><a href="#twitter" class="btn-round  icon icon-only icon-twitter">Twitter</a></li>
-					<li><a href="#youtube" class="btn-round  icon icon-only icon-youtube">Youtube</a></li>
-					<li><a href="#linkedin" class="btn-round icon icon-only icon-linkedin">LinkedIn</a></li>
+					<li><a href="http://www.facebook.com/vierstroom" target="_blank" class="btn-round icon icon-only icon-facebook">Facebook</a></li>
+					<li><a href="http://www.twitter.com/" target="_blank"  class="btn-round  icon icon-only icon-twitter">Twitter</a></li>
+					<li><a href="http://www.youtube.com/user/Vierstroom" target="_blank"  class="btn-round  icon icon-only icon-youtube">Youtube</a></li>
+					<li><a href="http://www.linkedin.com/" target="_blank"  class="btn-round icon icon-only icon-linkedin">LinkedIn</a></li>
 				</ul>
 			</nav>
 			
