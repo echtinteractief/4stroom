@@ -6,7 +6,7 @@
 			<?php
 				
 				$title=(types_render_field("header-title",array('raw' => 'true'))) ? types_render_field("header-title",array('raw' => 'true')) : false;
-				$subtitle=(types_render_field("slider-subtitle",array('raw' => 'true'))) ? types_render_field("slider-subtitle",array('raw' => 'true')) : false;
+				$subtitle=(types_render_field("header-subtitle",array('raw' => 'true'))) ? types_render_field("header-subtitle",array('raw' => 'true')) : false;
 				$content=(types_render_field("header-text",array('raw' => 'true'))) ? types_render_field("header-text",array('raw' => 'false')) : false;
 				$getImg=types_render_field("header-img",array('size'=>'header-img'));
 				
@@ -25,9 +25,9 @@
 						<div class="box ">
 							<div class="box-content">
 								<h1><?php echo $title;?><strong><br /><?php echo $subtitle ?></strong></h1>						
-								<p class="small-text">
+								<div class="small-text">
 									<?php echo $content; ?>
-								</p>
+								</div>
 							</div>
 						</div>
 					</div>
