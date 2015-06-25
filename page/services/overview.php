@@ -29,15 +29,17 @@
 					<?php
 					/* We need to get the id of the diensten zorgthuis pagina and get the children of that page to display*/
 					$servicesHomePage = get_page_by_title('Diensten ZorgThuis');
-					$servicesHomeId = $page->ID;
-					query_posts(array('showposts' => 8, 'post_parent' => $servicesHomeId, 'post_type' => 'page')); while (have_posts()) { the_post();
+					$servicesHomeId = $servicesHomePage->ID;
+					query_posts(array('showposts' => 8, 'post_parent' => $servicesHomeId, 'post_type' => 'page'));
+
+					while (have_posts()) { the_post();
 
 						$title=(types_render_field("teaser-title",array('raw' => 'true'))) ? types_render_field("teaser-title",array('raw' => 'true')) : get_the_title();
 						$content=(types_render_field("teaser-txt",array('raw' => 'true'))) ? types_render_field("teaser-txt",array('raw' => 'true')) : get_the_excerpt();
 						$img=(types_render_field("teaser-img",array('raw' => 'true'))) ? types_render_field("teaser-img",array('raw' => 'true')) : wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'thumb-300');
 						$uri =  get_page_link($post->ID); ?>
 
-					<li class="post post-text-in-image shadow">
+						<li class="post post-text-in-image shadow">
 							<article>
 								<figure class="crop">
 									<img src="<?php echo $img ?>">
@@ -50,7 +52,8 @@
 							</article>
 						</li>
 
-					<?php } ?>
+					<?php }
+				 ?>
 
 				</ul>
 			</div>
