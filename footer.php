@@ -2,30 +2,48 @@
 		<div class="row">
 			<div class="grid-8">
 			<ul class="sitemap group-3">
-				
+
+				<?php
+				$args = array(
+						'posts_per_page' => 3,
+						'order_by' => 'title',
+						'order' => 'ASC',
+						'tag' => 'thuissite',
+						'post_type' => 'page'
+				);
+				$the_query = new WP_Query($args); ?>
+
+				<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+
 				<li class="sitemap-item">
-					<a href="#">ZorgThuis</a>
-					
-					<ul class="sitemap-subgroup">
-						<li class="sitemap-subitem"><a href="#">Diensten ZorgThuis</a></li>
-						<li class="sitemap-subitem"><a href="#">Werkgebied ZorgThuis</a></li>
-						<li class="sitemap-subitem"><a href="#">Contact</a></li>
-					</ul>
+					<a href="<?php echo get_permalink() ?>"><?php the_title(); ?></a>
+
+					<?php
+					$my_wp_query = new WP_Query();
+					$all_wp_pages = $my_wp_query->query(array('post_type' => 'page'));
+
+					$args = array(
+							'child_of' => $post->ID,
+							'parent' => $post->ID,
+							'sort_column' => 'menu_order',
+							'sort_order' => 'asc'
+					);
+					$subpages = get_pages( $args );
+
+					if(count($subpages) > 0){ ?>
+						<ul class="sitemap-subgroup">
+						<?php foreach($subpages as $subpage){ ?>
+							<li class="sitemap-subitem"><a href="<?php echo $subpage->post_title; ?>"><?php echo $subpage->post_title; ?></a></li>
+						<?php } ?>
+						</ul>
+					<?php }
+					?>
 				</li>
-				<li class="sitemap-item">
-					<a href="#">HulpThuis</a>
-					
-					<ul class="sitemap-subgroup">
-						<li class="sitemap-subitem"><a href="#">link to</a></li>
-					</ul>
-				</li>
-				<li class="sitemap-item">
-					<a href="#">VeiligThuis</a>
-					
-					<ul class="sitemap-subgroup">
-						<li class="sitemap-subitem"><a href="#">link to</a></li>
-					</ul>
-				</li>
+
+
+					<?php endwhile;
+						wp_reset_postdata(); ?>
+
 				<li class="sitemap-item">
 					<a href="#">Leden</a>
 					

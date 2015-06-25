@@ -17,56 +17,16 @@
 	?>
 	</head>
 	<body <?php body_class($page_slug); ?>>
+
+	<?php get_template_part('parts/common/topnav'); ?>
 	
-	<header class="topHeader">
-		<div class="row">
-			<h1 class="logo"><a class="box-link" href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
-			<nav class="topNav">
-				<h1 class="hide">Top navigatie links</h1>
-				<?php wp_nav_menu(array(
-				         'container' => false,                           // remove nav container
-				         'container_class' => 'menu cf',                 // class of container (should you choose to use it)
-				         'menu' => __( 'Top Navigation Left', 'bonestheme' ),  // nav name
-				         'menu_class' => '',               // adding custom nav class
-				         'theme_location' => 'top-nav-left',                 // where it's located in the theme
-				         'before' => '',                                 // before the menu
-						 'after' => '',                                  // after the menu
-						 'link_before' => '',                            // before each link
-			             'link_after' => '',                             // after each link
-						 'depth' => 0,                                   // limit the depth of the nav
-						 'fallback_cb' => ''                             // fallback function (if there is one)
-				)); ?>	
-			</nav>
-			<div class="search-box">
-				<input type="search" placeholder="zoeken" class="search" />
-				<input type="submit" class="btn btn--search" value="&#xf002;" />
-			</div>
-			<nav class="topNav right">
-				<h1 class="hide">Top navigatie rechts</h1>
-				<?php wp_nav_menu(array(
-				         'container' => false,                           // remove nav container
-				         'container_class' => 'menu cf',                 // class of container (should you choose to use it)
-				         'menu' => __( 'Top Navigation Right', 'bonestheme' ),  // nav name
-				         'menu_class' => '',               // adding custom nav class
-				         'theme_location' => 'top-nav-right',                 // where it's located in the theme
-				         'before' => '',                                 // before the menu
-						 'after' => '',                                  // after the menu
-						 'link_before' => '',                            // before each link
-			             'link_after' => '',                             // after each link
-						 'depth' => 0,                                   // limit the depth of the nav
-						 'fallback_cb' => ''                             // fallback function (if there is one)
-				)); ?>	
-			</nav>
-		</div>
-	</header>
-	
-	
-	<?php 
+
+	<?php
 		//Headers
 		if (is_front_page()) {
-			get_template_part('parts/_part-slider-home');
+			get_template_part('parts/common/_part-slider-home');
 		} else {
-			get_template_part('parts/_part-header-img');
+			get_template_part('parts/common/_part-header-img');
 		}	
 		
 	?>
@@ -79,10 +39,21 @@
 			
 			case 'page' :
 				if (is_front_page()) {
-					get_template_part('page/_page-home');
-				} else {
-				
-					get_template_part('page/_page-detail');
+					get_template_part('page/common/home');
+				} elseif(is_page('veiligthuis') || is_page('hulpthuis') || is_page('zorgthuis')){
+					get_template_part('page/services/overview');
+				}
+				elseif(is_page('leden')){
+					get_template_part('page/members/overview');
+				}
+				elseif(is_page('werkenbijdevierstroom')){
+					get_template_part('page/jobs/landingpage');
+				}
+				elseif(is_page('thuiszorgwinkels')){
+					get_template_part('page/homecareshops/overview');
+				}
+				else {
+					get_template_part('common/detail');
 				}
 				
 			break;

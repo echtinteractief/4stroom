@@ -9,21 +9,20 @@
 						'post_type' => 'home-slider',
 						'orderby'=>'menu_order',
 						'order'=>'ASC'
-					)  
-				 
+					)
 				);	
 			?>
 			
-			<?php while ($loop_slider->have_posts() ) : $loop_slider->the_post();	?>
-			
+			<?php while ($loop_slider->have_posts() ) : $loop_slider->the_post(); ?>
+
 			<?php
+
 				$id=$post->post_title;
 				$title=get_the_title();
 				$subtitle=(types_render_field("slider-subtitle",array('raw' => 'true'))) ? types_render_field("slider-subtitle",array('raw' => 'true')) : false;
 				$content=(types_render_field("slider-text",array('raw' => 'true'))) ? types_render_field("slider-text",array('raw' => 'true')) : false;
 				
 				//frontpage has bigger image
-				
 				$getImg=types_render_field("slider-img-2",array('size'=>'header-slider'));
 				
 				preg_match('@src="([^"]+)"@' , $getImg, $match);
