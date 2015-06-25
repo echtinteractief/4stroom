@@ -68,6 +68,7 @@
 		
 		.sub-menu,
 		.children {
+			display: none;
 			margin-top:-5px;
 			border-left:2px solid darken(#fafafa,5%);
 			margin-bottom:15px;
@@ -101,8 +102,18 @@
 				}
 			}
 			
+			
+			
 			.menu-item {
 				//color:$black;
+			}
+		}
+		
+		.current_page_parent,
+		.current_page_item {
+			.sub-menu,
+			.children {
+				display: block;
 			}
 		}
 	}
