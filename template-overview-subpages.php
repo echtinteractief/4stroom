@@ -40,7 +40,8 @@
 				<div class="text">
 					<?php the_content(); ?>
 				</div>
-								<?php
+					<?php
+
 					$args = array( 'post_parent' => get_the_ID(), 'post_type'   => 'page', 'orderby' => 'menu_order','order'=>'ASC');
 					$children = get_children( $args );
 					foreach ( $children as $child ) { 
@@ -48,6 +49,7 @@
 						//get sub diensten page
 						if($child->post_title=='Diensten') {
 							
+							//get diensten subpages
 							$args = array( 'post_parent' =>  $child->ID, 'post_type'   => 'page', 'orderby' => 'menu_order','order'=>'ASC');
 							$children = get_children( $args );
 							
@@ -91,11 +93,9 @@
 								
 							}
 							
-							
 							break;
 						}
-
-							
+	
 					}
 				?>
 		
@@ -103,7 +103,14 @@
 			
 				</section>
 				<aside class="grid-4 sidebar">
-					{{> site-subnav }}
+					<?php 
+
+						
+						//wp_list_pages("title_li=&child_of=".get_the_ID());
+						
+					?>
+					
+					<?php get_template_part('parts/_part-services-subnav'); ?>
 				</aside>
 			</div>
 		</article>	
