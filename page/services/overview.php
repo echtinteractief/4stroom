@@ -1,7 +1,6 @@
 <article>
 	<?php get_template_part('parts/services/nav'); ?>
 
-	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		<div class="row block-padding page-overview">
 			<div class="grid-8 content ">
 
@@ -61,5 +60,4 @@
 				<?php get_template_part('parts/services/subnav'); ?>
 			</aside>
 		</div>
-	<?php endwhile; endif; ?>
 </article>
