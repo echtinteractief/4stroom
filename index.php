@@ -53,7 +53,8 @@
 					get_template_part('page/homecareshops/overview');
 				}
 				else {
-					get_template_part('common/detail');
+					
+					get_template_part('page/common/detail');
 				}
 				
 			break;
