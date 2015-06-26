@@ -31,7 +31,7 @@
 					$servicesHomeId = $servicesHomePage->ID;
 					query_posts(array('showposts' => 8, 'post_parent' => $servicesHomeId, 'post_type' => 'page'));
 
-					while (have_posts()) { the_post();
+					while (have_posts()) : the_post();
 
 						$title=(types_render_field("teaser-title",array('raw' => 'true'))) ? types_render_field("teaser-title",array('raw' => 'true')) : get_the_title();
 						$content=(types_render_field("teaser-txt",array('raw' => 'true'))) ? types_render_field("teaser-txt",array('raw' => 'true')) : get_the_excerpt();
@@ -51,8 +51,10 @@
 							</article>
 						</li>
 
-					<?php }
-				 ?>
+					<?php 
+						endwhile; 
+						wp_reset_query(); 
+					?>
 
 				</ul>
 			</div>
