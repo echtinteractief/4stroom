@@ -13,7 +13,7 @@
 <?php
 		$args = array(
 			'posts_per_page' => 3,
-			'order_by' => 'title',
+			'order_by' => 'menu_order',
 			'order' => 'ASC',
 			'tag' => 'thuissite',
 			'post_type' => 'page'
