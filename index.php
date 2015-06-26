@@ -40,9 +40,10 @@
 			case 'page' :
 				if (is_front_page()) {
 					get_template_part('page/common/home');
-				} elseif(is_page('veiligthuis') || is_page('hulpthuis') || is_page('zorgthuis')){
-					get_template_part('page/services/overview');
 				}
+				/*elseif(is_page('veiligthuis') || is_page('hulpthuis') || is_page('zorgthuis')){
+					get_template_part('page/services/overview');
+				}*/
 				elseif(is_page('leden')){
 					get_template_part('page/members/overview');
 				}
