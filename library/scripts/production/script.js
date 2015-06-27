@@ -347,7 +347,6 @@ var gallery = {};
 	
 }).apply(gallery);
 
-
 var slider = {};
 
 (function() {
