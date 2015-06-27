@@ -69,6 +69,49 @@
 					<?php endwhile; ?>
 			<?php endif; ?>
 
+			<!-- ThuisZorg/VeiligThuis/HulpThuis -> Extra diensten informatie -->
+			<?php if( have_rows('diensten_detail_informatie') ): ?>
+
+				<ul class="data-services">
+
+				<?php while( have_rows('diensten_detail_informatie') ): the_row(); ?>
+
+						<li class="data-service">
+							<article>
+								<h1 class="service-title"><?php the_sub_field('titel') ?></h1>
+								<p class="info"><em><?php the_sub_field('subtitel') ?></em></p>
+
+								<?php $posts = get_sub_field('details');
+								if( $posts ): ?>
+
+									<ul class="list-check">
+
+									<?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+										<?php setup_postdata($post); ?>
+										<li class="icon icon-check"><?php echo $post['tekst'] ?></li>
+
+									<?php endforeach; ?>
+								</ul>
+								<?php wp_reset_postdata(); ?>
+								<?php endif; ?>
+
+								<div>
+									<?php if(get_sub_field('bij_u_in_de_buurt')) { ?>
+									<a href="<?php the_sub_field('bij_u_in_de_buurt') ?>" class="btn lighter">Bij u in de buurt?</a>
+									<?php }
+									if(get_sub_field('aanvragen')) { ?>
+									<a href="<?php the_sub_field('aanvragen') ?>" class="btn">Aanvragen</a>
+									<?php } ?>
+								</div>
+							</article>
+						</li>
+
+				<?php endwhile; ?>
+
+					</ul>
+
+			<?php endif; ?>
+
 		</div>
 		
 		<aside class="grid-4 sidebar">

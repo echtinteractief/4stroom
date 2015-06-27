@@ -239,5 +239,32 @@ function bones_comments( $comment, $args, $depth ) {
 <?php
 } // don't remove this bracket!
 
+/* Add extra location rule to the ACF plugin */
+add_filter('acf/location/rule_types', 'acf_location_rules_types');
+function acf_location_rules_types( $choices ) {
+	$choices['Page']['descendantof'] = 'Descendant of the page';
+	return $choices;
+}
+add_filter('acf/location/rule_values/descendantof', 'acf_location_rules_values_descendantof');
+function acf_location_rules_values_descendantof( $choices ) {
+	foreach(get_pages() as $p)
+		$choices[ $p->ID ] = $p->post_title;
+	return $choices;
+}
+add_filter('acf/location/rule_match/descendantof', 'acf_location_rules_match_descendantof', 10, 3);
+function acf_location_rules_match_descendantof( $match, $rule, $options ) {
+	global $post;
+	$match = false;
+	$selectedPageID = (int) $rule['value'];
+
+	foreach(get_post_ancestors( $post->ID ) as $ancestor) {
+		if($ancestor == $selectedPageID)
+			$match = true;
+	}
+	if($rule['operator'] == "==")
+		return $match;
+	elseif($rule['operator'] == "!=")
+		return !$match;
+}
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
