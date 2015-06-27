@@ -72,6 +72,14 @@
 			<!-- ThuisZorg/VeiligThuis/HulpThuis -> Extra diensten informatie -->
 			<?php if( have_rows('diensten_detail_informatie') ): ?>
 
+			<section>
+
+				<?php if(get_field('titel_detail_informatie')) { ?>
+
+					<h2 class="page-heading"><?php the_field('titel_detail_informatie') ?></h2>
+
+				<?php } ?>
+
 				<ul class="data-services">
 
 				<?php while( have_rows('diensten_detail_informatie') ): the_row(); ?>
@@ -110,6 +118,15 @@
 
 					</ul>
 
+					<?php if(get_field('bijschrift_detail_informatie')) { ?>
+
+					<div class="panel note">
+						<p><?php the_field('bijschrift_detail_informatie') ?></p>
+					</div>
+
+					<?php } ?>
+
+				</section>
 			<?php endif; ?>
 
 		</div>
