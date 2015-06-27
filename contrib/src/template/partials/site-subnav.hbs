@@ -1,35 +1,40 @@
 <nav class=" sub-nav">
-	<h3 class="subnav-title"><a href="zorgthuis.html">ZorgThuis</a></h3>
+	
 	<ul class="subnav-list">
-		<li class="menu-item {{#if this.subnavcheck }} is--current {{/if}}">
-			<a href="zorgthuis-diensten.html">Diensten ZorgThuis</a>
-			
-			{{#if this.subnavdepth}}
-				<ul class="sub-menu">
+		<li class="menu-item">
+			<h3 class="subnav-title"><a href="zorgthuis.html">ZorgThuis</a></h3>
+			<ul class="sub-menu">
+				<li class="menu-item {{#if this.subnavcheck }} is--current {{/if}}">
+					<a href="zorgthuis-diensten.html">Diensten ZorgThuis</a>
 					
-					
-					{{!-- <li class="menu-item"><a href="zorgthuis-diensten.html">Alle diensten</a></li> --}}
-					{{#each diensten.1.subdiensten }}
-					
-					<li class="menu-item  {{#is teaser-title  ../page.title }} is--current {{/is}} ">
-						
-						<a href="{{teaser-uri}}">{{teaser-title}}</a>
-						{{#if ../page.subnavid}}
-							<ul class="sub-menu">
-								{{#each this.subdiensten }}
-									<li class="menu-item  {{#is teaser-title  ../page.title }} is--current {{/is}} ">
-										<a href="{{teaser-uri}}">{{teaser-title}}</a>
-									</li>
-								{{/each}}
-							</ul>
-						{{/if}}
-					</li>
-					{{/each}}	
-				</ul>
-			{{/if}}
+					{{#if this.subnavdepth}}
+						<ul class="sub-menu">
+							
+							
+							{{!-- <li class="menu-item"><a href="zorgthuis-diensten.html">Alle diensten</a></li> --}}
+							{{#each diensten.1.subdiensten }}
+							
+							<li class="menu-item  {{#is teaser-title  ../page.title }} is--current {{/is}} ">
+								
+								<a href="{{teaser-uri}}">{{teaser-title}}</a>
+								{{#if ../page.subnavid}}
+									<ul class="sub-menu">
+										{{#each this.subdiensten }}
+											<li class="menu-item  {{#is teaser-title  ../page.title }} is--current {{/is}} ">
+												<a href="{{teaser-uri}}">{{teaser-title}}</a>
+											</li>
+										{{/each}}
+									</ul>
+								{{/if}}
+							</li>
+							{{/each}}	
+						</ul>
+					{{/if}}
+				</li>
+				<li class="menu-item"><a href="#">Over ZorgThuis</a></li>
+				<li class="menu-item"><a href="#">Werkgebied ZorgThuis</a></li>					
+				<li class="menu-item"><a href="#">Contact</a></li>
+			</ul>
 		</li>
-		<li class="menu-item"><a href="#">Over ZorgThuis</a></li>
-		<li class="menu-item"><a href="#">Werkgebied ZorgThuis</a></li>					
-		<li class="menu-item"><a href="#">Contact</a></li>
 	</ul>
 </nav>

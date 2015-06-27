@@ -12,7 +12,7 @@
 			//background: $pink;
 			//color:#fff;
 			//padding:10px 20px;
-		}
+		}	
 	}
 	.subnav-list {
 		border-bottom:1px solid  darken(#fafafa,5%);
@@ -110,11 +110,18 @@
 		}
 		
 		.current_page_parent,
-		.current_page_item {
+		.current_page_item,
+		.is--current {
 			.sub-menu,
 			.children {
 				display: block;
 			}
 		}
+	}
+	
+	.subnav-title + .sub-menu,
+	.subnav-title + .children {
+		display: block;
+			
 	}
 }
