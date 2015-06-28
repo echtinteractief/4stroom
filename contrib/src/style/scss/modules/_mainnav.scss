@@ -51,7 +51,7 @@
 		display: inline-block;
 		color:#fff;
 		font-size: em(16);
-		font-weight: 700;
+		font-weight: 300;
 		float: left;
 		padding:17px 10px 0 0;
 		
@@ -62,12 +62,11 @@
 	
 	> ul {float: left;}
 	
+	&.services {
+		.menu-item a {font-weight: 500;}
+	}
+	
 	&.tabs {
-		
-		
-		
-		
-		
 		.menu-item {
 			a {
 				padding:15px 30px;
