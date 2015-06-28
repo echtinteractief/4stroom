@@ -50,7 +50,7 @@
 				elseif(is_page('vacatures')){
 					get_template_part('page/jobs/overview');
 				}
-				elseif(is_page('thuiszorgwinkels')){
+				elseif(is_page('winkels')){
 					get_template_part('page/homecareshops/overview');
 				}
 				else {
