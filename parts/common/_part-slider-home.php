@@ -60,7 +60,8 @@
 			
 		</ul>
 	</div>
-	<!--
+	<?php 
+		/*
 	<div class="row relative">
 		<div class="widget-find">
 			<form>
@@ -113,5 +114,8 @@
 			</form>
 			<p class="text-center">Of bel direct met Vierstroom <strong>088 - 0900 400</strong></p>
 		</div>
-	</div>-->
+	</div>
+	
+	*/
+	?>
 </section>
