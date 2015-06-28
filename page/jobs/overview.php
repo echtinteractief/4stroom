@@ -1,4 +1,5 @@
 <article>
+<?php get_template_part('parts/services/nav'); ?>
 <div class="row block-padding page-overview">
 		
 		
