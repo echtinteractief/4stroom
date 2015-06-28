@@ -138,7 +138,9 @@
 			}
 		}
 		
-		&.is--current {
+		&.is--current,
+		&.current-page-ancestor,
+		&.current-menu-item {
 			a {
 				font-weight: 700;
 				
