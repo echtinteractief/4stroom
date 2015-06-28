@@ -6,9 +6,25 @@
 			bottom:0;
 		}
 		.box {
-			margin:-120px 0 0 -70px;
+			margin:-120px 0 0 30px;
 			text-align: left;
 			width: 400px;
+			
+			.box-content {	
+				h1 {
+					font-size: em(28);
+				}
+				
+				ul {
+					list-style: disc;
+					font-size: em(18);
+					> li {
+						margin-left:$gutter;
+						font-weight: 700;
+					}
+				}
+				
+			}
 		}
 		
 		.crop {
@@ -244,7 +260,6 @@
 	
 	&:hover {
 		box-shadow: 0px 0px 5px rgba(#000,.3);
-		
 		
 		//&:before {width: 100%;}
 		
