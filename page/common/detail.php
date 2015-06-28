@@ -43,13 +43,16 @@
 									<?php
 										$title= get_field('teaser_titel', $post->ID)  ? get_field('teaser_titel', $post->ID) : get_the_title($post->ID);
 										$content= get_field('teaser_beschrijving', $post->ID) ? get_field('teaser_beschrijving', $post->ID) : get_the_excerpt($post->ID);
-										$img= get_field('teaser_afbeelding', $post->ID)['url'] ? get_field('teaser_afbeelding', $post->ID)['url'] : wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'thumb-300');
-										$uri =  get_page_link($post->ID); ?>
-
+										$img= get_field('teaser_afbeelding', $post->ID)['url'] ? get_field('teaser_afbeelding')['id'] : wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'thumb-300');
+										$img_array = wp_get_attachment_image_src($img, 'thumb-600'); //get image thumb
+										$uri =  get_page_link($post->ID); 
+										
+									?>
 										<li class="post post-text-in-image shadow">
 											<article>
 												<figure class="crop">
-													<img src="<?php echo $img ?>">
+													<img src="<?php  echo $img_array[0]; ?>"> 
+													
 												</figure>
 												<div class="text-block">
 													<h1><?php echo $title ?>
