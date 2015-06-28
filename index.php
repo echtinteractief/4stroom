@@ -47,8 +47,8 @@
 				elseif(is_page('leden')){
 					get_template_part('page/members/overview');
 				}
-				elseif(is_page('werkenbijdevierstroom')){
-					get_template_part('page/jobs/landingpage');
+				elseif(is_page('vacatures')){
+					get_template_part('page/jobs/overview');
 				}
 				elseif(is_page('thuiszorgwinkels')){
 					get_template_part('page/homecareshops/overview');
