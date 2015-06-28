@@ -2,8 +2,8 @@
 	<div class="row">
 		<h1 class="bar-title arrow-vierstroom right"><span>Direct contact? Bel </span><a href="#link">088 - 0900 400</a></h1>
 		<nav class="nav main-nav left tabs">
-			<h1 class="hide">ZorgThuis navigatie"</h1>
-			<ul>
+			<h1 class="hide">Onze diensten:</h1>
+			
 				<?php wp_nav_menu(array(
 						'container' => false,                           // remove nav container
 						'container_class' => 'menu cf',                 // class of container (should you choose to use it)
@@ -17,7 +17,7 @@
 						'depth' => 0,                                   // limit the depth of the nav
 						'fallback_cb' => ''                             // fallback function (if there is one)
 				)); ?>
-			</ul>
+			
 		</nav>
 	</div>
 </aside>		

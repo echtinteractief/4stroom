@@ -42,9 +42,32 @@
 		&.current-page-ancestor {	
 			a {font-weight: 700;}
 		}
+		
+		
+		
 	}
 	
+	h1 {
+		display: inline-block;
+		color:#fff;
+		font-size: em(16);
+		font-weight: 700;
+		float: left;
+		padding:17px 10px 0 0;
+		
+		&.hide {
+			display: none;
+		}
+	}
+	
+	> ul {float: left;}
+	
 	&.tabs {
+		
+		
+		
+		
+		
 		.menu-item {
 			a {
 				padding:15px 30px;
