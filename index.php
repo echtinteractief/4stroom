@@ -32,7 +32,9 @@
 	?>
 	
 	<?php
-		
+	if (is_front_page()) {
+		get_template_part('page/common/home');
+	}
 		
 		//check posttypes
 		switch (get_post_type()) {

@@ -1,16 +1,16 @@
 <article>
-<?php get_template_part('parts/services/nav'); ?>
-<div class="row block-padding page-overview">
-		
-		
-		<div class="grid-8 content ">
-			<h1 class="page-heading">Vacatures</h1>
+		<div class="grid-12 content ">
+			<h1 class="page-heading"><?php the_title(); ?></h1>
+
 			<div class="text">
 				<p class="intro">
 					<strong>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, quasi, rerum, minus placeat blanditiis porro vel aliquam tempore iste amet culpa labore modi quibusdam sit.
+
+				<?php the_content(); ?>
+
 					</strong>
 				</p>
+			</div>
 			
 				<section class="block list-block">
 					<h2 class="hide page-heading">Vacature overzicht:</h2>
@@ -23,19 +23,59 @@
 								<input type="submit" id="searchsubmit" class="btn btn--search" value="&#xf002;" />
 							</form>
 						</div>
-						
-						<div class="sort-options left">
-							<div class="style-select">
-								<select id="boe">
-									<option class="placeholder" disabled selected>Kies functietype:</option>
-									<option value="bla">Huishoudelijke hulp (15)</option>
-									<option value="Sipsum">Helpende niveau 2 (10)</option>
-									<option value="Vlorem">Verzorgende niveau ag/ig (5)</option>
-									
-								</select>
+
+						<?php
+						$args = array(
+								'post_type' => 'vacature');
+
+							$vacatures = new WP_Query( $args );
+						if( $vacatures->have_posts() ) { ?>
+
+							<?php
+							$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+							$wp_query = new WP_Query( array( 'post_type' => 'vacature', 'posts_per_page' => 1, 'paged' => $paged ) );
+
+							// get terms of taxonomy product_categories
+							$terms = get_terms( "vacature_category" );
+							$count = count( $terms );
+
+							// check if category is selected
+							$currentCategory = $_GET['category'];
+							if ( ! empty( $currentCategory ) ) {
+								$args     = array(
+										'vacature_category' => $currentCategory,
+										'post_type'          => 'vacature'
+								);
+								$wp_query = null;
+								$wp_query = new WP_Query( $args );
+							}
+
+							// build filter for product categories
+							if ( $count > 0 ) { ?>
+
+
+								<div class="sort-options left">
+								<div class="style-select">
+									<select id="boe2">
+										<nav class="box category">
+											<h1>Categorie</h1>
+											<ul>
+												<?php if ( !empty( $currentCategory ) ) { ?>
+													<option value="<?php echo $term ?>" selected="<?php $currentCategory == $term->name ? true : false ?>" href=\"/vacatures?category=<?php echo $term ?>" />
+
+											<?php } ?>
+												<?php foreach ( $terms as $term ) { ?>
+													<option value="<?php echo $term->slug ?>" selected="<?php $currentCategory == $term->slug ? true : false ?>" href=\"/vacatures?category=<?php echo $term->slug ?>"><?php echo $term->name ?></option>
+
+												<?php	} ?>
+										</ul>
+									</select>
+								</div>
 							</div>
-						</div>
-						
+
+						<?php	} ?>
+
+
 						<div class="sort-options right">
 							<div class="style-select">
 								<select id="boe">
@@ -43,130 +83,53 @@
 									<option value="bla">Datum</option>
 									<option value="Sipsum">A-Z</option>
 									<option value="Vlorem">Z-A</option>
-									
+
 								</select>
 							</div>
 						</div>
 
-						
 					</div>
+
 					<ul class="results">
-						<li class="post post-list">
-							<article>
-								<div class="text-block">
-									<h1 class="post-title">Verzorgende 3IG wijkteam Waddinxveen 1</h1>
-									<ul class="post-meta">
-										<li class="icon icon-location">Waddinxveen</li>
-										
-										<li class="icon icon-date">22 mei 2015</li>
-										
-									</ul>
-									<p class="post-text fixed-height"><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, dignissimos, sint! Commodi, sequi, eveniet repudiandae voluptas eligendi sint a sit quos pariatur ad voluptatum quae ipsa!</em></p>
-									<a href="" class="post-link icon icon-arrow-right">Lees meer</a>
-								</div>
-								<a href="" class="box-link">Lees meer</a>
-								
-							</article>
-						</li>
-						<li class="post post-list">
-							<article>
-								<div class="text-block">
-									<h1 class="post-title">Verpleegkundige niv. 4 wijkteam Waddinxveen Noord</h1>
-									<ul class="post-meta">
-										<li class="icon icon-location">Waddinxveen</li>
-										
-										<li class="icon icon-date">22 mei 2015</li>
-										
-									</ul>
-									<p class="post-text fixed-height"><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, animi dolor distinctio odio. Perferendis, harum accusantium quisquam itaque.</em></p>
-									<a href="" class="post-link icon icon-arrow-right">Lees meer</a>
-								</div>
-								<a href="" class="box-link">Lees meer</a>
-								
-							</article>
-						</li>
-						<li class="post post-list">
-							<article>
-								<div class="text-block">
-									<h1 class="post-title">Hulp bij het huishouden</h1>
-									<ul class="post-meta">
-										<li class="icon icon-location">Oudewater</li>
-										
-										<li class="icon icon-date">22 mei 2015</li>
-										
-									</ul>
-									<p class="post-text fixed-height"><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, impedit, aut sunt sed animi excepturi sequi omnis quos est quidem blanditiis totam.</em></p>
-									<a href="" class="post-link icon icon-arrow-right">Lees meer</a>
-								</div>
-								<a href="" class="box-link">Lees meer</a>
-								
-							</article>
-						</li>
-						<li class="post post-list">
-							<article>
-								<div class="text-block">
-									<h1 class="post-title">HR-adviseur</h1>
-									<ul class="post-meta">
-										<li class="icon icon-location">Gouda</li>
-										
-										<li class="icon icon-date">22 mei 2015</li>
-										
-									</ul>
-									<p class="post-text fixed-height"><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit quam est natus quas earum aliquid tempore asperiores animi nisi quis. Provident, nulla ab magnam quis dignissimos maxime placeat minima iusto reprehenderit repellendus facere.</em></p>
-									<a href="" class="post-link icon icon-arrow-right">Lees meer</a>
-								</div>
-								<a href="" class="box-link">Lees meer</a>
-								
-							</article>
-						</li>
-						<li class="post post-list">
-							<article>
-								<div class="text-block">
-									<h1 class="post-title">Verzorgenden 3 IG</h1>
-									<ul class="post-meta">
-										<li class="icon icon-location">Gouda</li>
-										
-										<li class="icon icon-date">22 mei 2015</li>
-										
-									</ul>
-									<p class="post-text fixed-height"><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi impedit sequi in delectus explicabo doloribus.</em></p>
-									<a href="" class="post-link icon icon-arrow-right">Lees meer</a>
-								</div>
-								<a href="" class="box-link">Lees meer</a>
-								
-							</article>
-						</li>
-						<li class="post post-list">
-							<article>
-								<div class="text-block">
-									<h1 class="post-title">Verpleegkundige niv. 4 wijkteam Gouda Noord</h1>
-									<ul class="post-meta">
-										<li class="icon icon-location">Gouda</li>
-										
-										<li class="icon icon-date">22 mei 2015</li>
-										
-									</ul>
-									<p class="post-text fixed-height"><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, neque!</em></p>
-									<a href="" class="post-link icon icon-arrow-right">Lees meer</a>
-								</div>
-								<a href="" class="box-link">Lees meer</a>
-								
-							</article>
-						</li>
+						<?php while ( $wp_query->have_posts() ) : $wp_query->the_post();?>
+
+							<li class="post post-list">
+								<article>
+									<div class="text-block">
+										<h1 class="post-title"><?php the_title()?></h1>
+										<ul class="post-meta">
+											<li class="icon icon-location"><?php the_field('plaats'); ?></li>
+
+											<li class="icon icon-date"><?php the_date() ?></li>
+
+										</ul>
+										<p class="post-text fixed-height"><em><?php the_excerpt()?></em></p>
+										<a href="<?php echo get_page_link( $post->ID ) ?>" class="post-link icon icon-arrow-right">Lees meer</a>
+									</div>
+									<a href="<?php echo get_page_link( $post->ID ) ?>" class="box-link">Lees meer</a>
+
+								</article>
+							</li>
+
+						<?php endwhile ?>
+
 					</ul>
-					<nav class="pagination"><ul class="page-numbers">
-						<li class="bpn-prev-link"><a class="prev page-numbers" href="#">prev</a></li>
-						<li><span class="page-numbers current">1</span></li>
-						<li><a class="page-numbers" href="#">2</a></li>
-						<li class="bpn-next-link"><a class="next page-numbers" href="#">next</a></li>
-					</ul>
-					</nav>
+
+					<?php }
+						else {
+							echo 'Geen vacatures op dit moment.';
+						}
+						?>
+
+					<?php
+										//if ( $wp_query->max_num_pages > 1 ) :
+					//bones_page_navi();
+					bones_page_navi( '', '', $wp_query );
+					//endif;
+					?>
 				</section>
 			</div>
 		</div>
-		<aside class="grid-4 sidebar">
-				<?php get_template_part('parts/services/subnav'); ?>
-		</aside>
-
 	</div>
+
 </article>
