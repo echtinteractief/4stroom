@@ -8,7 +8,19 @@
 		"tel":"0123456789",
 		"open":"Maandag tot en met vrijdag van 9.00 - 17.30 uur. \n Zaterdag van 10.00 tot 16.00 uur.",
 		"text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, dignissimos, sint! Commodi, sequi, eveniet repudiandae voluptas eligendi sint a sit quos pariatur ad voluptatum quae ipsa!",
-		"plaats":"Waddinxveen",
+		"uri":"vacature-detail.html",
+		"img":"../images/winkel_berghoek.jpg"
+	},
+	{
+		"id": 400,
+		"winkel":"Thuiszorgwinkel Bleiswijk",
+		"adres":"Medisch Hart Bleiswijk Dorpsstraat 3",
+		"postcode":"2665 BG ",
+		"plaats":"Bleiswijk",
+		"tel":"06 - 23257713",
+		"email":"info@comfortenzorgwinkel.nl",
+		"open":"maandag tot en met vrijdag van 8.00-16.30 uur. Zaterdag van 10.00 tot 14.00 uur.",
+		"text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, dignissimos, sint! Commodi, sequi, eveniet repudiandae voluptas eligendi sint a sit quos pariatur ad voluptatum quae ipsa!",
 		"uri":"vacature-detail.html",
 		"img":"../images/winkel_berghoek.jpg"
 	}

@@ -26,26 +26,36 @@ subnavdepth: true
 			
 			<section class="block list-block">
 				<h2 class="page-heading">Overzicht winkels</h2>
-				<ul class="group-3 ">
+				<ul class=" ">
 						
 						{{#each winkels }}
-						<li class="post post-text-in-image post-stores">
+						<li class="post post-list post-stores">
 							<article>
 							
 								<h1 class="post-title"><a href="">{{winkel}}</a></h1>
-								<div class="crop">
-									<img src="{{img}}" />
-								</div>
+								
+								<figure class="crop">
+									<a href="#maps">
+										<img src="{{img}}" />
+									</a>
+								</figure>
+								
 								<div class="post-text">
 									<p class="fixed-height">{{text}}</p>
-									<ul class="post-adress">
-										<li class="adress">{{adres}}</li>
-										<li class="zipp">{{postcode}}</li>
-										<li class="city">{{plaats}}</li>
-										<li class="tel"><strong>{{tel}}</strong></li>
-										<li class="open">{{open}}</li>
-									</ul>
-										
+									<p>
+										<strong>Bezoek adres</strong><br />
+										{{adres}}<br />
+										{{postcode}} {{plaats}}
+									</p>
+									<p>
+										<strong>Contact</strong><br />
+										{{tel}} <br />
+										{{email}}
+									</p>
+									<p>
+										<strong>Openingstijden</strong><br />
+										{{open}}
+									</p>
 								</div>
 								{{!--
 								<a href="{{uri}}" class="button">Meer informatie</a>

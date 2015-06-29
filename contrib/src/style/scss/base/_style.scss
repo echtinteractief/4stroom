@@ -204,17 +204,50 @@
 
 .post-stores {
 	font-weight: 300;
+	padding-bottom: 0;
 	
 	.post-title {margin-bottom: 20px;color:$black;a{color:inherit;}}
 	.post-text {
 		//font-size: em(15);
 		display: inline-block;
-		width: 80%;
-		padding-left:$gutter;
+		padding-right: $gutter;
+		width: 70%;
 	}
 	.crop {
-		width: 	20%;
-		float: left;
+		width: 	30%;
+		float: right;
+		position: relative;
+		a {
+			
+			
+			&:before {
+				@extend %icon-fa;
+				content:$fa-var-map-marker ' route';
+				position: absolute;
+				background:rgba(#fff,.8);
+				width: 100px;
+				font-size: em(14);
+				border:1px solid #fff;
+				text-align: center;
+				display: inline-block;
+				padding:9px 15px;
+				height: 40px;
+				border-radius: 10px;
+				left:50%;
+				top:50%;
+				margin:-20px 0 0 -50px;
+				opacity: 0;
+				@include transform(scale3d(.3, .3, .3));
+				@include transition(all, .3s, .2s, ease-in-out);
+			}
+			
+			&:hover {
+				&:before {
+					 opacity: 1;
+					 @include transform(scale3d(1, 1, 1));
+				}
+			}
+		}
 	}
 	
 	.post-adress {

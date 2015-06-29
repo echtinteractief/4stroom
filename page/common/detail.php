@@ -37,7 +37,7 @@
 							$posts = get_sub_field('paginas');
 
 							if( $posts ): ?>
-							<ul>
+							
 								<?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
 									<?php setup_postdata($post); ?>
 									<?php
@@ -64,7 +64,7 @@
 										</li>
 
 								<?php endforeach; ?>
-							</ul>
+							
 							<?php wp_reset_postdata(); ?>
 							<?php endif; ?>
 						</ul>

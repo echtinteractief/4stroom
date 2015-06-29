@@ -1,6 +1,6 @@
 <?php
 /*
- Template Name: Overview
+ Template Name: Automatisch overzicht
  *
  * This is your custom page template. You can create as many of these as you need.
  * Simply name is "page-whatever.php" and in add the "Template Name" title at the
@@ -8,10 +8,38 @@
 */
 ?>
 
-<article>
-<?php get_template_part('parts/services/nav'); ?>
+<!doctype html>
+<!--[if lt IE 7 ]>
+<html class="ie ieLT ie6" lang="nl"> <![endif]-->
+<!--[if IE 7 ]>
+<html class="ie ieLT ie7" lang="nl"> <![endif]-->
+<!--[if IE 8 ]>
+<html class="ie ieLT ie8" lang="nl"> <![endif]-->
+<!--[if IE 9 ]>
+<html class="ie ieLT ie9" lang="nl"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="nl">
+<head>
+	<?php
+	get_header();
 
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+	//body page class
+	$page_slug = "";
+	if ( is_page() ) {
+		$page_slug = 'page-' . $post->post_name;
+	}
+	?>
+</head>
+<body <?php body_class( $page_slug ); ?>>
+<?php
+get_template_part( 'parts/common/topnav' );
+get_template_part( 'parts/common/_part-header-img' );
+?>
+
+<article>
+	<?php get_template_part( 'parts/services/nav' ); ?>
+
+	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<div class="row block-padding page-overview">
 		<div class="grid-8 content ">
 			
@@ -32,127 +60,48 @@
 				
 				}
 
-				
 				the_content();
 				?>
 			</div>
-
-			<!-- Teaser groups -->
-			<?php if( have_rows('teasers') ): ?>
-				<?php while( have_rows('teasers') ): the_row(); ?>
-
-					<h2 class="page-heading"><?php the_sub_field('groep_titel'); ?></h2>
-						<ul class="group-2 box">
-<?php
-							$posts = get_sub_field('paginas');
-
-							if( $posts ): ?>
-							<ul>
-								<?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
-									<?php setup_postdata($post); ?>
-									<?php
-										$title= get_field('teaser_titel', $post->ID)  ? get_field('teaser_titel', $post->ID) : get_the_title($post->ID);
-										$content= get_field('teaser_beschrijving', $post->ID) ? get_field('teaser_beschrijving', $post->ID) : get_the_excerpt($post->ID);
-										$img= get_field('teaser_afbeelding', $post->ID)['url'] ? get_field('teaser_afbeelding')['id'] : wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'thumb-300');
-										$img_array = wp_get_attachment_image_src($img, 'thumb-600'); //get image thumb
-										$uri =  get_page_link($post->ID); 
-										
-									?>
-										<li class="post post-text-in-image shadow">
-											<article>
-												<figure class="crop">
-													<img src="<?php  echo $img_array[0]; ?>"> 
-													
-												</figure>
-												<div class="text-block">
-													<h1><?php echo $title ?>
-													</h1>
-													<p class="fixed-height"><em><?php echo $content ?></em></p>
-												</div>
-												<a href="<?php echo $uri ?>" class="box-link">Lees meer</a>
-											</article>
-										</li>
-
-								<?php endforeach; ?>
-							</ul>
-							<?php wp_reset_postdata(); ?>
-							<?php endif; ?>
-						</ul>
-
-					<?php endwhile; ?>
-			<?php endif; ?>
-
-			<!-- ThuisZorg/VeiligThuis/HulpThuis -> Extra diensten informatie -->
-			<?php if( have_rows('diensten_detail_informatie') ): ?>
-
-			<section>
-
-				<?php if(get_field('titel_detail_informatie')) { ?>
-
-					<h2 class="page-heading"><?php the_field('titel_detail_informatie') ?></h2>
-
-				<?php } ?>
-
-				<ul class="data-services">
-
-				<?php while( have_rows('diensten_detail_informatie') ): the_row(); ?>
-
-						<li class="data-service">
-							<article>
-								<h1 class="service-title"><?php the_sub_field('titel') ?></h1>
-								<p class="info"><em><?php the_sub_field('subtitel') ?></em></p>
-
-								<?php $posts = get_sub_field('details');
-								if( $posts ): ?>
-
-									<ul class="list-check">
-
-									<?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
-										<?php setup_postdata($post); ?>
-										<li class="icon icon-check"><?php echo $post['tekst'] ?></li>
-
-									<?php endforeach; ?>
-								</ul>
-								<?php wp_reset_postdata(); ?>
-								<?php endif; ?>
-
-								<div>
-									<?php if(get_sub_field('bij_u_in_de_buurt')) { ?>
-									<a href="<?php the_sub_field('bij_u_in_de_buurt') ?>" class="btn lighter">Bij u in de buurt?</a>
-									<?php }
-									if(get_sub_field('aanvragen')) { ?>
-									<a href="<?php the_sub_field('aanvragen') ?>" class="btn">Aanvragen</a>
-									<?php } ?>
-								</div>
-							</article>
-						</li>
-
-				<?php endwhile; ?>
-
-					</ul>
-
-					<?php if(get_field('bijschrift_detail_informatie')) { ?>
-
-					<div class="panel note">
-						<p><?php the_field('bijschrift_detail_informatie') ?></p>
-					</div>
-
-					<?php } ?>
-
-				</section>
-			<?php endif; ?>
-
-		</div>
-		
-		<aside class="grid-4 sidebar">
-				<?php get_template_part('parts/services/subnav'); ?>
-		</aside>
-		
-
+			<h2 class="page-heading">Meer</h2>
+			<ul class="group-2 box">
+				<?php 
+					$args = array( 'post_parent' => get_the_ID(), 'post_type'   => 'page', 'orderby' => 'menu_order','order'=>'ASC');
+					$children = get_children( $args );
+					
+					foreach( $children as $child) :
+					
 	
-
-
-
+						$title= get_field('teaser_titel', $child->ID)  ? get_field('teaser_titel', $child->ID) : get_the_title($child->ID);
+						$content= get_field('teaser_beschrijving', $child->ID) ? get_field('teaser_beschrijving', $child->ID) : get_the_excerpt($child->ID);
+						//$img= get_field('teaser_afbeelding', $child->ID)['url'] ? get_field('teaser_afbeelding')['id'] : false;
+						//$img_array = wp_get_attachment_image_src($img, 'thumb-600'); //get image thumb
+						$uri =  get_page_link($child->ID); 	
+				?>
+				<li class="post post-text-in-image shadow">
+					<article>
+						<figure class="crop">
+							<img src="<?php  echo get_field('teaser_afbeelding', $child->ID)['url']; ?>"> 
+						</figure>
+						<div class="text-block">
+							<h1><?php echo $title ?>
+							</h1>
+							<p class="fixed-height"><em><?php echo $content ?></em></p>
+						</div>
+						<a href="<?php echo $uri ?>" class="box-link">Lees meer</a>
+					</article>
+				</li>
+				<?php endforeach; ?>
+			</ul>
+		</div>	
+		<aside class="grid-4 sidebar">
+			<?php get_template_part( 'parts/services/subnav' ); ?>
+		</aside>
 	</div>
-<?php endwhile; endif; ?>
+	<?php endwhile; endif; ?>
 </article>
+
+
+<?php get_footer(); ?>
+</body>
+</html>
