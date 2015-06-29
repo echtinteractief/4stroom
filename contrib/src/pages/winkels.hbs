@@ -20,27 +20,41 @@ subnavdepth: true
 			<h1 class="page-heading">{{title}}</h1>
 			<div class="text">
 				<p class="intro">
-					Vierstroom werkt voor de exploitatie van thuiszorgwinkels samen met Vegro Verpleeg-artikelen. Bel 0800 - 2 88 77 66 of ga naar www.vegro.info
+					Vierstroom werkt voor de exploitatie van thuiszorgwinkels samen met Vegro Verpleeg-artikelen.<br /> Bel 0800 - 2 88 77 66 of ga naar www.vegro.info
 				</p>
 			</div>
-			<ul class="group-3 box">
-					
-					{{#each diensten.1.subdiensten }}
-					<li class="post post-text-in-image shadow">
-						<article>
-							<figure class="crop">
-								<img src="{{teaser-img}}" />
-							</figure>
-							<div class="text-block">
-								<h1>{{teaser-title}}</h1>
-								<p class="fixed-height"><em>{{teaser-text}}</em></p>
-							</div>
-							<a href="{{teaser-uri}}" class="box-link">Lees meer</a>
-						</article>
-					</li>
-					{{/each}}
-				</ul>
 			
+			<section class="block list-block">
+				<h2 class="page-heading">Overzicht winkels</h2>
+				<ul class="group-3 ">
+						
+						{{#each winkels }}
+						<li class="post post-text-in-image post-stores">
+							<article>
+							
+								<h1 class="post-title"><a href="">{{winkel}}</a></h1>
+								<div class="crop">
+									<img src="{{img}}" />
+								</div>
+								<div class="post-text">
+									<p class="fixed-height">{{text}}</p>
+									<ul class="post-adress">
+										<li class="adress">{{adres}}</li>
+										<li class="zipp">{{postcode}}</li>
+										<li class="city">{{plaats}}</li>
+										<li class="tel"><strong>{{tel}}</strong></li>
+										<li class="open">{{open}}</li>
+									</ul>
+										
+								</div>
+								{{!--
+								<a href="{{uri}}" class="button">Meer informatie</a>
+								--}}
+							</article>
+						</li>
+						{{/each}}
+					</ul>
+			</section>
 			
 		</div>
 		

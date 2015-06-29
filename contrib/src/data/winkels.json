@@ -1,0 +1,16 @@
+[
+	{
+		"id": 400,
+		"winkel":"Thuiszorgwinkel Bergschenhoek",
+		"adres":"De Kruin 1",
+		"postcode":"2661 DJ",
+		"plaats":"Bergschenhoek",
+		"tel":"0123456789",
+		"open":"Maandag tot en met vrijdag van 9.00 - 17.30 uur. \n Zaterdag van 10.00 tot 16.00 uur.",
+		"text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, dignissimos, sint! Commodi, sequi, eveniet repudiandae voluptas eligendi sint a sit quos pariatur ad voluptatum quae ipsa!",
+		"plaats":"Waddinxveen",
+		"uri":"vacature-detail.html",
+		"img":"../images/winkel_berghoek.jpg"
+	}
+
+]
