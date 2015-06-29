@@ -107,10 +107,7 @@
 								<?php endif; ?>
 
 								<div>
-									<?php if(get_sub_field('bij_u_in_de_buurt')) { ?>
-									<a href="<?php the_sub_field('bij_u_in_de_buurt') ?>" class="btn lighter">Bij u in de buurt?</a>
-									<?php }
-									if(get_sub_field('aanvragen')) { ?>
+									<?php if(get_sub_field('aanvragen')) { ?>
 									<a href="<?php the_sub_field('aanvragen') ?>" class="btn">Aanvragen</a>
 									<?php } ?>
 								</div>

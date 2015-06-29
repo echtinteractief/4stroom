@@ -49,9 +49,6 @@
 				elseif(is_page('leden')){
 					get_template_part('page/members/overview');
 				}
-				elseif(is_page('vacatures')){
-					get_template_part('page/jobs/overview');
-				}
 				elseif(is_page('winkels')){
 					get_template_part('page/homecareshops/overview');
 				}
