@@ -81,7 +81,7 @@ get_template_part( 'parts/common/_part-header-img' );
 				<li class="post post-text-in-image shadow">
 					<article>
 						<figure class="crop">
-							<img src="<?php  echo get_field('teaser_afbeelding', $child->ID)['url']; ?>"> 
+							<img src="<?php echo get_field('teaser_afbeelding', $child->ID)['url']; ?>"> 
 						</figure>
 						<div class="text-block">
 							<h1><?php echo $title ?>
