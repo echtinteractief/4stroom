@@ -42,6 +42,9 @@ get_template_part( 'parts/common/_part-header-img' );
 				<?php if(is_page('vacatures')){
 					get_template_part('page/jobs/overview');
 			} ?>
+			<?php if(is_page('nieuws')){
+				get_template_part('page/common/overview');
+			} ?>
 
 			<!--<aside class="grid-4 sidebar">
 				<?php get_template_part( 'parts/services/subnav' ); ?>
