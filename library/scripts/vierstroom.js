@@ -7,6 +7,12 @@ $(function(){
 		gallery.Init('.gallery');
 	}
 	
+	$('.acf-map').each(function(){
+
+		render_map( $(this) );
+
+	});
+	
 /*
 	if(slider.checkDom('#Gmap')) {
 		
@@ -33,8 +39,8 @@ $(function(){
 		  	content: '<a href="https://www.google.nl/maps/place/Zwartsluizerweg+11,+8061+AB+Hasselt/@52.6010168,6.0985107,17z/data=!4m7!1m4!3m3!1s0x47c8769d15caa21b:0x87d25b84eda86e60!2sZwartsluizerweg+11,+8061+AB+Hasselt!3b1!3m1!1s0x47c8769d15caa21b:0x87d25b84eda86e60" target="_blank">Kraanverhuur Dick ten Klooster, <br />Bekijk op google maps</a>'
         	}
 		});
+
 	}
-*/
-	
+*/	
 
 });//end line

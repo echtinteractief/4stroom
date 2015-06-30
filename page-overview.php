@@ -76,8 +76,9 @@ get_template_part( 'parts/common/_part-header-img' );
 						$content= get_field('teaser_beschrijving', $child->ID) ? get_field('teaser_beschrijving', $child->ID) : get_the_content($child->ID);
 						$img= get_field('teaser_afbeelding', $child->ID) ? get_field('teaser_afbeelding', $child->ID)['id'] : false;
 						$img_array = wp_get_attachment_image_src($img, 'thumb-600'); //get image thumb
-						$uri =  get_page_link($child->ID); 	
-				?>
+						$uri =  get_page_link($child->ID);
+						
+										?>
 				<li class="post post-text-in-image shadow">
 					<article>
 						<figure class="crop">

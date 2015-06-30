@@ -205,6 +205,7 @@
 .post-stores {
 	font-weight: 300;
 	padding-bottom: 0;
+	width: 100%;
 	
 	.post-title {margin-bottom: 20px;color:$black;a{color:inherit;}}
 	.post-text {
@@ -213,7 +214,8 @@
 		padding-right: $gutter;
 		width: 70%;
 	}
-	.crop {
+	.crop,
+	.map {
 		width: 	30%;
 		float: right;
 		position: relative;
@@ -250,6 +252,11 @@
 		}
 	}
 	
+	.acf-map {
+		width: 100%;
+		height: 200px;
+	}
+	
 	.post-adress {
 		.open {
 			margin-top:10px;
@@ -259,6 +266,7 @@
 
 .post-category-list {
 	background: #fff;
+	width: 100%;
 	.post-title {
 		background: $pink;
 		color:#fff;
