@@ -74,14 +74,17 @@ get_template_part( 'parts/common/_part-header-img' );
 	
 						$title= get_field('teaser_titel', $child->ID)  ? get_field('teaser_titel', $child->ID) : get_the_title($child->ID);
 						$content= get_field('teaser_beschrijving', $child->ID) ? get_field('teaser_beschrijving', $child->ID) : get_the_excerpt($child->ID);
-						//$img= get_field('teaser_afbeelding', $child->ID)['url'] ? get_field('teaser_afbeelding')['id'] : false;
-						//$img_array = wp_get_attachment_image_src($img, 'thumb-600'); //get image thumb
+						$img= get_field('teaser_afbeelding', $child->ID)['url'] ? get_field('teaser_afbeelding', $child->ID)['id'] : false;
+						$img_array = wp_get_attachment_image_src($img, 'thumb-600'); //get image thumb
 						$uri =  get_page_link($child->ID); 	
 				?>
 				<li class="post post-text-in-image shadow">
 					<article>
 						<figure class="crop">
-							<img src="<?php echo get_field('teaser_afbeelding', $child->ID)['url']; ?>"> 
+							<img src="<?php  
+								echo $img_array[0];
+								//echo get_field('teaser_afbeelding', $child->ID)['url']; 
+							?>"> 
 						</figure>
 						<div class="text-block">
 							<h1><?php echo $title ?>
