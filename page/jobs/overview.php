@@ -116,7 +116,7 @@
 
 						<?php 
 							endwhile;
-							wp_reset_query();
+							
 						?>
 						
 					</ul>
@@ -132,6 +132,7 @@
 					//bones_page_navi();
 					bones_page_navi( '', '', $wp_query );
 					//endif;
+					wp_reset_query();
 					?>
 				</section>
 				
