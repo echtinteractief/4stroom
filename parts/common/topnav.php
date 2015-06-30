@@ -17,9 +17,9 @@
 					 'fallback_cb' => ''                             // fallback function (if there is one)
 			)); ?>	
 		</nav>
-		<div class="search-box">
-			<?php  get_search_form();?>
-		</div>
+		
+		<?php  get_search_form();?>
+		
 		<nav class="topNav right">
 			<h1 class="hide">Top navigatie rechts</h1>
 			<?php wp_nav_menu(array(
