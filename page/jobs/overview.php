@@ -94,7 +94,19 @@
 											<li class="icon icon-date"><?php the_date() ?></li>
 
 										</ul>
-										<p class="post-text fixed-height"><em><?php the_excerpt()?></em></p>
+										<p class="post-text fixed-height">
+											<em>
+											<?php 
+												$content = get_the_excerpt();
+												$content = strip_tags($content);//remove html tags
+								
+												if(strlen($content)>200) 
+													$content = substr($content, 0, 200).'...';
+												
+												echo $content;
+											
+											?></em>
+										</p>
 										<a href="<?php echo get_page_link( $post->ID ) ?>" class="post-link icon icon-arrow-right">Lees meer</a>
 									</div>
 									<a href="<?php echo get_page_link( $post->ID ) ?>" class="box-link">Lees meer</a>
