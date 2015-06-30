@@ -1,0 +1,80 @@
+---
+title: "Volledig aanbod leden"
+posted: 2015-05-28
+subnavdepth: false
+pagetype: true
+bodyClass: "ledenPage"
+---
+
+<div class="action-stamp widget bg-brand-color">
+	<div class="action-table">
+		<div class="action-content">
+			<article>
+				<h1 class="action-title">Word nu lid en kies je eigen t-shirt</h1>
+				<p class="action-text">Al vanaf &euro;22.<sub>75</sub> per jaar voor het hele gezin</p>
+				<a href="#linkto?" class="box-link">Lees meer</a>
+			</article>
+		</div>
+	</div>
+</div>
+
+
+	<div class="slider header-img">
+		<h1 class="hide">Leden</h1>
+		<div class="carousel" data-prevnext="false">
+			<ul class="wrapper">
+				<li class="item">
+					<article>
+						<figure class="crop" data-img="../images/vierstroom_home_header_1.jpg">
+							
+						</figure>
+						<div class="row">
+							<div class="box ">
+								<div class="box-content">
+									<h1></h1>						
+									<p class="small-text">
+										
+									</p>
+								</div>
+							</div>
+						</div>
+						
+					</article>
+				</li>
+			</ul>
+		</div>
+	</div>
+	{{> ledensite-menubar }}
+	<div class="box post-higlight block-padding">
+		
+		<div class="row ">
+			<h1 class="page-heading">Volledig aanbod leden</h1>
+			<ul class="group-4-big box">
+				{{#each actions-category}}
+				<li class="post post-category-list shadow">
+					<article>
+						<h1 class="post-title icon-svg icon-svg-{{class}} ">{{title}}</h1>
+						<figure class="crop">
+							<img src="{{teaser-img}}" />
+						</figure>
+						
+						
+						<ul class="category-items">
+							{{#each this.items}}
+								<li class="item"><a href="#">{{title}}</a></li>
+							{{/each}}
+						</ul>
+					</article>
+				</li>
+				{{/each}}
+				
+			</ul>
+		</div>
+		
+	</div>
+	
+	
+	
+</article>
+
+{{>site-leden-footer}}

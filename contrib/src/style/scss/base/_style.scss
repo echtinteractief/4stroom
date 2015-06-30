@@ -257,6 +257,56 @@
 	}
 }
 
+.post-category-list {
+	background: #fff;
+	.post-title {
+		background: $pink;
+		color:#fff;
+		font-size: em(18);
+		padding:15px 15px 15px 45px;
+	}
+	
+	.category-items {
+		font-size: em(15);
+		padding:20px;
+		
+		.item {
+			margin-bottom: 4px;
+			
+			a {
+				display: block;
+				
+				&:before {
+					@extend %icon-fa;
+					content:$fa-var-arrow-right;
+					font-size: 11px;
+					vertical-align: text-bottom;
+					margin-right: 5px;
+					margin-left: -12px;
+					opacity: 0;
+					
+					@include transition(all .2s linear);
+				}
+				
+				&:hover:before {
+					opacity: 1;
+					margin-left:0;
+				}
+			
+			}
+		}
+	}
+	
+	
+	
+	.crop {
+		padding-bottom: 35.13%;
+		height: 0;
+		overflow: hidden;
+		
+	}
+}
+
 .post-text-in-image {
 	
 	&:before {
