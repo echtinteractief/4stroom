@@ -42,7 +42,7 @@
 									<?php setup_postdata($post); ?>
 									<?php
 										$title= get_field('teaser_titel', $post->ID)  ? get_field('teaser_titel', $post->ID) : get_the_title($post->ID);
-										$content= get_field('teaser_beschrijving', $post->ID) ? get_field('teaser_beschrijving', $post->ID) : get_the_excerpt($post->ID);
+										$content= get_field('teaser_beschrijving', $post->ID) ? get_field('teaser_beschrijving', $post->ID) : get_the_content();
 										$img= get_field('teaser_afbeelding', $post->ID)['url'] ? get_field('teaser_afbeelding')['id'] : wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'thumb-300');
 										$img_array = wp_get_attachment_image_src($img, 'thumb-600'); //get image thumb
 										$uri =  get_page_link($post->ID); 
@@ -57,7 +57,19 @@
 												<div class="text-block">
 													<h1><?php echo $title ?>
 													</h1>
-													<p class="fixed-height"><em><?php echo $content ?></em></p>
+													<p class="fixed-height">
+														<em>
+															<?php 
+																
+																$content = strip_tags($content);//remove html tags
+												
+																if(strlen($content)>200) 
+																	$content = substr($content, 0, 150).'...';
+																
+																echo $content;
+															?>
+															</em>
+														</p>
 												</div>
 												<a href="<?php echo $uri ?>" class="box-link">Lees meer</a>
 											</article>

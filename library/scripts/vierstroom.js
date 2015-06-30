@@ -7,6 +7,7 @@ $(function(){
 		gallery.Init('.gallery');
 	}
 	
+/*
 	if(slider.checkDom('#Gmap')) {
 		
 		var map=new GMaps({
@@ -33,6 +34,7 @@ $(function(){
         	}
 		});
 	}
+*/
 	
 
 });//end line
