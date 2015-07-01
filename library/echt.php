@@ -3,7 +3,7 @@
 function switch_page_template() {
 	global $post;
 	// Checks if current post type is a page, rather than a post
-	if (is_page() && !is_page('aanbod')) {
+	if (is_page()) {
 		$mother = get_top_parent_page_id();
 		$mother_title= get_the_title($mother);
 		if($mother_title == 'Leden') {
