@@ -35,4 +35,6 @@
  endwhile;
  endif;	
 	
+
 ?>
+<?php get_template_part('parts/members/leden-footer'); ?>
