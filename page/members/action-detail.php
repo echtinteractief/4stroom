@@ -1,9 +1,10 @@
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 <div class="box post-higlight block-padding">
 			<div class="row ">
 				<div class="grid-8">
 					<h1 class="page-heading"><?php the_title(); ?></h1>
 					<div class="text">
-						<?php echo get_the_content(); ?>
+						<?php the_content(); ?>
 					</div>
 				</div>
 				<div class="grid-4">
@@ -30,4 +31,8 @@
 
 <?php get_template_part('parts/members/members-teasergroup'); ?>
 		
-
+<?php
+ endwhile;
+ endif;	
+	
+?>

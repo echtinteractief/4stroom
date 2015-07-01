@@ -10,8 +10,8 @@
 	}
 	
 	@include media(new-breakpoint(max-width 1290px)) {
-		max-width: 94%;
-		//padding:0 15px;
+		max-width: 98%;
+		padding:0 15px;
 		
 		&.block-padding {
 			padding:2*$gutter 15px $gutter 15px;
