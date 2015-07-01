@@ -3,8 +3,6 @@
 <section class="bg-white-color block-padding">
 	<div class="row">
 		<h2 class="page-heading"><?php the_field('members_teasergroup_title') ?></h2>
-
-
 		<ul class="group-8 ">
 	<?php while( have_rows('members_offers') ): the_row(); ?>
 
@@ -21,7 +19,7 @@
 
 				//$img= wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'thumb-300');
 				//$img_array = wp_get_attachment_image_src($img, 'thumb-600'); //get image thumb
-				$uri =  get_page_link($post->ID);
+				$uri =  get_permalink();
 				?>
 
 				<li class="post post-image-sale">
@@ -33,7 +31,7 @@
 						<div class="text-block-sale round">
 							<p><?php the_field('korting') ?>% korting</p>
 						</div>
-						<a href="<?php echo $url ?>" class="box-link">Lees meer</a>
+						<a href="<?php echo $uri ?>" class="box-link">Lees meer</a>
 					</article>
 				</li>
 
