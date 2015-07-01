@@ -1,9 +1,3 @@
-<?php
-/*
-Template Name: Leden page template
-*/
-?>
-
 <!doctype html>
 <!--[if lt IE 7 ]>
 <html class="ie ieLT ie6" lang="nl"> <![endif]-->
