@@ -3,12 +3,12 @@
 function switch_page_template() {
 	global $post;
 	// Checks if current post type is a page, rather than a post
-	if (is_page()){
+	if (is_page() && !is_page('aanbod')) {
 		$mother = get_top_parent_page_id();
 		$mother_title= get_the_title($mother);
 		if($mother_title == 'Leden') {
 			$ancestors = $post->ancestors;
-		
+			
 			if ($ancestors) {
 				$parent_page_template = get_post_meta(end($ancestors),'_wp_page_template',true);
 				$template = TEMPLATEPATH . "/{$parent_page_template}";
