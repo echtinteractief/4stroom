@@ -291,7 +291,7 @@ function custom_post_vacature() {
 			'menu_position' => 5,
 			'rewrite' => array('slug' => 'werkenbijdevierstroom/vacatures'),
 			'supports'      => array( 'title', 'editor'),
-			'has_archive'   => true,
+			'has_archive'   => false,
 	);
 	register_post_type( 'vacature', $args );
 }
@@ -343,7 +343,7 @@ function custom_post_ledenaanbiedingen() {
 			'menu_position' => 5,
 			'rewrite' => array('slug' => 'leden/aanbod'),
 			'supports'      => array('title', 'editor'),
-			'has_archive'   => true,
+			'has_archive'   => false,
 	);
 	register_post_type( 'ledenaanbieding', $args );
 }
