@@ -34,6 +34,7 @@ get_template_part( 'parts/common/_part-header-img' );
 ?>
 
 <article>
+
 	<?php get_template_part( 'parts/services/nav' ); ?>
 
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -45,10 +46,6 @@ get_template_part( 'parts/common/_part-header-img' );
 			<?php if(is_page('nieuws')){
 				get_template_part('page/common/overview');
 			} ?>
-
-			<!--<aside class="grid-4 sidebar">
-				<?php get_template_part( 'parts/services/subnav' ); ?>
-			</aside>-->
 		</div>
 	<?php endwhile; endif; ?>
 </article>

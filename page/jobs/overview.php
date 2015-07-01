@@ -1,30 +1,23 @@
-<article>
-		<div class="grid-12 content ">
-			<h1 class="page-heading"><?php the_title(); ?></h1>
 
-			<div class="text">
-				<p class="intro">
-					<strong>
-
-				<?php the_content(); ?>
-
-					</strong>
-				</p>
-			</div>
+	<div class="grid-8 content ">
+		<h1 class="page-heading"><?php the_title(); ?></h1>
+		<div class="text">
 			
-				<section class="block list-block">
-					<h2 class="hide page-heading">Vacature overzicht:</h2>
+			<?php the_content(); ?>
+			
+			<section class="block list-block">
+				<h2 class="hide page-heading">Vacature overzicht:</h2>
 					
-					<div class="results-options">
-						<div class="search-box left">
-							<form role="search" method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-								<label class="hide screen-reader-text" for="s">Zoek op</label>
-								<input type="search" placeholder="Zoek vacature, bv op plaats" class="search"  name="s" id="s" />
-								<input type="submit" id="searchsubmit" class="btn btn--search" value="&#xf002;" />
-							</form>
-						</div>
+				<div class="results-options">
+					<div class="search-box left">
+						<form role="search" method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+							<label class="hide screen-reader-text" for="s">Zoek op</label>
+							<input type="search" placeholder="Zoek vacature, bv op plaats" class="search"  name="s" id="s" />
+							<input type="submit" id="searchsubmit" class="btn btn--search" value="&#xf002;" />
+						</form>
+					</div>
 
-						<?php
+					<?php
 						$args = array(
 								'post_type' => 'vacature');
 
@@ -53,14 +46,14 @@
 							// build filter for product categories
 							if ( $count > 0 ) { ?>
 
-
-								<div class="sort-options left">
+							<div class="sort-options left">
 								<div class="style-select">
 									<select id="boe2">
 										<nav class="box category">
 											<h1>Categorie</h1>
 											<ul>
 												<?php if ( !empty( $currentCategory ) ) { ?>
+													<?php echo "test: " .$count; ?>
 													<option value="<?php echo $term ?>" selected="<?php $currentCategory == $term->name ? true : false ?>" href=\"/vacatures?category=<?php echo $term ?>" />
 
 											<?php } ?>
@@ -68,7 +61,7 @@
 													<option value="<?php echo $term->slug ?>" selected="<?php $currentCategory == $term->slug ? true : false ?>" href=\"/vacatures?category=<?php echo $term->slug ?>"><?php echo $term->name ?></option>
 
 												<?php	} ?>
-										</ul>
+											</ul>
 									</select>
 								</div>
 							</div>
@@ -83,13 +76,11 @@
 									<option value="bla">Datum</option>
 									<option value="Sipsum">A-Z</option>
 									<option value="Vlorem">Z-A</option>
-
 								</select>
 							</div>
 						</div>
-
+					
 					</div>
-
 					<ul class="results">
 						<?php while ( $wp_query->have_posts() ) : $wp_query->the_post();?>
 
@@ -103,7 +94,19 @@
 											<li class="icon icon-date"><?php the_date() ?></li>
 
 										</ul>
-										<p class="post-text fixed-height"><em><?php the_excerpt()?></em></p>
+										<p class="post-text fixed-height">
+											<em>
+											<?php 
+												$content = get_the_excerpt();
+												$content = strip_tags($content);//remove html tags
+								
+												if(strlen($content)>200) 
+													$content = substr($content, 0, 200).'...';
+												
+												echo $content;
+											
+											?></em>
+										</p>
 										<a href="<?php echo get_page_link( $post->ID ) ?>" class="post-link icon icon-arrow-right">Lees meer</a>
 									</div>
 									<a href="<?php echo get_page_link( $post->ID ) ?>" class="box-link">Lees meer</a>
@@ -111,8 +114,11 @@
 								</article>
 							</li>
 
-						<?php endwhile ?>
-
+						<?php 
+							endwhile;
+							
+						?>
+						
 					</ul>
 
 					<?php }
@@ -126,10 +132,12 @@
 					//bones_page_navi();
 					bones_page_navi( '', '', $wp_query );
 					//endif;
+					wp_reset_query();
 					?>
 				</section>
+				
 			</div>
 		</div>
-	</div>
-
-</article>
+	<aside class="grid-4 sidebar">
+		<?php get_template_part('parts/services/subnav'); ?>
+	</aside>
