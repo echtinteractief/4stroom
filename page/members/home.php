@@ -44,7 +44,7 @@
 			        	$text= get_sub_field('testimonial');
 			        	$naam = get_sub_field('naam');
 			        	$img = get_sub_field('afbeelding');
-			        	
+			        	$img_array = wp_get_attachment_image_src($img, 'thumb-300');
 			        ?>
 			        	
 		        	<section class="block-padding">
@@ -52,7 +52,7 @@
 							<h2 class="hide">Testamonial</h2>
 							<article>
 								<figure class="crop">
-									<img src="<?php echo $img; ?>" />
+									<img src="<?php echo $img['url']; ?>" />
 								</figure>
 								<div class="text">
 									<?php echo $text; ?>
