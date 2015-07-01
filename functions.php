@@ -319,4 +319,56 @@ function my_taxonomies_vacature() {
 }
 add_action( 'init', 'my_taxonomies_vacature', 0 );
 
+/* Leden aanbiedingen custom post type */
+function custom_post_ledenaanbiedingen() {
+	$labels = array(
+			'name'               => _x( 'Leden aanbiedingen', 'post type general name' ),
+			'singular_name'      => _x( 'Leden aanbieding', 'post type singular name' ),
+			'add_new'            => _x( 'Nieuwe aanbieding', 'ledenaanbieding' ),
+			'add_new_item'       => __( 'Voeg een leden aanbieding toe' ),
+			'edit_item'          => __( 'Bewerk aanbieding' ),
+			'new_item'           => __( 'Nieuwe aanbieding' ),
+			'all_items'          => __( 'Alle aanbiedingen' ),
+			'view_item'          => __( 'Bekijk aanbieding' ),
+			'search_items'       => __( 'Zoek leden aanbiedingen' ),
+			'not_found'          => __( 'Geen aanbiedingen gevonden' ),
+			'not_found_in_trash' => __( 'Geen aanbiedingen gevonden in de prullenbak' ),
+			'parent_item_colon'  => '',
+			'menu_name'          => 'Leden aanbiedingen'
+	);
+	$args = array(
+			'labels'        => $labels,
+			'description'   => 'Leden aanbiedingen van de vierstroom',
+			'public'        => true,
+			'menu_position' => 5,
+			'rewrite' => array('slug' => 'leden/aanbod'),
+			'supports'      => array( 'title', 'editor'),
+			'has_archive'   => true,
+	);
+	register_post_type( 'ledenaanbieding', $args );
+}
+add_action( 'init', 'custom_post_ledenaanbiedingen' );
+
+function my_taxonomies_ledenaanbieding() {
+	$labels = array(
+			'name'              => _x( 'Ledenaanbieding categorieën', 'taxonomy general name' ),
+			'singular_name'     => _x( 'Ledenaanbieding categorie', 'taxonomy singular name' ),
+			'search_items'      => __( 'Zoek categorieën' ),
+			'all_items'         => __( 'Alle categorieën' ),
+			'parent_item'       => __( 'Ouder categorieën' ),
+			'parent_item_colon' => __( 'Ouder categorieën:' ),
+			'edit_item'         => __( 'Bewerk cagtegorie' ),
+			'update_item'       => __( 'Update categorie' ),
+			'add_new_item'      => __( 'Voeg nieuwe categorie toe' ),
+			'new_item_name'     => __( 'Nieuwe categorie' ),
+			'menu_name'         => __( 'Categorieën' ),
+	);
+	$args = array(
+			'labels' => $labels,
+			'hierarchical' => true,
+	);
+	register_taxonomy( 'ledenaanbieding_category', 'ledenaanbieding', $args );
+}
+add_action( 'init', 'my_taxonomies_ledenaanbieding', 0 );
+
 /* DON'T DELETE THIS CLOSING TAG */ ?>
