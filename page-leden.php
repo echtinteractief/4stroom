@@ -40,7 +40,10 @@ get_template_part( 'parts/members/leden-header-img' );
 		
 	<?php 
 	
-		if(is_page('leden')) {
+		if(is_page('ons aanbod')) {
+			get_template_part('page/members/overview');
+		} 
+		elseif(is_page('leden')) {
 			get_template_part('page/members/home');
 		} else {
 			get_template_part('page/members/detail');
