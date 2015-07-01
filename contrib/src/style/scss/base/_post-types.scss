@@ -283,11 +283,11 @@
 .post-higlight {
 	margin:$gutter 0;
 	
-	.text {
-		.intro {
+	.text.intro {
+		
 			font-size: em(19);
 			font-weight: 300;
-		}
+		
 	}
 }
 

@@ -22,11 +22,11 @@ Template Name: Leden page template
 	//body page class
 	$page_slug = "";
 	if ( is_page() ) {
-		$page_slug = 'page-' . $post->post_name;
+		$page_slug = 'ledenPage page-' . $post->post_name;
 	}
 	?>
 </head>
-<body <?php body_class( $page_slug ); ?>>
+<body <?php body_class($page_slug); ?>>
 
 <?php
 get_template_part( 'parts/members/leden-topnav' );
@@ -37,20 +37,20 @@ get_template_part( 'parts/members/leden-header-img' );
 	<?php get_template_part( 'parts/members/leden-mainnav' ); ?>
 
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-		<div class="row block-padding page-overview">
-				<?php echo get_the_title(); ?>
-				
-				<?php if(is_page('vacatures')){
-					get_template_part('page/jobs/overview');
-			} ?>
-			<?php if(is_page('nieuws')){
-				get_template_part('page/common/overview');
-			} ?>
+		
+	<?php 
+	
+		if(is_page('ons aanbod')) {
+			get_template_part('page/members/overview');
+		} 
+		elseif(is_page('leden')) {
+			get_template_part('page/members/home');
+		} else {
+			get_template_part('page/members/detail');
+		} 
+	
+	?>
 
-			<!--<aside class="grid-4 sidebar">
-				<?php get_template_part( 'parts/services/subnav' ); ?>
-			</aside>-->
-		</div>
 	<?php endwhile; endif; ?>
 </article>
 

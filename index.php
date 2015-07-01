@@ -13,7 +13,9 @@
 	<?php
 		//body page class
 		$page_slug="";
-		if(is_page()) { $page_slug = 'page-'.$post->post_name; } 
+		if(is_page()) { 
+			$page_slug = 'page-'.$post->post_name; 
+		} 
 	?>
 	</head>
 	<body <?php body_class($page_slug); ?>>
