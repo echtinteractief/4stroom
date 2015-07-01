@@ -1,4 +1,4 @@
-<article>
+
 	<div class="grid-8 content ">
 		<h1 class="page-heading"><?php the_title(); ?></h1>
 		<div class="text">
@@ -138,9 +138,6 @@
 				
 			</div>
 		</div>
-		<aside class="grid-4 sidebar">
-			<?php get_template_part('parts/services/subnav'); ?>
+	<aside class="grid-4 sidebar">
+		<?php get_template_part('parts/services/subnav'); ?>
 	</aside>
-	</div>
-	
-</article>
