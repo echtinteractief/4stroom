@@ -23,9 +23,17 @@
 				}
 
 				
-				the_content();
+					the_content();
 				?>
 			</div>
+			
+			
+			<?php
+				//if winkel informatie  
+				if(!empty(get_field('extra_winkel_informatie'))) :
+					get_template_part('parts/homecareshops/store-information'); 	
+				endif; 
+			?>
 
 			<!-- Teaser groups -->
 			<?php if( have_rows('teasers') ): ?>
@@ -146,11 +154,6 @@
 		<aside class="grid-4 sidebar">
 				<?php get_template_part('parts/services/subnav'); ?>
 		</aside>
-		
-
-	
-
-
 
 	</div>
 <?php endwhile; endif; ?>
