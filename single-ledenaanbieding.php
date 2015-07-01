@@ -36,15 +36,8 @@ get_template_part( 'parts/members/leden-header-img' );
 <article>
 	<?php get_template_part( 'parts/members/leden-mainnav' ); ?>
 
-	
-		
 	<?php 
-	
-		
-		
-			get_template_part('page/members/action-detail');
-		 
-	
+		get_template_part('page/members/action-detail');
 	?>
 
 	
