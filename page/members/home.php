@@ -61,31 +61,9 @@
 			</div>
 			
 		</div>
-		<section class="bg-white-color block-padding">
-			<div class="row">
-				<h2 class="page-heading">Ons aanbod voor leden</h2>
-				<ul class="group-8 ">
-					
-					{{#each actions }}
-					<li class="post post-image-sale">
-						<article>
-							<h1 class="post-sale-title">{{teaser-title}}</h1>
-							<figure class="crop">
-								<img src="{{teaser-img}}" />
-							</figure>
-							<div class="text-block-sale round">
-								<p>{{teaser-price}}</p>
-							</div>
-							<a href="{{uri}}" class="box-link">Lees meer</a>
-						</article>
-					</li>
-					{{/each}}
-					
-				</ul>
-				<a href="leden-overzicht.html" class="link-to-page icon icon-arrow-right right">Meer aanbiedingen</a>
-				
-			</div>
-		</section>
+
+		<?php get_template_part('parts/members/members-teasergroup'); ?>
+
 		<section class="block-padding">
 			<div class="row text-center post-quote">
 				<h2 class="hide">Testamonial</h2>

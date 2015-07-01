@@ -309,7 +309,7 @@ function my_taxonomies_vacature() {
 			'update_item'       => __( 'Update vacature categorie' ),
 			'add_new_item'      => __( 'Voeg nieuwe vacature categorie toe' ),
 			'new_item_name'     => __( 'Nieuwe vacature categorie' ),
-			'menu_name'         => __( 'Vacature categorieën' ),
+			'menu_name'         => __( 'Categorieën' ),
 	);
 	$args = array(
 			'labels' => $labels,
@@ -342,7 +342,7 @@ function custom_post_ledenaanbiedingen() {
 			'public'        => true,
 			'menu_position' => 5,
 			'rewrite' => array('slug' => 'leden/aanbod'),
-			'supports'      => array( 'title', 'editor'),
+			'supports'      => array('title', 'editor'),
 			'has_archive'   => true,
 	);
 	register_post_type( 'ledenaanbieding', $args );
