@@ -16,7 +16,7 @@ $terms = get_terms( "ledenaanbieding_category",array('get' => 'all'));
 						<article>
 							<h1 class="post-title icon-svg icon-svg-<?php echo $term->slug ?> "><?php echo $term->name ?></h1>
 							<figure class="crop">
-								<img src="" />
+								<img src="http://berrywijnia.nl/projects/4stroom/images/zorgthuis.jpg" />
 							</figure>
 
 							<?php
@@ -46,3 +46,5 @@ $terms = get_terms( "ledenaanbieding_category",array('get' => 'all'));
 		</div>
 		
 	</article>
+
+<?php get_template_part('parts/members/leden-footer'); ?>
