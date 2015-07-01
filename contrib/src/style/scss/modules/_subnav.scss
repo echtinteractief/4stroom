@@ -102,8 +102,6 @@
 				}
 			}
 			
-			
-			
 			.menu-item {
 				//color:$black;
 			}
@@ -111,7 +109,8 @@
 		
 		.current_page_parent,
 		.current_page_item,
-		.is--current {
+		.is--current,
+		.current_page_ancestor {
 			.sub-menu,
 			.children {
 				display: block;

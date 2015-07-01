@@ -1,4 +1,4 @@
-<header class="topHeader">
+<header class="topHeader bg-orange-color">
 	<div class="row">
 		<h1 class="logo"><a class="box-link" href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
 		<nav class="topNav">

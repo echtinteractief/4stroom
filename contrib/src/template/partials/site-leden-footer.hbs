@@ -1,0 +1,24 @@
+<footer class="leden-footer bg-blue-color">
+	<div class="row block-padding">
+		<div class="grid-8">
+				<h1 class="page-heading hide">Extra's voor leden</h1>
+				<div class="text">
+					<p>
+						Vierstroom biedt niet alleen alle hulp en zorg om zelfstandig te kunnen blijven.
+	U kunt ook lid van worden van <strong>Vierstroom LedenService!</strong> Want samen met 65.000 leden staan we sterk! Leden krijgen interessante kortingen op de diensten van Vierstroom en profiteren van aanvullende aanbiedingen.
+	Voordeel op uw zorgverzekering bijvoorbeeld of gratis krukken lenen. 
+					</p>					
+				</div>
+			</div>
+			<div class="grid-4">
+				<div class="banner action bg-blue-color">
+					<ul>
+						<li class="icon-svg arrow">Met uw hele gezin lid voor maar &euro;22,<sup>75</sup> per jaar</li>
+						<li class="icon-svg arrow">Ledenkorting op diensten van Vierstroom</li>
+						<li class="icon-svg arrow">Volop voordeel op uw zorgverzekering en diensten aan huis</li>
+					</ul>
+					<a href="#wordlid" class="btn darker">Word lid</a>
+				</div>
+			</div>
+	</div>
+</footer>

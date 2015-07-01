@@ -91,6 +91,21 @@
 	 > li {
 		 @include span-columns(3);
 		 @include omega(4n);
+
+		@include media($mobile) {
+			 @include span-columns(6);	
+			 @include omega(2n); 
+		}
+	}
+}
+
+.group-4-big {
+	 @include outer-container;
+	 .post,
+	 > li {
+		 @include span-columns(6 of 24);
+		 @include omega(4n);
+		//margin-bottom: 1.18509%;
 		
 		@include media($mobile) {
 			 @include span-columns(6);	
@@ -98,6 +113,7 @@
 		}
 	}
 }
+
 
 .group-5 {
 	 @include outer-container;
