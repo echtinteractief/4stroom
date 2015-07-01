@@ -1,15 +1,37 @@
 <?php 	?>
 
 <article class="bar leden-bar">
+	<?php 
+		$leden = get_page_by_title('Leden');	
+		$args = array(	
+	    	'post_type' => 'page',
+			'post__in' => array($leden->ID),
+			'orderby' => 'post__in'
+		);	
+		
+		$query_leden=  new WP_Query($args);
+	
+	
+		while ($query_leden->have_posts()) : $query_leden->the_post();$do_not_duplicate = $post->ID;
+			$title= get_field('teaser_titel', $post->ID)  ? get_field('teaser_titel', $post->ID) : get_the_title($post->ID);
+			$content= get_field('teaser_beschrijving', $post->ID) ? get_field('teaser_beschrijving', $post->ID) : false;
+			$uri =  get_page_link($post->ID);
+	?>
 	<div class="row">
-		<h1 class="bar-title arrow-vierstroom right"><a href="leden">Extra's voor leden</a></h1>
+		<h1 class="bar-title arrow-vierstroom right"><a href="<?php echo $uri; ?>"><?php echo $title; ?></a></h1>
 		
 		<div class="bar-text">
-			<p>Vierstroom biedt niet alleen alle hulp en zorg om zelfstandig te kunnen blijven. U kunt ook lid worden van Vierstroom LedenService! Want samen met 65.000 staan we sterk! Leden krijgen interessante kortingen op de diensten van Vierstroom enHuishoudelijke hulp voor iedereen Hulp binnen handbereik via persoonlijk alarmprofiteren van aanvullende aanbiedingen. Voordeel op uw zorgverzekering bijvoorbeeld of gratis krukken lenen.</p>
-			<a href="leden" class="box-link">Lees meer</a>
+			<?php echo $content; ?>
+			<a href="<?php echo $uri;?>" class="box-link">Lees meer</a>
 		</div>
 	</div>
+	
+	<?php 
+		endwhile; 
+		wp_reset_query();
+	?>
 </article>
+
 <?php
 		$args = array(
 			'posts_per_page' => 3,

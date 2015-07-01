@@ -1,17 +1,20 @@
 <aside class="bar contact-bar">
 	<div class="row">
-		<nav class="nav main-nav left">
+		<nav class="nav main-nav left member-nav">
 			<h1 class="hide">Leden navigatie"</h1>
-			<ul>
-				<li class="menu-item is--current"><a href="leden-home.html">Home</a></li>
-				<li class="menu-item">
-					<a href="hulpthuis.html">Lid worden</a>
-				</li>
-				<li class="menu-item"><a href="veiligthuis.html">Ons aanbod</a></li>
-				<li class="menu-item"><a href="veiligthuis.html">Ledenadviseur</a></li>				
-				<li class="menu-item"><a href="veiligthuis.html">Meepraten</a></li>				
-				<li class="menu-item"><a href="veiligthuis.html">Vierstroom magezine</a></li>				
-			</ul>
+			<?php wp_nav_menu(array(
+						'container' => false,                           // remove nav container
+						'container_class' => 'menu cf',                 // class of container (should you choose to use it)
+						'menu' => __( 'Leden navigatie', 'bonestheme' ),  // nav name
+						'menu_class' => '',               // adding custom nav class
+						'theme_location' => 'leden-nav',                 // where it's located in the theme
+						'before' => '',                                 // before the menu
+						'after' => '',                                  // after the menu
+						'link_before' => '',                            // before each link
+						'link_after' => '',                             // after each link
+						'depth' => 0,                                   // limit the depth of the nav
+						'fallback_cb' => ''                             // fallback function (if there is one)
+				)); ?>
 				
 		</nav>
 	</div>
