@@ -8,7 +8,7 @@
 			
 			$serviceTitle= get_the_title($mother_id);
 			
-			if($serviceTitle=='ZorgThuis' || $serviceTitle=='HulpThuis' || $serviceTitle=='VeiligThuis') :
+			if($serviceTitle=='Zorg Thuis' || $serviceTitle=='Hulp Thuis' || $serviceTitle=='Veilig Thuis') :
 		?>
 		
 		
