@@ -6,7 +6,8 @@ function switch_page_template() {
 	if (is_page()) {
 		$mother = get_top_parent_page_id();
 		$mother_title= get_the_title($mother);
-		if($mother_title == 'Leden') {
+		//if($mother_title == "leden") {
+		if($mother == 37) {
 			$ancestors = $post->ancestors;
 			
 			if ($ancestors) {
