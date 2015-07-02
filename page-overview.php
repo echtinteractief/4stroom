@@ -93,7 +93,18 @@ get_template_part( 'parts/common/_part-header-img' );
 						<div class="text-block">
 							<h1><?php echo $title ?>
 							</h1>
-							<p class="fixed-height"><em><?php echo $content ?></em></p>
+							<p class="fixed-height"><em>
+							
+							<?php 
+								$content = strip_tags($content);//remove html tags
+						
+								if(strlen($content)>100) 
+									$content = substr($content, 0, 100).'...';	
+								
+								echo $content;
+							?>
+							
+							</em></p>
 						</div>
 						<a href="<?php echo $uri ?>" class="box-link">Lees meer</a>
 					</article>
