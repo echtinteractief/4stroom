@@ -15,8 +15,7 @@
 				<?php
 				$title= get_the_title($post->ID);
 				$content= get_the_content();
-					$img = get_field('afbeelding');
-
+				$img = get_field('afbeelding');
 				//$img= wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'thumb-300');
 				//$img_array = wp_get_attachment_image_src($img, 'thumb-600'); //get image thumb
 				$uri =  get_permalink();
@@ -26,7 +25,17 @@
 					<article>
 						<h1 class="post-sale-title"><?php echo $title	 ?></h1>
 						<figure class="crop">
-							<img src="<?php echo $img['url'] ?>">
+							<?php
+								if( !empty($img) ):	
+								// thumbnail
+									$size = 'thumb-square';
+									$thumb = $img['sizes'][ $size ];
+								?>
+								
+							<img src="<?php echo $thumb; ?>">
+							
+							<?php endif; ?>
+							
 						</figure>
 						<div class="text-block-sale round">
 							<p><?php the_field('korting') ?>% korting</p>

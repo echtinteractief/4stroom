@@ -27,7 +27,6 @@ Template Name: Resultaten
 	?>
 </head>
 <body <?php body_class( $page_slug ); ?>>
-
 <?php
 get_template_part( 'parts/common/topnav' );
 get_template_part( 'parts/common/_part-header-img' );
@@ -49,6 +48,7 @@ get_template_part( 'parts/common/_part-header-img' );
 		</div>
 	<?php endwhile; endif; ?>
 </article>
+
 <?php get_footer(); ?>
 </body>
 </html>

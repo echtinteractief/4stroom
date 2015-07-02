@@ -43,7 +43,7 @@ get_template_part( 'parts/members/leden-header-img' );
 		if(is_page('aanbod')) {
 			get_template_part('page/members/overview');
 		} 
-		elseif(is_page('Leden')) {
+		elseif(is_page('leden')) {
 			get_template_part('page/members/home');
 		} else {
 			get_template_part('page/members/detail');
