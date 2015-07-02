@@ -2,10 +2,10 @@
 
 <article class="bar leden-bar">
 	<?php 
-		$leden = get_page_by_title('Leden');	
+		//$leden = get_page_by_title("Extra’s voor leden");	
 		$args = array(	
 	    	'post_type' => 'page',
-			'post__in' => array($leden->ID),
+			'post__in' => array(37),
 			'orderby' => 'post__in'
 		);	
 		
