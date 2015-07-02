@@ -77,7 +77,7 @@ if ( ! isset( $content_width ) ) {
 
 // Thumbnail sizes
 // Thumbnail sizes 
-add_image_size( 'header-slider', 1900, 800, array('center','center' ));//homepage header img
+add_image_size( 'header-slider', 1900, 700, array('center','center' ));//homepage header img
 add_image_size( 'header-img', 1900, 460, array('center','center' ));//default image header size
 add_image_size( 'thumb-square', 200, 200, true );//leden actie images
 add_image_size( 'thumb-600', 600, 280, true );//default diensten images
@@ -108,7 +108,7 @@ add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
 
 function bones_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        'header-slider' => __('1900px by 800px'),
+        'header-slider' => __('1900px by 700px'),
         'header-img' => __('1900px by 460px'),
         'thumb-600' => __('600px by 280px')
     ) );
@@ -322,8 +322,8 @@ add_action( 'init', 'my_taxonomies_vacature', 0 );
 /* Leden aanbiedingen custom post type */
 function custom_post_ledenaanbiedingen() {
 	$labels = array(
-			'name'               => _x( 'Leden aanbiedingen', 'post type general name' ),
-			'singular_name'      => _x( 'Leden aanbieding', 'post type singular name' ),
+			'name'               => _x( 'Ledenaanbiedingen', 'post type general name' ),
+			'singular_name'      => _x( 'Ledenaanbieding', 'post type singular name' ),
 			'add_new'            => _x( 'Nieuwe aanbieding', 'ledenaanbieding' ),
 			'add_new_item'       => __( 'Voeg een leden aanbieding toe' ),
 			'edit_item'          => __( 'Bewerk aanbieding' ),
@@ -351,8 +351,8 @@ add_action( 'init', 'custom_post_ledenaanbiedingen' );
 
 function my_taxonomies_ledenaanbieding() {
 	$labels = array(
-			'name'              => _x( 'Ledenaanbieding categorieën', 'taxonomy general name' ),
-			'singular_name'     => _x( 'Ledenaanbieding categorie', 'taxonomy singular name' ),
+			'name'              => _x( 'Leden aanbieding categorieën', 'taxonomy general name' ),
+			'singular_name'     => _x( 'Leden aanbieding categorie', 'taxonomy singular name' ),
 			'search_items'      => __( 'Zoek categorieën' ),
 			'all_items'         => __( 'Alle categorieën' ),
 			'parent_item'       => __( 'Ouder categorieën' ),
