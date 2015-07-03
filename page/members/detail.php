@@ -12,8 +12,10 @@
 		</div>
 		
 	</div>
-	
+		
 </div>
+
+	<?php get_template_part('parts/members/members-flexcontent'); ?>
 
 <?php get_template_part('parts/members/leden-footer'); ?>
 		

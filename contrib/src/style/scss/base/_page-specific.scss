@@ -1,0 +1,25 @@
+.ledenPage  {
+	.logo {
+		&:before {
+			@extend %icon-fa;
+			content:$fa-var-arrow-left;
+			position: absolute;
+			top:12px;
+			left:0;
+			color:rgba(#fff,.7);
+			font-size: 22px;
+		}
+	}
+	
+	.topNav {
+		.menu-item-403 {display: none;}
+	}
+}
+
+
+.home {
+	.topNav {
+		.menu-item-403 {display: none;}
+	}
+
+}

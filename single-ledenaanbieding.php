@@ -15,9 +15,9 @@
 
 	//body page class
 	$page_slug = "";
-	if ( is_page() ) {
-		$page_slug = 'ledenPage page-' . $post->post_name;
-	}
+	
+		$page_slug = 'ledenPage post-' . $post->post_name;
+	
 	?>
 </head>
 <body <?php body_class($page_slug); ?>>
