@@ -2,7 +2,7 @@
 	padding:2*$gutter 0;
 	@include background-image(linear-gradient(to bottom, lighten($pink,20%), lighten($pink,1%)));
 	//background-color:lighten($pink,20%);
-
+	.row  {position: relative;}
 	input[type="text"] {
 		border-color: transparent;	
 	}
@@ -61,6 +61,8 @@
 	
 	.social-follow-nav {
 		margin-bottom: 0;
+		position: absolute;
+		bottom:$gutter;
 		.btn-round {
 			border:2px solid;
 			color:#fff;

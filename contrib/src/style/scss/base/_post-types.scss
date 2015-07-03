@@ -337,6 +337,8 @@
 	padding-bottom: 15px;
 	.post-sale-title {
 		font-size: em(15);
+		height: 35px;
+		overflow: hidden;
 	}
 	
 	.text-block-sale {
@@ -372,6 +374,9 @@
 		max-width: 180px;
 		float: right;
 		margin-left: $gutter;
+		border:2px solid #fff;
+		
+		> img {float:left;}
 	}
 	
 	.text {
