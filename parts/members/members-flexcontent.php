@@ -101,9 +101,12 @@
 													<?php endif; ?>
 													
 												</figure>
+												
+												<?php if( !empty(get_field('korting')) ): ?>
 												<div class="text-block-sale round">
-													<p><?php the_field('korting') ?>% korting</p>
+													<p><?php echo get_field('korting'); ?>% korting</p>
 												</div>
+												<?php endif; ?>
 												<a href="<?php echo $uri ?>" class="box-link">Lees meer</a>
 											</article>
 										</li>

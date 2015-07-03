@@ -1,3 +1,10 @@
+<?php
+	
+	$mother_id = get_top_parent_page_id();
+	$post_type =get_post_type( $post );
+
+	if($mother_id != 37):	
+?>
 <footer class="footer-page">
 	<div class="row">
 		<div class="grid-8">
@@ -46,6 +53,7 @@
 		</div>
 	</div>
 </footer>
+<?php endif; ?>
 <footer class="footer-page-end">
 	<div class="row">
 		<span class=""><?php echo date('Y'); ?>  </span>

@@ -1,5 +1,8 @@
-<!-- Members teasergroup -> member offers -->
+<!-- Members teasergroup -> member offers-->
 <?php if( have_rows('members_offers') ): ?>
+
+<?php // WORDT NIET MEER GEBRUIKT!!!!! verplaatst naar memebers-flexcontent.php?>
+
 <section class="bg-white-color block-padding">
 	<div class="row">
 		<h2 class="page-heading"><?php the_field('members_teasergroup_title') ?></h2>
