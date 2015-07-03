@@ -171,7 +171,12 @@
 		.text {margin-bottom: 0;}
 	}
 	.map {
-		height: 300px;
+		height: 280px;
+		
+		.google-map {
+			width: 100%;
+			height: 100%;
+		}
 	}
 	&.note {
 		//padding:$gutter;

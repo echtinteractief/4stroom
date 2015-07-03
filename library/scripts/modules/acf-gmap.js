@@ -61,7 +61,7 @@ function add_marker( $marker, map ) {
 	{
 		// create info window
 		var infowindow = new google.maps.InfoWindow({
-			content		: $marker.html()
+			content		: $marker.html('<div class="boe">boe</div>')
 		});
 
 		// show info window when marker is clicked

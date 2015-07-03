@@ -7,7 +7,7 @@ $(function(){
 		gallery.Init('.gallery');
 	}
 	
-	$('.acf-map').each(function(){
+	$('.google-map').each(function(){
 
 		render_map( $(this) );
 

@@ -14,7 +14,17 @@ $terms = get_terms( "ledenaanbieding_category",array('get' => 'all'));
 
 					<li class="post post-category-list shadow" data-value="<?php echo $term->slug ?>">
 						<article>
-							<h1 class="post-title icon-svg icon-svg-<?php echo $term->slug ?> "><?php echo $term->name ?></h1>
+							<h1 class="post-title  ">
+								<span class=" icon-svg icon-svg icon-svg-<?php echo $term->slug ?>">
+									
+									<?php
+										$path_temp =get_template_directory();
+										 echo file_get_contents($path_temp."/library/style/gfx/svg/".$term->slug.".svg"); 	
+									?>
+									
+								</span>
+								<?php echo $term->name ?>
+							</h1>
 							<figure class="crop">
 								<img src="http://berrywijnia.nl/projects/4stroom/images/zorgthuis.jpg" />
 							</figure>
