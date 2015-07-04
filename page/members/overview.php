@@ -18,6 +18,7 @@ $terms = get_terms( "ledenaanbieding_category",array('get' => 'all'));
 								<span class=" icon-svg icon-svg icon-svg-<?php echo $term->slug ?>">
 									
 									<?php
+										//set icon svg in de dom
 										$path_temp =get_template_directory();
 										 echo file_get_contents($path_temp."/library/style/gfx/svg/".$term->slug.".svg"); 	
 									?>
