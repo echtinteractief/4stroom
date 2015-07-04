@@ -1,6 +1,6 @@
 ul.data-services {
 	@include outer-container;
-	background:lighten($grey,18%);
+	//background:lighten($grey,18%);
 	margin-bottom: $gutter;
 
 	
@@ -9,9 +9,8 @@ ul.data-services {
 		float: left;
 		border-left:3px solid #fff;
 		font-weight: 300;
-
-
-			
+		background:lighten($grey,18%);
+	
 		&:first-child{border:0;}
 		
 		article {

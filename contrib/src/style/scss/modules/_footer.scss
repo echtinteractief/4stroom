@@ -1,5 +1,5 @@
 .footer-page {
-	padding:2*$gutter 0;
+	padding:3*$gutter 0;
 	@include background-image(linear-gradient(to bottom, lighten($pink,20%), lighten($pink,1%)));
 	//background-color:lighten($pink,20%);
 	.row  {position: relative;}
@@ -16,6 +16,8 @@
 	
 	.sitemap-item {
 		margin-bottom: 1.5*$gutter;
+		font-size: 90%;
+		
 		.menu-item {
 			margin-bottom: 4px;
 		}
