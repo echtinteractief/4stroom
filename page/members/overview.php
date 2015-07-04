@@ -25,10 +25,14 @@ $terms = get_terms( "ledenaanbieding_category",array('get' => 'all'));
 								</span>
 								<?php echo $term->name ?>
 							</h1>
+							
+							<?php /*
 							<figure class="crop">
 								<img src="http://berrywijnia.nl/projects/4stroom/images/zorgthuis.jpg" />
 							</figure>
-
+							*/
+							?>
+							
 							<?php
 							$args     = array(
 							'ledenaanbieding_category' => $term->slug,
