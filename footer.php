@@ -43,9 +43,9 @@
 				<h1 class="widget-title">Volg ons op:</h1>
 				<ul>
 					<li><a href="http://www.facebook.com/vierstroom" target="_blank" class="btn-round icon icon-only icon-facebook">Facebook</a></li>
-					<li><a href="http://www.twitter.com/" target="_blank"  class="btn-round  icon icon-only icon-twitter">Twitter</a></li>
+					<li><a href="https://twitter.com/vierstroom" target="_blank"  class="btn-round  icon icon-only icon-twitter">Twitter</a></li>
 					<li><a href="http://www.youtube.com/user/Vierstroom" target="_blank"  class="btn-round  icon icon-only icon-youtube">Youtube</a></li>
-					<li><a href="http://www.linkedin.com/" target="_blank"  class="btn-round icon icon-only icon-linkedin">LinkedIn</a></li>
+					<li><a href="https://nl.linkedin.com/company/vierstroom" target="_blank"  class="btn-round icon icon-only icon-linkedin">LinkedIn</a></li>
 				</ul>
 			</nav>
 			
