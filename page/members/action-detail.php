@@ -17,12 +17,12 @@
 								<li class=""><?echo the_sub_field('text') ?></li>
 							<?php endwhile; ?>
 						</ul>
-						<?php if( !empty(get_field('nieuwe_prijs')) ): ?>
+						<?php if( get_field('nieuwe_prijs')): ?>
 						<p class="price">
 							<del>van € <?php the_field('oude_prijs') ?>,-</del> voor € <?php the_field('nieuwe_prijs') ?>,
 						</p>
 						<?php endif; ?>
-						<a href="#wordlid" class="btn inverse">Nu bestellen</a>
+						<a href="#wordlid" class="btn inverse">Nu aanmelden</a>
 					</div>
 
 					<?php endif; ?>
