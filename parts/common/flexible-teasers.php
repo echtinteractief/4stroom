@@ -82,7 +82,7 @@
 		 	
 		 	
 		 	//teaser testimonial
-		 	case 'testimonial' :
+		 	case 'teaser_testimonial' :
 		 		$text= get_sub_field('testimonial');
 	        	$naam = get_sub_field('naam');
 	        	$img = get_sub_field('afbeelding');

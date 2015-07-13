@@ -37,7 +37,7 @@
 							<div class="map">
 								
 								<?php 
-									if( !empty($location) ):
+									if( ($location) ):
 								?>
 									<div class="google-map">
 										<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>

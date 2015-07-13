@@ -24,6 +24,15 @@
 					}
 				}
 				
+				.small-text {
+					> p {
+						>strong, 
+						> em {
+							float: left;
+						}
+					}
+				}
+				
 			}
 		}
 		

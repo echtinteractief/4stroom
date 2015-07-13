@@ -34,7 +34,7 @@
 
 							// check if category is selected
 							$currentCategory = $_GET['category'];
-							if ( ! empty( $currentCategory ) ) {
+							if (  $currentCategory )  {
 								$args     = array(
 										'vacature_category' => $currentCategory,
 										'post_type'          => 'vacature'
@@ -52,7 +52,7 @@
 										<nav class="box category">
 											<h1>Categorie</h1>
 											<ul>
-												<?php if ( !empty( $currentCategory ) ) { ?>
+												<?php if ( !$currentCategory ) { ?>
 													<?php echo "test: " .$count; ?>
 													<option value="<?php echo $term ?>" selected="<?php $currentCategory == $term->name ? true : false ?>" href=\"/vacatures?category=<?php echo $term ?>" />
 
