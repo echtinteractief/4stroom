@@ -32,14 +32,15 @@
 		}	
 		
 	?>
-	
 	<?php
+	
 	if (is_front_page()) {
 		get_template_part('page/common/home');
 	}
 		//check posttypes
 		switch (get_post_type()) {
 			case 'page' :
+			
 				if (is_front_page()) {
 					//get_template_part('page/common/home');
 				}
@@ -53,8 +54,9 @@
 					get_template_part('page/jobs/overview');
 				}
 				else {
-					get_template_part('page/common/detail');
+				get_template_part('page/common/detail');
 				}
+				
 			break;
 
 			case 'ledenaanbieding' :
@@ -78,8 +80,6 @@
 			
 		}
 	?>
-	
-	
 	
 	<?php get_footer(); ?>
 	</body>
