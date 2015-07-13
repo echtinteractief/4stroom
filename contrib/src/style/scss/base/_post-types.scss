@@ -322,6 +322,7 @@
 	overflow: hidden;
 	position: relative;
 	
+/*
 	&:before {
 		@extend %icon-fa;
 		position: absolute;
@@ -329,8 +330,14 @@
 		bottom:$gutter;
 		content:$fa-var-arrow-right;
 	}
+*/
 	.page-heading {
 		color:#fff;
+		
+		.meta {
+			font-size: 13px;
+			margin-left: $gutter;
+		}
 	}
 	
 	.crop {
@@ -347,7 +354,7 @@
 		float: left;
 		
 		p {
-			padding-left:$gutter;
+			//padding-left:$gutter;
 		}
 	}
 	
@@ -357,6 +364,20 @@
 		}
 	}
 	
+}
+
+.post-image-big {
+	margin-bottom: $gutter;
+	
+	.crop {
+		width: 100%;
+		height: auto;
+		
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
 }
 
 .post-image-sale {

@@ -80,6 +80,7 @@ if ( ! isset( $content_width ) ) {
 add_image_size( 'header-slider', 1900, 700, array('center','center' ));//homepage header img
 add_image_size( 'header-img', 1900, 460, array('center','center' ));//default image header size
 add_image_size( 'thumb-square', 200, 200, true );//leden actie images
+add_image_size( 'thumb-square-500', 500, 500, true );
 add_image_size( 'thumb-600', 600, 280, true );//default diensten images
 add_image_size( 'thumb-280', 281, 199, true );//default adviseur
 

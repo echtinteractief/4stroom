@@ -64,7 +64,7 @@
 						case 'leden_aanbiedingen_blok' :
 					?>
 					
-						  <section class="bg-white-color block-padding">
+					<section class="bg-white-color block-padding">
 							<div class="row">
 								<h2 class="page-heading"><?php echo get_sub_field('members_teasergroup_title'); ?></h2>
 								<ul class="group-8 ">
@@ -92,7 +92,7 @@
 													<?php
 														if( !empty($img) ):	
 														// thumbnail
-															$size = 'thumb-square';
+															$size = 'thumb-square-500';
 															$thumb = $img['sizes'][ $size ];
 														?>
 														

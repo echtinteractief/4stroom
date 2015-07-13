@@ -30,11 +30,18 @@
 			
 			<?php
 				//if winkel informatie  
-				if(!empty(get_field('extra_winkel_informatie'))) :
+				if(get_field('extra_winkel_informatie')) :
 					get_template_part('parts/homecareshops/store-information'); 	
 				endif; 
 			?>
-
+			
+			<?php
+				//flexible teaser blokken
+				if( have_rows('pagina_flexible_teasers') ):
+					get_template_part('parts/common/flexible-teasers');			
+				endif; 
+			?>
+			
 			<!-- Teaser groups -->
 			<?php if( have_rows('teasers') ): ?>
 				<?php while( have_rows('teasers') ): the_row(); ?>
