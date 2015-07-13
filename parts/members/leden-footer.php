@@ -17,7 +17,7 @@
 						<li class="icon-svg arrow">Ledenkorting op diensten van Vierstroom</li>
 						<li class="icon-svg arrow">Volop voordeel op uw zorgverzekering en diensten aan huis</li>
 					</ul>
-					<a href="#wordlid" class="btn darker">Word lid</a>
+					<a href="/leden/word-lid" class="btn darker">Word lid</a>
 				</div>
 			</div>
 	</div>
