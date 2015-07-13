@@ -80,8 +80,17 @@ $img-padding:36.84%;//h700/w1900
 				
 				.small-text {
 					font-size:em(13);
+					strong {
+						display: inline-block;
+						clear: both;
+						float: right;
+					}
 					em {
 						font-size: .9em;
+						display: inline-block;
+						clear: both;
+						float: right;
+
 					}
 				}
 				
