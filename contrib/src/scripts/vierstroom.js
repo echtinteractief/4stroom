@@ -17,7 +17,7 @@ $(function(){
 	if($('body').hasClass('single-ledenaanbieding')){
 		$('div.action a').click(function(){
 			$('html, body').animate({
-				scrollTop: $('form').offset().top
+				scrollTop: $('.visual-form-builder').offset().top
 			}, 500);
 		});
 	};
