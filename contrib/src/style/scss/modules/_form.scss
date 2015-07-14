@@ -282,33 +282,51 @@ label {
 	}
 }
 
-.visual-form-builder .vfb-item {
-	position: relative;
-	.vfb-required-asterisk {
-		color:$pink;
-		font-size:em(14);
-		vertical-align:text-top;
+.visual-form-builder {
+	
+	.vfb-legend {
+		h3 {
+			font-weight: 700;
+			margin: -10px 0 1.25em 0;
+		    font-family: $header-font;
+		    font-size: 1.25em;
+		    &:before {
+				content: '/';
+				margin-right: 8px;
+			    color: inherit;
+		    }
+		}
 	}
 	
-	> .vfb-desc {
-		width: 35%;
-		padding-right: 20px;
-		display: inline-block;
-		text-align: left;
-	}
-	
-	> .vfb-medium {
-		width: 65%;
-	}
-	
-	&.vfb-item-textarea,
-	&.vfb-item-radio {
-		> div {width: 65%;display: inline-block;}
-	}
-	
-	label.vfb-error {
-		font-size: em(12);
-		font-style: italic;
-		display: block;
+	.vfb-item {	
+		position: relative;
+		
+		.vfb-required-asterisk {
+			color:$pink;
+			font-size:em(14);
+			vertical-align:text-top;
+		}
+		
+		> .vfb-desc {
+			width: 35%;
+			padding-right: 20px;
+			display: inline-block;
+			text-align: left;
+		}
+		
+		> .vfb-medium {
+			width: 65%;
+		}
+		
+		&.vfb-item-textarea,
+		&.vfb-item-radio {
+			> div {width: 65%;display: inline-block;}
+		}
+		
+		label.vfb-error {
+			font-size: em(12);
+			font-style: italic;
+			display: block;
+		}
 	}
 }
