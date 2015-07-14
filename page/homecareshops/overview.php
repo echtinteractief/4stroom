@@ -32,7 +32,13 @@
 					<li class="post post-list post-stores">
 						<article>
 						
+							<?php 
+								
+							/* remove uri
 							<h1 class="post-title"><a href="<?php echo $uri; ?>"><?php echo $title; ?></a></h1>
+							*/ ?>
+							
+							<h1 class="post-title"><?php echo $title; ?></h1>
 							
 							<div class="map">
 								

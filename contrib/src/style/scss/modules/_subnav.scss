@@ -123,4 +123,10 @@
 		display: block;
 			
 	}
+	
+	//winkels hide
+	.page_item.page-item-97 {
+		.children,
+		.sub-menu {display: none;}
+	}
 }
