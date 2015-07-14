@@ -63,7 +63,7 @@ get_template_part( 'parts/common/_part-header-img' );
 				the_content();
 				?>
 			</div>
-			<h2 class="page-heading">Meer</h2>
+			<h2 class="page-heading">Overzicht</h2>
 			<ul class="group-2 box">
 				<?php 
 					$args = array( 'post_parent' => get_the_ID(), 'post_type'   => 'page', 'orderby' => 'menu_order','order'=>'ASC');
