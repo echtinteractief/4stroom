@@ -13,6 +13,15 @@ $(function(){
 
 	});
 	
+	// Add formulier scroll anchor for member offer page
+	if($('body').hasClass('single-ledenaanbieding')){
+		$('div.action a').click(function(){
+			$('html, body').animate({
+				scrollTop: $('form').offset().top
+			}, 500);
+		});
+	};
+	
 /*
 	if(slider.checkDom('#Gmap')) {
 		
