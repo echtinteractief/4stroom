@@ -31,13 +31,14 @@
 			</div>
 		</div>
 
-<?php //get_template_part('parts/members/members-teasergroup'); ?>
 <?php get_template_part('parts/members/members-flexcontent'); ?>
-		
-<?php
- endwhile;
- endif;	
-	
 
+	<?php if( get_field('formulier')){
+		the_field('formulier');
+	} ?>
+
+
+<?php endwhile;
+ endif;
 ?>
 <?php get_template_part('parts/members/leden-footer'); ?>
