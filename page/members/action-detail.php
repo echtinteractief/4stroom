@@ -6,6 +6,13 @@
 					<div class="text">
 						<?php the_content(); ?>
 					</div>
+					
+					<?php if( get_field('formulier')) : ?>
+					<div class="form-inpage">		
+						<?php the_field('formulier'); ?>
+						
+					</div>
+					<?php endif; ?>
 				</div>
 				<div class="grid-4">
 
@@ -30,16 +37,9 @@
 				</div>
 			</div>
 		</div>
+	
 
 <?php get_template_part('parts/members/members-flexcontent'); ?>
-
-	<?php if( get_field('formulier')) : ?>
-	<div class="row">		
-		<?php the_field('formulier'); ?>
-		
-	</div>
-	<?php endif; ?>
-
 
 <?php endwhile;
  endif;
