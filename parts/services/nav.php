@@ -2,7 +2,7 @@
 
 <aside class="bar contact-bar ">
 	<div class="row">
-		<h1 class="bar-title arrow-vierstroom right"><span>Direct contact? Bel </span><a href="#link">0900-9300</a></h1>
+		<h1 class="bar-title arrow-vierstroom right"><span>Direct contact? Bel </span><a href="tel:09009300">0900-9300</a></h1>
 		<?php
 			$mother_id = get_top_parent_page_id();
 			
