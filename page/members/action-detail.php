@@ -33,9 +33,12 @@
 
 <?php get_template_part('parts/members/members-flexcontent'); ?>
 
-	<?php if( get_field('formulier')){
-		the_field('formulier');
-	} ?>
+	<?php if( get_field('formulier')) : ?>
+	<div class="row">		
+		<?php the_field('formulier'); ?>
+		
+	</div>
+	<?php endif; ?>
 
 
 <?php endwhile;
