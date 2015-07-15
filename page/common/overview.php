@@ -38,7 +38,7 @@
 
 				// check if category is selected
 				$currentCategory = $_GET['category'];
-					if ( ! empty( $currentCategory ) ) {
+					if ( $currentCategory ) {
 					$args     = array(
 							'category_name' => $currentCategory,
 							'page_type'          => 'post'
@@ -66,34 +66,32 @@
 // 								$img=(types_render_field("teaser-img",array('raw' => 'true'))) ? types_render_field("teaser-img",array('raw' => 'true')) : wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'thumb-300');
 					$uri =  get_page_link($post->ID);
 					?>
-					<li  class="post post-archive">
+					<li  class="post post-archive type-">
 						<article>
 
 							<div class="meta date">
-								<span class="meta-month"><?php the_time('M'); ?></span>
-								<span class="meta-day"><?php the_time('d'); ?></span>
-								<?php //<span class="meta-year"><?php the_time('Y'); ?></span>
+								<div class="column">
+									<span class="meta-day"><?php the_time('d'); ?></span>
+									<span class="meta-month"><?php the_time('M'); ?></span>
+									
+								</div>
 							</div>
 
-							<div class="archive-content">
+							
 								<?php /* if($img) : ?>
 							<figure class="crop round left">
 								<img src="<?php	echo $img;?>" />
 							</figure>
 							<?php endif; */?>
 
-								<div class="text">
-									<h1>
-										<?php echo $title; ?>
-									</h1>
-
-
-
-									<p>
+								<div class="text-block">
+									
+									<h1 class="post-title"><?php echo $title; ?></h1>
+									<p class="post-text fixed-height">
 										<?php echo $content; ?>
 									</p>
 								</div>
-							</div>
+							
 							<a class="box-link" href="<?php echo $uri;?>">lees meer over <?php echo $title;?></a>
 						</article>
 
