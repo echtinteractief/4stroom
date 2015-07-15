@@ -16,6 +16,8 @@ $(function(){
 	// Add formulier scroll anchor for member offer page
 	if($('body').hasClass('single-ledenaanbieding')){
 		$('div.action a').click(function(){
+			$('.visual-form-builder').addClass('active');
+			
 			$('html, body').animate({
 				scrollTop: $('.visual-form-builder').offset().top
 			}, 500);

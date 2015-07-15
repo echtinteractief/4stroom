@@ -76,7 +76,11 @@ input[type="checkbox"] {
 		margin-right: 10px;
 		line-height: 12px;
 		border:2px solid $grey;
-		
+		background: #fff;
+		content:'';
+		width: 15px;
+		height: 15px;
+		display: inline-block;
 		@include transition(border-color .3s ease-in-out);
 	}
 
@@ -319,7 +323,8 @@ label {
 		}
 		
 		&.vfb-item-textarea,
-		&.vfb-item-radio {
+		&.vfb-item-radio,
+		&.vfb-item-checkbox {
 			> div {width: 65%;display: inline-block;}
 		}
 		

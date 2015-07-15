@@ -64,6 +64,16 @@ $img-padding:36.84%;//h700/w1900
 				//height: 200px;
 			}
 			
+			@include media($desktop980) {
+				width: 280px;
+				
+				margin:-135px 0 0 -400px;
+			}
+			
+			@include media(new-breakpoint(min-width 1900px)) {
+				margin:-135px 0 0 -540px;
+			}
+			
 			.box-content {
 				display: table-cell;
 				vertical-align: middle;
@@ -76,6 +86,10 @@ $img-padding:36.84%;//h700/w1900
 					font-size: em(34);
 					letter-spacing: -1px;
 					strong {color:$black;}
+					
+					@include media($desktop980) {
+						font-size: em(24);	
+					}
 				}
 				
 				.small-text {

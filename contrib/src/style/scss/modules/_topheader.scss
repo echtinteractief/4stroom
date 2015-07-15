@@ -72,6 +72,11 @@
 	&:hover {
 		@include tada($duration:.8s);
 	}
+	
+	@include media($desktop980) {
+		width: 96px;
+		height:120px;	
+	}
 }
 
 

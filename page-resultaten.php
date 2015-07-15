@@ -36,17 +36,19 @@ get_template_part( 'parts/common/_part-header-img' );
 
 	<?php get_template_part( 'parts/services/nav' ); ?>
 
-	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+	
 		<div class="row block-padding page-overview">
-
+			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 				<?php if(is_page('vacatures')){
 					get_template_part('page/jobs/overview');
 			} ?>
 			<?php if(is_page('nieuws')){
 				get_template_part('page/common/overview');
 			} ?>
+			
+			<?php endwhile; endif; ?>
 		</div>
-	<?php endwhile; endif; ?>
+	
 </article>
 
 <?php get_footer(); ?>

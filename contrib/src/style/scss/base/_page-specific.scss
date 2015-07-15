@@ -14,8 +14,33 @@
 	.topNav {
 		.menu-item-403 {display: none;}
 	}
+	
+	
 }
 
+.single-ledenaanbieding {
+	.visual-form-builder {
+		display: none;
+		
+		&.active {
+			display: block;
+		}
+	}
+}
+
+.search-results  {
+	.search-options .search-box {
+		margin-top: 43px;
+		
+		input.search {
+			height: 50px;
+		}
+	}
+	
+	h1.page-heading {
+		margin-bottom: 2*$gutter;
+	}
+}
 
 .home {
 	.topNav {
