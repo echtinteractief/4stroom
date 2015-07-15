@@ -61,23 +61,13 @@
 			
 						</div>
 						*/ ?>
-						<div class="archive-content">
-							<?php /* if($img) : ?>
-							<figure class="crop round left">
-								<img src="<?php	echo $img;?>" />
-							</figure>
-							<?php endif; */?>
-							
-							<div class="text">
-								<h1>
-									<?php echo $title; ?>
-								</h1>
-																<p>
-									<?php echo $content; ?>
-								</p>
-							</div>
-						</div>
-						<a class="box-link" href="<?php echo $uri;?>">lees meer </a>
+						<div class="text-block">
+									
+									<h1 class="post-title"><?php echo $title; ?></h1>
+									<p class="post-text fixed-height">
+										<?php echo $content; ?>
+									</p>
+								</div>						<a class="box-link" href="<?php echo $uri;?>">lees meer </a>
 					</article>
 						
 						
