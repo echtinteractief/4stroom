@@ -449,9 +449,9 @@
 	margin-bottom: $gutter;
 	
 	.meta {
-		width: 100px;
-		height: 100px;
-		border:2px solid $grey;
+		width: 90px;
+		height: 90px;
+		border:2px solid lighten($grey,10%);
 		float: left;
 		display:table;
 		margin-right: $gutter;
@@ -474,7 +474,7 @@
 	.post-title {
 		font-weight: 700;
 		font-size: em(16);
-		margin-bottom: 15px;
+		margin-bottom: 10px;
 	}
 	
 	.post-text {
