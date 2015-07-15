@@ -26,7 +26,7 @@
 						</ul>
 						<?php if( get_field('nieuwe_prijs')): ?>
 						<p class="price">
-							<del>van € <?php the_field('oude_prijs') ?>,-</del> voor € <?php the_field('nieuwe_prijs') ?>,
+							<del>van € <?php the_field('oude_prijs') ?>-</del> voor € <?php the_field('nieuwe_prijs') ?>
 						</p>
 						<?php endif; ?>
 						<a href="#wordlid" class="btn inverse">Nu aanmelden</a>
