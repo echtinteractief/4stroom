@@ -47,6 +47,6 @@
 
 	<footer class="leden-footer bg-blue-color">
 		<div class="row text-center">
-			<a href="#lidworden" class="btn darker">Ik wil graag lid worden</a>
+			<a href="/leden/word-lid/" class="btn darker">Ik wil graag lid worden</a>
 		</div>
 	</footer>
