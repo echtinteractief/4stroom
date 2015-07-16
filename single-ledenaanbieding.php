@@ -37,6 +37,14 @@ get_template_part( 'parts/members/leden-header-img' );
 	
 </article>
 
-<?php get_footer(); ?>
+<footer class="footer-page-end">
+	<div class="row">
+		<span class=""><?php echo date('Y'); ?>  </span>
+		<em class=""><?php bloginfo('name'); ?>, <?php bloginfo('description');?></em>
+	</div>
+</footer>
+	
+	
+<?php wp_footer(); ?>
 </body>
 </html>
