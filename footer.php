@@ -34,9 +34,9 @@
 						We houden u op deze wijze graag op de hoogte van de zorg- en dienstverlening van Vierstroom.
 					</p>
 				</div>
-				<form>
-					<input type="submit" class="btn lighter send " value="&#xf0e0; Aanmelden" />
-				</form>
+				
+					<a href="/leden/nieuwsbrief/" type="submit" class="btn lighter send ">&#xf0e0; Aanmelden</a>
+				
 				
 			</div>
 			<nav class="social-follow-nav widget">

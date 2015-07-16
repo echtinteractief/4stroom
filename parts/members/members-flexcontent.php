@@ -114,7 +114,7 @@
 												
 												<?php if(get_field('korting') ): ?>
 												<div class="text-block-sale round">
-													<p><?php echo get_field('korting'); ?>% korting</p>
+													<p><?php echo get_field('korting'); ?></p>
 												</div>
 												<?php endif; ?>
 												<a href="<?php echo $uri ?>" class="box-link">Lees meer</a>
