@@ -38,12 +38,6 @@
 				
 		<?php get_template_part('parts/members/members-flexcontent'); ?>
 		
-		
-		
-
-
-
-
 
 	<footer class="leden-footer bg-blue-color">
 		<div class="row text-center">
