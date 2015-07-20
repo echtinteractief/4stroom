@@ -14,7 +14,8 @@
 			//padding:10px 20px;
 		}	
 	}
-	.subnav-list {
+	.subnav-list,
+	.sub-menu {
 		//border-bottom:1px solid  darken(#fafafa,5%);
 		a {
 			color:inherit;
@@ -48,13 +49,15 @@
 		}
 		
 		.menu-item,
-		.page_item {
+		.page_item,
+		.cat-item {
 			color:darken($grey,30%);
 			//color:$pink;
 		}
 		
 		> .menu-item,
-		> .page_item {
+		> .page_item,
+		> .cat-item {
 			display: block;
 	
 			> a {

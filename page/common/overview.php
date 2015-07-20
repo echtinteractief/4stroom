@@ -11,18 +11,9 @@
 				</strong>
 			</p>
 		</div>
-		<div class="text">
-			<p class="intro">
-				<strong>
-
-					<?php the_content(); ?>
-
-				</strong>
-			</p>
-		</div>
 
 		<section class="block list-block">
-			<h2 class="hide page-heading">Vacature overzicht:</h2>
+			<h2 class="hide page-heading"><?php echo get_the_title(); ?> overzicht:</h2>
 
 
 				<?php

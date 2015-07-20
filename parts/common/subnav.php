@@ -1,14 +1,4 @@
 
-<div class="sort-options right">
-	<div class="style-select">
-		<select id="boe">
-			<option class="placeholder" disabled selected>Sorteer op</option>
-			<option value="bla">Datum</option>
-			<option value="Sipsum">A-Z</option>
-			<option value="Vlorem">Z-A</option>
-		</select>
-	</div>
-</div>
 <nav class=" sub-nav">
 	<ul class="subnav-list">
 		<li class="menu-item">
