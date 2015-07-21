@@ -78,9 +78,9 @@
 		height:120px;	
 	}
 	
-	@include media($tablet-down) {
+	@include media($tablet) {
 		width: 70px;
-		height: 8px;
+		height: 80px;
 	}
 }
 

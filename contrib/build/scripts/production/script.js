@@ -587,11 +587,13 @@ $(function(){
 	};
 	
 	
+	
 	 $.datepicker.setDefaults({
 		yearRange: '1910:2015', 
         changeMonth: true,
 		changeYear: true
     });	
+   
 	
 /*
 	if(slider.checkDom('.hasDatepicker')) {
