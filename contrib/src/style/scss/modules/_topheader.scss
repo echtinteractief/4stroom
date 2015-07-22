@@ -101,7 +101,9 @@
 			font-weight: normal;
 			margin-left:10px;
 			position: relative;
-			&:before {
+						
+
+			&:after {
 				height: 2px;
 				background-color: $pink;
 				width: 0px;
@@ -114,9 +116,10 @@
 				
 				@include transition(width .2s .2s linear);
 			}
+
 			
 			&:hover{
-				&:before {
+				&:after {
 					width: 100%;
 				}
 			}	
@@ -126,18 +129,19 @@
 		&.menu-item-403 a {
 			background-color: $orange;
 			color:#fff;
-			padding: 15px;
+			padding: 15px 25px 15px 15px;
 			font-weight: 700;
 			
 			&:before {
-				background-color:darken($orange,20%);
-				
-			}
-			
-			&:after {
 				@extend %icon-fa;
 				content:$fa-var-arrow-right;
 				margin-left: 10px;
+				position: absolute;
+				right: 5px;
+			}
+			
+			&:after {
+				background-color: darken($orange, 10%);
 			}
 		}
 		
@@ -147,7 +151,7 @@
 			a {
 				font-weight: 700;
 				
-				&:before {
+				&:after {
 					width: 100%;
 				}
 			}
