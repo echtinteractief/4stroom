@@ -37,6 +37,9 @@ get_template_part( 'parts/common/_part-header-img' );
 
 	<div class="box block-padding">
 		<div class="row ">
+
+			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
 			<div class="grid-8">
 				<h1 class="page-heading"><?php echo get_the_title(); ?></h1>
 				<div class="text">
@@ -46,6 +49,9 @@ get_template_part( 'parts/common/_part-header-img' );
 			<aside class="grid-4 sidebar">
 				<?php get_template_part('parts/common/subnav'); ?>
 			</aside>
+
+			<?php endwhile; endif; ?>
+
 		</div>
 	</div>
 </article>
