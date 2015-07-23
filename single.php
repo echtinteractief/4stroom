@@ -33,25 +33,31 @@ get_template_part( 'parts/common/_part-header-img' );
 ?>
 
 <article>
-
 	<?php get_template_part( 'parts/services/nav' ); ?>
 
-	
-		<div class="row block-padding page-overview">
-
-			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-				<?php if(is_page('vacatures')){
-					get_template_part('page/jobs/overview');
-			} ?>
-			<?php if(is_page('nieuws')){
-				get_template_part('page/common/overview');
-			} ?>
-			
-			<?php endwhile; endif; ?>
+	<div class="box block-padding">
+		<div class="row ">
+			<div class="grid-8">
+				<h1 class="page-heading"><?php echo get_the_title(); ?></h1>
+				<div class="text">
+					<?php the_content(); ?>
+				</div>
+			</div>
+			<aside class="grid-4 sidebar">
+				<?php get_template_part('parts/common/subnav'); ?>
+			</aside>
 		</div>
-	
+	</div>
 </article>
 
-<?php get_footer(); ?>
+<footer class="footer-page-end">
+	<div class="row">
+		<span class=""><?php echo date('Y'); ?>  </span>
+		<em class=""><?php bloginfo('name'); ?>, <?php bloginfo('description');?></em>
+	</div>
+</footer>
+	
+	
+<?php wp_footer(); ?>
 </body>
 </html>

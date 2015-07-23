@@ -11,7 +11,6 @@
 				</strong>
 			</p>
 		</div>
-
 		<section class="block list-block">
 			<h2 class="hide page-heading"><?php echo get_the_title(); ?> overzicht:</h2>
 
@@ -32,7 +31,9 @@
 					if ( $currentCategory ) {
 					$args     = array(
 							'category_name' => $currentCategory,
-							'page_type'          => 'post'
+							'page_type'          => 'post',
+							'paged'							 => $paged,
+							'posts_per_page' => 5
 					);
 					$wp_query = null;
 					$wp_query = new WP_Query( $args );
@@ -55,7 +56,7 @@
 
 
 // 								$img=(types_render_field("teaser-img",array('raw' => 'true'))) ? types_render_field("teaser-img",array('raw' => 'true')) : wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'thumb-300');
-					$uri =  get_page_link($post->ID);
+					$uri =  get_permalink($post->ID);
 					?>
 					<li  class="post post-archive type-">
 						<article>
