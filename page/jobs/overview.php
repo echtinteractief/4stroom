@@ -1,3 +1,42 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('.sort-category').change(function(){
+			window.location.href = "?category=" + $('.sort-category option:selected').val();
+		});
+
+		$('.sort-date').change(function(){
+			var $searchText = getParameterByName('text');
+			var $category = getParameterByName('category');
+
+			if(!empty($category)){
+				window.location.href = "?category=" + $category + "&sort=" + $('.sort-date option:selected').val();
+			}
+			else if(!empty($searchText)){
+				window.location.href = "?text=" + $searchText + "&sort=" + $('.sort-date option:selected').val();
+			} else {
+				window.location.href = "?sort=" + $('.sort-date option:selected').val();
+			}
+		});
+
+		$('#searchform').submit(function(event){
+			event.preventDefault();
+
+			if(!empty($(this).val()))
+			{
+				window.location.href = "?text=" + $(this).val();
+			}
+		});
+	});
+
+	function getParameterByName(name) {
+		name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+		var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+				results = regex.exec(location.search);
+		return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	}
+</script>
+
 
 	<div class="grid-8 content ">
 		<h1 class="page-heading"><?php the_title(); ?></h1>
@@ -26,27 +65,52 @@
 
 							<?php
 							$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-							$wp_query = new WP_Query( array( 'post_type' => 'vacature', 'posts_per_page' => 1, 'paged' => $paged ) );
+
+							// base arguments
+							$args     = array(
+									'post_type' => 'vacature',
+									'posts_per_page' => 5,
+									'paged' => $paged
+							);
+
+							// check if category is selected
+							$currentCategory = $_GET['category'];
+							if ( $currentCategory ) {
+								$args['vacature_category'] = $currentCategory;
+							}
+
+							// check if there was a textsearch
+							$currentSearch = $_GET['text'];
+							if ( $currentSearch ) {
+								$args['s'] = $currentSearch;
+							}
+
+							// check if sort option is selected
+							$currenSort = $_GET['sort'];
+							if ( $currenSort == "az") {
+								$args['orderby'] = 'title';
+								$args['order'] = 'ASC';
+							}
+							elseif( $currenSort == "za") {
+								$args['orderby'] = 'title';
+								$args['order'] = 'DESC';
+							}
+							elseif( $currenSort == "date") {
+								$args['orderby'] = 'date';
+								$args['order'] = 'DESC';
+							}
+
+							$wp_query = null;
+							$wp_query = new WP_Query( $args );
 
 							// get terms of taxonomy product_categories
 							$terms = get_terms( "vacature_category" );
 							$count = count( $terms );
 
-							// check if category is selected
-							$currentCategory = $_GET['category'];
-							if ( $currentCategory ) {
-								$args     = array(
-										'vacature_category' => $currentCategory,
-										'post_type'          => 'vacature'
-								);
-								$wp_query = null;
-								$wp_query = new WP_Query( $args );
-							}
-
 							// build filter for product categories
 							if ( $count > 0 ) { ?>
 
-							<div class="sort-options left">
+							<div class="sort-options left sort-category">
 								<div class="style-select">
 									<select id="boe2">
 										<nav class="box category">
@@ -54,11 +118,11 @@
 											<ul>
 												<?php if (  $currentCategory )  { ?>
 													<?php echo "test: " .$count; ?>
-													<option value="<?php echo $term ?>" selected="<?php $currentCategory == $term->name ? true : false ?>" href=\"/vacatures?category=<?php echo $term ?>" />
+													<option value="<?php echo $term ?>" selected="<?php $currentCategory == $term->name ? true : false ?>" href="?category=<?php echo $term ?>" />
 
 											<?php } ?>
 												<?php foreach ( $terms as $term ) { ?>
-													<option value="<?php echo $term->slug ?>" selected="<?php $currentCategory == $term->slug ? true : false ?>" href=\"/vacatures?category=<?php echo $term->slug ?>"><?php echo $term->name ?></option>
+													<option value="<?php echo $term->slug ?>" selected="<?php $currentCategory == $term->slug ? true : false ?>" href="?category=<?php echo $term->slug ?>"><?php echo $term->name ?></option>
 
 												<?php	} ?>
 											</ul>
@@ -69,7 +133,7 @@
 						<?php	} ?>
 
 
-						<div class="sort-options right">
+						<div class="sort-options right sort-date">
 							<div class="style-select">
 								<select id="boe">
 									<option class="placeholder" disabled selected>Sorteer op</option>
@@ -107,9 +171,9 @@
 											
 											?></em>
 										</p>
-										<a href="<?php echo get_page_link( $post->ID ) ?>" class="post-link icon icon-arrow-right">Lees meer</a>
+										<a href="<?php echo get_permalink( $post->ID ) ?>" class="post-link icon icon-arrow-right">Lees meer</a>
 									</div>
-									<a href="<?php echo get_page_link( $post->ID ) ?>" class="box-link">Lees meer</a>
+									<a href="<?php echo get_permalink( $post->ID ) ?>" class="box-link">Lees meer</a>
 
 								</article>
 							</li>

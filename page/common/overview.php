@@ -39,7 +39,6 @@
 				$wp_query = new WP_Query( $args );
 			}?>
 
-
 			<ul id="inner-content" class="list-view">
 				<?php
 
