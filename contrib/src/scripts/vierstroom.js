@@ -1,3 +1,10 @@
+function getParameterByName(name) {
+	name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+	var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+			results = regex.exec(location.search);
+	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
 $(function(){
 	if (slider.checkDom('.carousel')) {
 		slider.Init();
@@ -32,7 +39,35 @@ $(function(){
 		changeYear: true
     });	
    
+   
+   $('.sort-category').change(function(){
+		window.location.href = "?category=" + $('.sort-category option:selected').val();
+	});
+
+	$('.sort-date').change(function(){
+		var $searchText = getParameterByName('text');
+		var $category = getParameterByName('category');
 	
+		if(!empty($category)){
+			window.location.href = "?category=" + $category + "&sort=" + $('.sort-date option:selected').val();
+		}
+		else if(!empty($searchText)){
+			window.location.href = "?text=" + $searchText + "&sort=" + $('.sort-date option:selected').val();
+		} else {
+			window.location.href = "?sort=" + $('.sort-date option:selected').val();
+		}
+	});
+	
+	$('#searchform').submit(function(event){
+		event.preventDefault();
+
+		if(!empty($(this).val()))
+		{
+			window.location.href = "?text=" + $(this).val();
+		}
+	});
+	
+		
 /*
 	if(slider.checkDom('.hasDatepicker')) {
 		
