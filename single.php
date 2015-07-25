@@ -31,7 +31,6 @@ Template Name: Resultaten
 get_template_part( 'parts/common/topnav' );
 get_template_part( 'parts/common/_part-header-img' );
 ?>
-
 <article>
 	<?php get_template_part( 'parts/services/nav' ); ?>
 

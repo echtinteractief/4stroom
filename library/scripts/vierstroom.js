@@ -31,15 +31,6 @@ $(function(){
 		});
 	};
 	
-	
-	
-	 $.datepicker.setDefaults({
-		yearRange: '1910:2015', 
-        changeMonth: true,
-		changeYear: true
-    });	
-   
-   
    $('.sort-category').change(function(){
 		window.location.href = "?category=" + $('.sort-category option:selected').val();
 	});

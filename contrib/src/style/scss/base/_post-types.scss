@@ -477,6 +477,37 @@
 		.meta-day {font-size: em(22);}
 	}
 	
+	.text-block {
+		width: 70%;
+		float: left;
+	}
+	
+	.meta-data {
+		font-size: em(13);
+		color:darken($grey,15%);
+		margin-bottom: 5px;
+		margin-top: -5px;
+		.meta-item {
+			display: inline-block;
+			margin-left: 8px;
+			&:before {
+				@extend %icon-fa;
+				content:$fa-var-circle;
+				font-size: 6px;
+				vertical-align: middle;
+			    padding-right: 8px;
+			    
+			}
+			
+			&:first-child {
+				margin-left: 0;
+				&:before {
+					display: none;
+				}
+			}	
+		}
+	}
+	
 	.post-title {
 		font-weight: 700;
 		font-size: em(16);
@@ -486,6 +517,8 @@
 	.post-text {
 		font-size: em(14);
 		color:lighten($black,20%);
+		max-height: 46px;
+		overflow: hidden;
 	}
 }
 

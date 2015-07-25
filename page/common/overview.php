@@ -56,18 +56,7 @@
 					?>
 					<li class="post post-archive type-">
 						<!-- Show the categories of the current post if there's not been a category filtered -->
-						<?php
-						if ( ! isset( $currentCategory ) ) {
-							$postCategories = get_the_category( $post->ID );
-							foreach ( $postCategories as $index => $cat ) {
-								if ( $index != 0 ) {
-									echo ', ' . $cat->name;
-								} else {
-									echo $cat->name;
-								}
-							}
-						}
-						?>
+						
 						<article>
 
 							<div class="meta date">
@@ -81,7 +70,23 @@
 							<div class="text-block">
 
 								<h1 class="post-title"><?php echo $title; ?></h1>
-
+								<?php if ( ! isset( $currentCategory ) ) : ?>
+								<ul class="meta-data">	
+								<?php
+									$postCategories = get_the_category( $post->ID );
+									foreach ( $postCategories as $index => $cat ) {
+										echo '<li class="meta-item category">'.$cat->name. '</li>';
+/*
+										if ( $index != 0 ) {
+											echo ', ' . $cat->name;
+										} else {
+											echo $cat->name;
+										}
+*/
+									}
+								?>
+								</ul>
+								<?php endif;?>
 								<p class="post-text fixed-height">
 									<?php echo $content; ?>
 								</p>
