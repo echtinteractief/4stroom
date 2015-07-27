@@ -214,7 +214,8 @@ function bones_theme_support() {
 			'top-nav-left' => __( 'Top Navigatie Links', 'bonestheme' ),   // top nav left
 			'top-nav-right' => __( 'Top Navigatie Rechts', 'bonestheme' ),   // main nav in header
 			'footer-links' => __( 'Footer Links', 'bonestheme' ),
-			'leden-nav' => __( 'Leden navigatie', 'bonestheme' )  // secondary nav in footer
+			'leden-nav' => __( 'Leden navigatie', 'bonestheme' ),
+			'mobile-nav' => __( 'Mobile navigatie', 'bonestheme' )   // secondary nav in footer
 		)
 	);
 

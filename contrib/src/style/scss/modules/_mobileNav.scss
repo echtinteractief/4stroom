@@ -71,6 +71,7 @@
 				border-width: 1px 0px;
 				margin-top:-1px;
 				display: block;
+				color: $pink !important;
 				
 				&:after {
 					@extend %icon-fa;
@@ -86,8 +87,8 @@
 			}
 		}
 		
-		
 		.sub-nav,
+		.sub-menu,
 		.children {
 			padding-left: 20px;			
 			display: none;
@@ -101,7 +102,32 @@
 					}
 				}
 			}
-		}		
+		}
+		
+		.current-menu-item {
+			> a {
+				background:$pink;
+				color:#fff !important;
+			}
+			
+		}
+		
+		.current_page_ancestor, 
+		.current-menu-item {
+			&.menu-item-has-children {
+				
+				>a:after {
+					@include transform(rotate(90deg));
+				}
+				.toggleSubNav {
+					display: none;	
+				}
+				.sub-menu {
+					display: block;
+				}
+			}
+		}
+				
 	}
 	
 	

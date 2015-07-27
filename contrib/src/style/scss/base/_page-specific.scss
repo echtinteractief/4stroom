@@ -15,6 +15,9 @@
 		.menu-item-403 {display: none;}
 	}
 	
+	.bar.contact-bar {
+		@extend %mobileHide;
+	}
 	
 }
 
