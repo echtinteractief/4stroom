@@ -1,5 +1,11 @@
 * { @include box-sizing(border-box);}
 
+%mobileHide {
+	@include media($mobile) {	
+		display: none;
+	}
+}
+
 .row {
 	//width: $row;
 	@include outer-container;
@@ -15,6 +21,15 @@
 		
 		&.block-padding {
 			padding:2*$gutter 15px $gutter 15px;
+		}
+	}
+	
+	@include media($mobile) {
+		max-width: 100%;
+		padding:0 10px;	
+		
+		&.block-padding {
+			padding:$gutter 5px;;
 		}
 	}
 	
@@ -44,6 +59,9 @@
 .block-padding {
 	padding:2*$gutter 0 $gutter 0;
 	
+	@include media($mobile) {
+		padding:15px 0;
+	}
 	
 }
 
@@ -150,11 +168,20 @@
 
 .grid-8 {
 	@include span-columns(8);
+	
+	@include media($mobile) {
+	 	width: 100%;
+	}
+	
 }
 
 
 .grid-4 {
 	@include span-columns(4);
+	
+	@include media($mobile) {
+	 	width: 100%;
+	}
 }
 
 

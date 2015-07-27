@@ -1,13 +1,25 @@
 .footer-page {
 	padding:3*$gutter 0;
+	
+	@include media($mobile) {
+		padding:30px 0 0 0;
+		text-align: center;
+	}
+	
 	@include background-image(linear-gradient(to bottom, lighten($pink,20%), lighten($pink,1%)));
 	//background-color:lighten($pink,20%);
-	.row  {position: relative;}
+	.row  {position: relative;padding-bottom:75px;}
 	input[type="text"] {
 		border-color: transparent;	
 	}
 	
 	a {	color:#fff;font-weight: 300;}
+	
+	.sitemap {
+		@include media($mobile) {
+			display: none;
+		}
+	}
 	
 	.sitemap-subitem {
 		font-size: em(14);
@@ -68,6 +80,12 @@
 		margin-bottom: 0;
 		position: absolute;
 		bottom:$gutter;
+		
+		@include media($mobile) {
+			width: 100%;
+			left:-5px;
+			bottom:5px;
+		}
 		.btn-round {
 			border:2px solid;
 			color:#fff;

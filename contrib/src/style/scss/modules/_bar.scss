@@ -13,6 +13,10 @@
 		
 		a {color:inherit;}
 		
+		@include media($mobile) {
+			text-align: center;
+			width: 100%;
+		}
 	}
 }
 
@@ -26,7 +30,10 @@
 	
 	&:hover {
 		background:$orange;
-		height: 200px;
+		
+		@include media( new-breakpoint(min-width 768px)) {
+			height: 200px;
+		}
 		
 		.bar-text:before {
 			top:46px;
@@ -37,6 +44,11 @@
 		padding:13px 25px 13px 45px;
 		text-transform: lowercase;
 		font-size: em(20);
+		
+		@include media($mobile) {
+			text-align: right;
+		}
+		
 		&:before {
 			content:'/';
 			margin-right: 5px;

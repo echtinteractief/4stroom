@@ -8,15 +8,33 @@
 	.search-box {
 		flex-grow: 2;
 		margin-right: 15px;
+		
+		
 		input[type="search"] {
 			height: 50px;
 			border-color:#fff;
+			@extend %mobileHide;
+		}
+		
+		.btn--search {
+			@include media($mobile) {
+				margin-right: 15px;
+				color:#fff;
+			}
 		}		
 	}
 	
 	.row {
 		@include display(flex);
 		flex-direction: row ;
+	}
+	
+	@include media($mobile) {
+		position: fixed;
+		top:0;
+		z-index: 999;
+		background:$pink;
+		box-shadow: 1px 1px 4px rgba(#000,.4);
 	}
 }
 
@@ -33,6 +51,8 @@
 	}
 	
 	.search-box {
+		
+		
 		input[type="search"] {
 			background-color: rgba(#fff,.2);
 			border-color: transparent;
@@ -82,6 +102,14 @@
 		width: 70px;
 		height: 80px;
 	}
+	
+	@include media($mobile) {
+		width: 132px;
+		height: 45px;
+		z-index: 15;
+		background-image: url('../gfx/logo-mobile.png');
+		background-size: auto 100%;
+	}
 }
 
 
@@ -91,7 +119,9 @@
 }
 
 .topNav {
-	display: inline-block;
+	display: inline-block;	
+	@extend %mobileHide;
+
 	.menu-item {
 		display: inline;
 		a {

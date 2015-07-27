@@ -58,6 +58,25 @@ $(function(){
 		}
 	});
 	
+	
+	if ($('.mobileNav h1').is(':visible')) {
+		var obj=$('.mobileNav');
+		
+		mobileNav.Init(obj);
+		
+		obj.children('h1:visible').bind('click', function() {
+			var obj=$(this);
+			obj.toggleClass('active');
+		});
+	} 
+	
+	
+	 $.datepicker.setDefaults({
+		yearRange: '1910:2015', 
+        changeMonth: true,
+		changeYear: true
+    });	
+   
 		
 /*
 	if(slider.checkDom('.hasDatepicker')) {

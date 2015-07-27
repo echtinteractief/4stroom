@@ -15,6 +15,9 @@
 }
 
 .main-nav {
+	
+	@extend %mobileHide;
+	
 	.menu-item {
 		color:#fff;
 		float: left;

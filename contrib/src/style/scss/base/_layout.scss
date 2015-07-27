@@ -31,6 +31,10 @@ body {
 		font-size: 90%;
 	}
 	
+	@include media($mobile) {
+		padding-top: 50px;
+	}
+	
 	&.ledenPage {
 		background-color:lighten($grey,10%);
 		background-image: url('#{$gfxMap}/white-dot.png');

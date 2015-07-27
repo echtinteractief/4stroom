@@ -8,6 +8,8 @@
 	background: $pink;
 	line-height: 1.8;
 	
+	@extend %mobileHide;
+	
 	ul {
 		margin-bottom: 10px;
 		> li {
