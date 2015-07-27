@@ -5,12 +5,18 @@ ul.data-services {
 
 	
 	.data-service {
-		width: 33.33333%;
+		width: 50%;
 		float: left;
 		border-left:3px solid #fff;
 		font-weight: 300;
 		background:lighten($grey,18%);
-	
+		
+		@include media($mobile) {
+			width: 100%;
+			border-left:0;
+			margin-bottom: 10px;
+		}
+		
 		&:first-child{border:0;}
 		
 		article {

@@ -219,6 +219,11 @@ embed { height: 100%; }
 	table {
 		font-size: em(14);
 		border:1px solid #ccc;
+		width: 100%;
+		overflow: hidden;
+		overflow-x: auto;
+		-webkit-overflow-scrolling:touch;
+		display: block;
 		
 		td {
 			vertical-align: middle;
