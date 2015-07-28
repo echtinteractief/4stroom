@@ -1,4 +1,8 @@
-#wpadminbar {position: relative;}
+#wpadminbar {
+	@include media($mobile) {
+		position: relative;
+	}
+}
 
 .header-img {
 	padding-bottom: 24.83%;//w:1900 h:460

@@ -110,6 +110,33 @@
 		&:before,
 		&:after {content:"'";}
 	}
+	
+	.footer-menu {
+		//padding:15px 0;
+		
+		> li {display: inline;}
+		> li:first-child a{margin-left: 0;&:before{display: none;}}
+		a {
+			color:lighten($pink, 30%);
+			margin-left:5px;
+			font-size: 12px;
+			font-weight: normal;
+			
+			&:before {
+				@extend %icon-fa;
+				content:$fa-var-circle;
+				font-size: 4px;
+				vertical-align: middle;
+				margin-right: 5px;
+			}
+			
+			&:hover {
+				color:lighten($pink, 40%);
+			}
+		}
+		
+	}
+	
 }
 
 
