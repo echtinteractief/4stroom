@@ -178,6 +178,10 @@
 	overflow: hidden;
 	margin-bottom: $gutter;
 	
+	@include media($mobile) {
+		padding:10px 15px;
+	}
+	
 	&.info {
 		text-align: left;
 		background:$orange;

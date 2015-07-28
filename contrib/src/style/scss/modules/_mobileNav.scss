@@ -31,7 +31,8 @@
 		}
 		
 		&.active + ul {
-			display: block;
+			//display: block;
+			@include transform(translate3d(0, 0 ,0 ));
 		}
 	}
 
@@ -40,26 +41,18 @@
 		z-index: 13;
 		background: #fff;
 		position: fixed;
+		border:10px solid $pink;
 		width: 100%;
 		left:0;
 		top:50px;
-		padding:5px 0 0 0;
+		padding:0px 0 0 0;
 		overflow: hidden;
 		bottom:0;
 		overflow-y:auto;
-		display: none;
+		//display: none;
+		@include transform(translate3d(-200%, 0 ,0 ));
+		@include transition(transform .3s ease-in-out);
 		-webkit-overflow-scrolling:touch;
-		
-		&:before {
-			position: absolute;
-			top:-2px;
-			right: 12px;
-			content:'';
-			border-left:10px solid transparent;
-			border-right:10px solid transparent;
-			border-top:10px solid $pink;
-		}
-		
 		
 		.menu-item {
 			width: 100%;
@@ -133,15 +126,17 @@
 	
 	.toggleSubNav {
 		position: absolute;
-		top:4px;
-		right: 0;
+		top:1px;
+		right: 0px;
 		z-index: 100;
+		
 		background: #fff;
-		border:1px solid !important;
-		//background:darken(#fff,2%);
-		height: 45px;
+		border:2px solid #e6e6e6 !important ;
+		border-width: 1px 0px 0px 1px !important;
+		background:darken(#fff,2%);
+		height: 52px;
 		color:$pink;
-		width: 45px;
+		width: 48px;
 		overflow: hidden;
 		text-indent: -200px;
 		//border-radius: 50%;
@@ -150,8 +145,8 @@
 			@extend %icon-fa;
 			content:$fa-var-plus;
 			text-indent: 0;
-			top:12px;
-			left: 17px;
+			top:16px;
+			left: 18px;
 			position: absolute;
 			color:inherit;
 			@include transition(transform .3s linear);
