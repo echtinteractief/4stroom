@@ -9,6 +9,12 @@
 		flex-grow: 2;
 		margin-right: 15px;
 		
+		@include media($mobile) {
+			flex-grow: inherit;
+			position: absolute;
+			right: 15px;
+			margin-top: -1px;
+		}
 		
 		input[type="search"] {
 			height: 50px;
