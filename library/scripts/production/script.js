@@ -659,7 +659,8 @@ $(function(){
 	
 	
 	if ($('.mobileNav h1').is(':visible')) {
-		var obj=$('.mobileNav');
+		var obj=$('.mobileNav'),
+			objSearch=$('.topHeader .search-box .btn--search');
 		
 		mobileNav.Init(obj);
 		
@@ -667,6 +668,25 @@ $(function(){
 			var obj=$(this);
 			obj.toggleClass('active');
 		});
+		
+		
+		objSearch.bind('click', function(e) {
+			var obj=$('.topHeader .search-box'),
+				obj2=$(this);
+				
+				if(!obj.hasClass('active')) {
+					obj.addClass('active');
+				} else {
+
+					if(obj.children().children('.search').val()) {
+						window.location.href = "?s="+obj.children().children('.search').val();
+					} else {
+						obj.removeClass('active');
+					}
+				}
+				
+			e.preventDefault();
+		});	
 	} 
 	
 	

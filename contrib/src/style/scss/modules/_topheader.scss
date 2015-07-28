@@ -9,6 +9,7 @@
 		flex-grow: 2;
 		margin-right: 15px;
 		
+		
 		@include media($mobile) {
 			flex-grow: inherit;
 			position: absolute;
@@ -19,7 +20,27 @@
 		input[type="search"] {
 			height: 50px;
 			border-color:#fff;
-			@extend %mobileHide;
+			
+			@include media($mobile) {
+				position: absolute;
+				width: 220px;
+				//@extend %mobileHide;
+				@include transform(translate3d(-400%,0,0));
+				@include transition(transform .3s ease-in-out);
+			}
+		}
+		
+		&.active {
+			z-index: 50;
+			@include media($mobile) {
+				input[type="search"] {
+					@include transform(translate3d(-275px,0,0));
+					
+					&:focus + .btn--search {
+						color:#fff;
+					}
+				}
+			}
 		}
 		
 		.btn--search {

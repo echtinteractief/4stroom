@@ -64,6 +64,7 @@
 				border-width: 1px 0px;
 				margin-top:-1px;
 				display: block;
+				font-weight: normal;
 				color: $pink !important;
 				
 				&:after {
@@ -99,8 +100,19 @@
 		
 		.current-menu-item {
 			> a {
-				background:$pink;
+				background:$orange;
 				color:#fff !important;
+				//color:$pink !important;
+				font-weight: 700;
+				//border:5px solid #fff;
+				//border-width: 1px 5px;
+				padding-left: 25px;
+				&:after {
+					position: absolute;
+					left:10px;
+					margin-top:3px;
+					
+				}
 			}
 			
 		}
@@ -119,10 +131,8 @@
 					display: block;
 				}
 			}
-		}
-				
+		}			
 	}
-	
 	
 	.toggleSubNav {
 		position: absolute;

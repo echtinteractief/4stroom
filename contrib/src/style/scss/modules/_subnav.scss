@@ -133,14 +133,14 @@
 	}
 	
 	//Mobile 
-
 	@include media($mobile) {
 		> .subnav-list > li  {
 			> .sub-menu {
 				padding:0;
 				border:0;
 				
-				> .menu-item {
+				> .menu-item,
+				> .page_item {
 					position: relative;
 					//border: 1px solid $grey;
 					background: $pink;
@@ -158,6 +158,10 @@
 							font-size: 18px;
 							
 						}
+					}
+					
+					> ul {
+						display: none;
 					}
 				}	
 			} 

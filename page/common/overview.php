@@ -54,7 +54,7 @@
 
 					$uri = get_permalink( $post->ID );
 					?>
-					<li class="post post-archive type-">
+					<li class="post post-archive type-news">
 						<!-- Show the categories of the current post if there's not been a category filtered -->
 						
 						<article>

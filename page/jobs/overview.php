@@ -5,7 +5,10 @@
 			
 			<?php the_content(); ?>
 			
-			<section class="block list-block">
+			
+				
+		</div>
+		<section class="block list-block">
 				<h2 class="hide page-heading">Vacature overzicht:</h2>
 					
 				<div class="results-options">
@@ -160,9 +163,7 @@
 					wp_reset_query();
 					?>
 				</section>
-				
-			</div>
-		</div>
+	</div>
 	<aside class="grid-4 sidebar">
 		<?php get_template_part('parts/services/subnav'); ?>
 	</aside>

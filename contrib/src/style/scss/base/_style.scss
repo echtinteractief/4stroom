@@ -1,3 +1,5 @@
+#wpadminbar {position: relative;}
+
 .header-img {
 	padding-bottom: 24.83%;//w:1900 h:460
 	
@@ -250,14 +252,14 @@ h1.page-heading {
 	font-size: em(30);
 	
 	@include media($mobile) {
-		font-size: em(26);
+		font-size: em(24);
 	}
 }
 h2.page-heading {
 	font-size: em(24);
 
 	@include media($mobile) {
-		font-size: em(20)
+		font-size: em(22)
 	}
 }
 h4.page-headeing {

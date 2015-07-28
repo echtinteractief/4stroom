@@ -1,5 +1,10 @@
 * { @include box-sizing(border-box);}
 
+html {
+	@include media($mobile){
+		top:-46px;
+	}
+}
 %mobileHide {
 	@include media($mobile) {	
 		display: none;
