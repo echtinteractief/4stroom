@@ -107,6 +107,11 @@ input[type="radio"] {
 .search-box {
 	padding:0 0px 0 50px;
 	position: relative;
+	
+	@include media($mobile) {
+		padding:0;
+	}
+	
 	input[type="search"] {
 		width: 100%;
 		padding-right: 45px;

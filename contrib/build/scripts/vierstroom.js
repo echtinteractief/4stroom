@@ -80,7 +80,7 @@ $(function(){
 				} else {
 
 					if(obj.children().children('.search').val()) {
-						window.location.href = "?s="+obj.children().children('.search').val();
+						window.location.href = "/?s="+obj.children().children('.search').val();
 					} else {
 						obj.removeClass('active');
 					}

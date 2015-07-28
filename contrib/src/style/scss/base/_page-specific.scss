@@ -35,6 +35,10 @@
 	.search-options .search-box {
 		margin-top: 43px;
 		
+		@include media($mobile) {
+			margin-top:0;
+		}
+		
 		input.search {
 			height: 50px;
 		}
