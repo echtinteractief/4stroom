@@ -648,7 +648,8 @@ $(function(){
 		}
 	});
 	
-	$('#searchform').submit(function(event){
+	
+	$('.results-options #searchform').submit(function(event){
 		event.preventDefault();
 
 		if(!empty($(this).val()))
@@ -656,7 +657,6 @@ $(function(){
 			window.location.href = "?text=" + $(this).val();
 		}
 	});
-	
 	
 	if ($('.mobileNav h1').is(':visible')) {
 		var obj=$('.mobileNav'),
@@ -691,7 +691,7 @@ $(function(){
 	
 	
 	// double click fix
-	$('a').on('click touchend', function(e) {
+	$('a').on('touchend', function(e) {
 	  var el = $(this);
 	  var link = el.attr('href');
 	  window.location = link;
