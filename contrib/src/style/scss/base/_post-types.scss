@@ -353,6 +353,7 @@
 			max-height: 150px;
 			overflow: hidden;
 			margin-top: 15px;
+			padding:0 15px;
 			img {min-height: 0;width: 100%;height: auto;}
 		}
 	}
@@ -440,6 +441,10 @@
 		float: right;
 		margin-left: $gutter;
 		border:2px solid #fff;
+		
+		@include media($mobile) {
+			max-width: 80px;
+		}
 		
 		> img {float:left;}
 	}
