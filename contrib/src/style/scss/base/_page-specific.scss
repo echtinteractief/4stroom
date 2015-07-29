@@ -9,10 +9,21 @@
 			color:rgba(#fff,.7);
 			font-size: 22px;
 		}
+		
+		@include media($mobile) {
+			&:before {
+				display: none;
+			}
+		}
 	}
 	
 	.topNav {
 		.menu-item-403 {display: none;}
+	}
+	
+	
+	@include media($tablet){
+		.bar .bar-title {display: none;}
 	}
 	
 	.bar.contact-bar {

@@ -83,7 +83,8 @@
 		
 		
 		input[type="search"] {
-			background-color: rgba(#fff,.2);
+//			background-color: rgba(#fff,.2);
+			background-color:lighten($orange,7%);
 			border-color: transparent;
 			
 			@include placeholder {
