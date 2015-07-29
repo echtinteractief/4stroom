@@ -507,13 +507,15 @@
 			}
 		}
 		
-		.meta {
-			width: 50px;
-			height: 50px;
-			margin-right: 10px;
-			
-			.meta-month {font-size: em(12);}
-			.meta-day {font-size: em(18);}
+		@include media($mobile) {
+			.meta {
+				width: 50px;
+				height: 50px;
+				margin-right: 10px;
+				
+				.meta-month {font-size: em(12);}
+				.meta-day {font-size: em(18);}
+			}
 		}
 	}
 	

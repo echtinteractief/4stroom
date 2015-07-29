@@ -690,7 +690,14 @@ $(function(){
 	} 
 	
 	
-	 $.datepicker.setDefaults({
+	// double click fix
+	$('a').on('click touchend', function(e) {
+	  var el = $(this);
+	  var link = el.attr('href');
+	  window.location = link;
+	});
+	
+	$.datepicker.setDefaults({
 		yearRange: '1910:2015', 
         changeMonth: true,
 		changeYear: true

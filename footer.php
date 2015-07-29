@@ -56,8 +56,16 @@
 <?php endif; ?>
 <footer class="footer-page-end">
 	<div class="row">
-		<span class=""><?php echo date('Y'); ?>  </span>
-		<em class=""><?php bloginfo('name'); ?>, <?php bloginfo('description');?></em>
+		<div class="right">
+			<span class=""><?php echo date('Y'); ?>  </span>
+			<em class=""><?php bloginfo('name'); ?>, <?php bloginfo('description');?></em>
+		</div>
+		<ul class="footer-menu left">
+			<li><a href="http://www.vierstroom.nl/disclaimer/">Disclaimer</a>
+			<li><a href="http://www.vierstroom.nl/cookiebeleid/">Cookiebeleid</a>
+			<li><a href="http://www.vierstroom.nl/lid-van-actiz/">Lid van actiz</a>
+		</ul>
+
 	</div>
 </footer>
 	

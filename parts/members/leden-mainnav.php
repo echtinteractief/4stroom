@@ -1,5 +1,6 @@
 <aside class="bar contact-bar">
 	<div class="row">
+		<h1 class="bar-title arrow-vierstroom right"><span>Direct contact? Bel </span><a href="tel:09009300">0900-9300</a></h1>
 		<nav class="nav main-nav left member-nav">
 			<h1 class="hide">Leden navigatie"</h1>
 			<?php wp_nav_menu(array(

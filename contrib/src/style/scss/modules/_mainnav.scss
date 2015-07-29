@@ -99,7 +99,12 @@
 	}
 	
 	&.member-nav {
+		width: auto;
+		display: inline-block;
 		.menu-item {
+			a {
+				padding:15px;
+			}
 			&.current-page-ancestor a {
 				font-weight: normal;
 			}
