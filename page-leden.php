@@ -30,6 +30,7 @@ Template Name: Leden page template
 
 <?php
 get_template_part( 'parts/members/leden-topnav' );
+get_template_part( 'parts/members/leden-actionstamp' );
 get_template_part( 'parts/members/leden-header-img' );
 ?>
 

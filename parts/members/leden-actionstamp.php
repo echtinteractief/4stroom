@@ -2,8 +2,12 @@
 	<div class="action-table">
 		<div class="action-content">
 			<article>
-				<h1 class="action-title">Word nu lid en kies je eigen t-shirt</h1>
-				<p class="action-text">Al vanaf &euro;22.<sub>75</sub> per jaar voor het hele gezin</p>
+				<?php
+					// Get the id of member home
+					$mother_id = get_top_parent_page_id(); //get mother ancestor id
+				?>
+				<h1 class="action-title"><?php echo get_field('actionstamp_titel', $mother_id); ?></h1>
+				<p class="action-text"><?php echo get_field('actionstamp_sub_titel', $mother_id); ?></p>
 				<a href="#linkto?" class="box-link">Lees meer</a>
 			</article>
 		</div>
