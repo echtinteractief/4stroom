@@ -38,18 +38,9 @@ get_template_part( 'parts/common/_part-header-img' );
 				<div class="text">
 					<?php the_content(); ?>
 				</div>
-				
-				<div class="comments">
-					<?php
-						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) :
-						comments_template();
-						endif; 
-					?>
-				</div>
 			</div>
 			<aside class="grid-4 sidebar">
-				<?php get_template_part('parts/common/subnav'); ?>
+				<?php get_template_part('parts/services/subnav'); ?>
 			</aside>
 
 			<?php endwhile; endif; ?>

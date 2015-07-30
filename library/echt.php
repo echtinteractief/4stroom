@@ -235,11 +235,16 @@ class Footer_Sitemap_Nav extends Walker_Nav_Menu {
 
 
 //return top ancestor id
-function get_top_parent_page_id() {
+function get_top_parent_page_id($postId = null) {
 
 	global $post;
 
 	$ancestors = $post->ancestors;
+
+	if(isset($postId))
+	{
+		$ancestors = get_post($postId)->ancestors;
+	}
 
 	// Check if page is a child page (any level)
 	if ($ancestors) {
