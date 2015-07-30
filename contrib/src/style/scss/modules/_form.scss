@@ -11,7 +11,8 @@
   }
   
   &.error,
-  &.vfb-error {
+  &.vfb-error,
+  &.invalid {
 	  color:$red;
 	  border-color:$red;
   }  

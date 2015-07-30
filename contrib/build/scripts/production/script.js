@@ -691,7 +691,7 @@ $(function(){
 	
 	
 	// double click fix
-	$('a').on('touchend', function(e) {
+	$('nav a').on('touchend', function(e) {
 	  var el = $(this);
 	  var link = el.attr('href');
 	  window.location = link;
