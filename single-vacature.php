@@ -35,18 +35,30 @@ get_template_part( 'parts/common/_part-header-img' );
 
 			<div class="grid-8">
 				<h1 class="page-heading"><?php echo get_the_title(); ?></h1>
+				<ul class="page-meta">
+					<?php if(get_field('type_vacature')) : ?>
+					<li><?php echo get_field('type_vacature'); ?></li>
+					<?php endif; ?>
+					<?php if(get_field('plaats')) : ?>
+					<li class="icon icon-location"><?php echo get_field('plaats'); ?></li>
+					<?php endif; ?>
+					<li class="">
+						<?php
+							$terms = get_the_terms( $post->ID , 'vacature_category' );
+							
+							foreach ( $terms as $term ) {
+								echo '<span class="icon icon-tag">'.$term->name.'</span> ';
+							}
+						?>
+					</li>
+					<li class="icon icon-date"><?php echo get_the_date(); ?></li>
+				</ul>
+				
+				
 				<div class="text">
 					<?php the_content(); ?>
 				</div>
-				<div>
-					Plaats: <?php echo get_field('plaats'); ?>
-				</div>
-				<div>
-					Aantal uren minimaal: <?php echo get_field('aantal_uren_minimaal'); ?>
-				</div>
-				<div>
-					Aantal uren maximaal: <?php echo get_field('aantal_uren_maximaal'); ?>
-				</div>
+			
 				<?php
 				$location = get_field('locatie');
 				if( !empty($location) ):

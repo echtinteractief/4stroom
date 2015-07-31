@@ -117,8 +117,10 @@
 									<div class="text-block">
 										<h1 class="post-title"><?php the_title()?></h1>
 										<ul class="post-meta">
+											<?php if(get_field('type_vacature')) : ?>
+											<li class=""><?php the_field('type_vacature'); ?></li>
+											<?php endif;?>
 											<li class="icon icon-location"><?php the_field('plaats'); ?></li>
-
 											<li class="icon icon-date"><?php the_date() ?></li>
 
 										</ul>
