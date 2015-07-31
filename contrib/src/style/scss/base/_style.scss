@@ -266,7 +266,7 @@
 		}
 		
 		&:first-child {
-			margin:0 8px 0 0;
+			margin:0 5px 0 0;
 		}
 		
 		&:after {
@@ -274,11 +274,21 @@
 			content:$fa-var-circle;
 			font-size: 4px;
 			vertical-align: middle;	
-			margin-left: 15px;
+			margin-left: 10px;
 		}
 		
 		&:last-child {
 			&:after {display: none;}
+		}
+		
+		
+		span {
+			&:before {margin:0 5px 0 5px;}
+			&:first-child:before {margin-left:-5px;}
+			
+			&:after {content:', ';}
+			
+			&:last-child:after {content:'';}
 		}
 	}
 }
