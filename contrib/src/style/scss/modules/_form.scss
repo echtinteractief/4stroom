@@ -235,7 +235,9 @@ label {
 	border-width: 2px 0;
 	
 	@include media($mobile) {
-		padding:0;
+		margin-bottom: 20px;
+		background: #fafafa;
+		padding: 10px;
 	}
 	
 	label {
@@ -293,6 +295,7 @@ label {
 
 			@include media($mobile) {
 				width: 100%;
+				padding:0;
 			}
 		}
 	}

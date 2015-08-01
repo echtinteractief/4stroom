@@ -109,6 +109,7 @@ $img-padding:36.84%;//h700/w1900
 					
 					@include media($mobile) {
 						font-size: em(18);
+						margin-bottom:0;
 					}
 					
 				}
