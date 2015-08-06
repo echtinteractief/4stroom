@@ -13,10 +13,10 @@
 					
 				<div class="results-options">
 					<div class="search-box left">
-						<form role="search" method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-							<label class="hide screen-reader-text" for="s">Zoek op</label>
-							<input type="search" placeholder="Zoek vacature, bv op plaats" class="search"  name="s" id="s" />
-							<input type="submit" id="searchsubmit" class="btn btn--search" value="&#xf002;" />
+						<form role="search" method="get" id="searchjobs" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+							<label class="hide screen-reader-text" for="jobs">Zoek op</label>
+							<input type="search" placeholder="Zoek vacature, bv op plaats" class="search"  name="jobs" id="jobs" />
+							<input type="submit" id="searchsubmit_jobs" class="btn btn--search" value="&#xf002;" />
 						</form>
 					</div>
 
@@ -39,7 +39,7 @@
 
 							// check if category is selected
 							$currentCategory = $_GET['category'];
-							if ( $currentCategory ) {
+							if ( $currentCategory && $currentCategory != 'default') {
 								$args['vacature_category'] = $currentCategory;
 							}
 
@@ -50,18 +50,20 @@
 							}
 
 							// check if sort option is selected
-							$currenSort = $_GET['sort'];
-							if ( $currenSort == "az") {
-								$args['orderby'] = 'title';
-								$args['order'] = 'ASC';
-							}
-							elseif( $currenSort == "za") {
-								$args['orderby'] = 'title';
-								$args['order'] = 'DESC';
-							}
-							elseif( $currenSort == "date") {
-								$args['orderby'] = 'date';
-								$args['order'] = 'DESC';
+							$currentSort = $_GET['sort'];
+							if($currentSort && $currentSort != 'default'){
+								if ( $currentSort == "az") {
+									$args['orderby'] = 'title';
+									$args['order'] = 'ASC';
+								}
+								elseif( $currentSort == "za") {
+									$args['orderby'] = 'title';
+									$args['order'] = 'DESC';
+								}
+								elseif( $currentSort == "date") {
+									$args['orderby'] = 'date';
+									$args['order'] = 'DESC';
+								}
 							}
 
 							$wp_query = null;
@@ -76,17 +78,14 @@
 
 							<div class="sort-options left sort-category">
 								<div class="style-select">
-									<select id="boe2">
+									<select>
 										<nav class="box category">
 											<h1>Categorie</h1>
 											<ul>
-												<?php if (  $currentCategory )  { ?>
-													<?php echo "test: " .$count; ?>
-													<option value="<?php echo $term ?>" selected="<?php $currentCategory == $term->name ? true : false ?>" href="?category=<?php echo $term ?>" />
+													<option value="default" <?php if ($currentCategory == $term->slug || !$currenCategory) { echo "selected"; } ?> href="?category=<?php echo $term ?>">Kies een categorie</option>
 
-											<?php } ?>
-												<?php foreach ( $terms as $term ) { ?>
-													<option value="<?php echo $term->slug ?>" selected="<?php $currentCategory == $term->slug ? true : false ?>" href="?category=<?php echo $term->slug ?>"><?php echo $term->name ?></option>
+													<?php foreach ( $terms as $term ) { ?>
+													<option value="<?php echo $term->slug ?>" <?php if ($currentCategory == $term->slug) { echo "selected"; } ?> href="?category=<?php echo $term->slug ?>"><?php echo $term->name ?></option>
 
 												<?php	} ?>
 											</ul>
@@ -99,11 +98,12 @@
 
 						<div class="sort-options right sort-date">
 							<div class="style-select">
-								<select id="boe">
-									<option class="placeholder" disabled selected>Sorteer op</option>
-									<option value="bla">Datum</option>
-									<option value="Sipsum">A-Z</option>
-									<option value="Vlorem">Z-A</option>
+								<select>							
+												
+									<option value="default" class="placeholder" <?php if ($currentSort == "default" || !$currentSort) { echo "selected"; } ?> disabled>Sorteer op</option>
+									<option value="date" <?php if ($currentSort == "date") { echo "selected"; } ?>>Datum</option>
+									<option value="az" <?php if ($currentSort == "az") { echo "selected"; } ?>>A-Z</option>
+									<option value="za" <?php if ($currentSort == "za") { echo "selected"; } ?>>Z-A</option>
 								</select>
 							</div>
 						</div>
