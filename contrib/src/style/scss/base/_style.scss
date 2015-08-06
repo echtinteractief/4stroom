@@ -16,7 +16,7 @@
 			bottom:0;
 		}
 		.box {
-			margin:-120px 0 0 30px;
+			margin:-120px 0 0 50px;
 			text-align: left;
 			
 			@include media($mobile) {
@@ -48,16 +48,16 @@
 				}
 				
 				.small-text {
-					@include media($mobile) {
-						@extend %mobileHide;
-					}
+				
+					@extend %mobileHide;
+					
 			
-					> p {
-						>strong, 
-						> em {
-							float: left;
-						}
+					
+					strong, 
+					em {
+						float: left;
 					}
+					
 				}
 				
 			}
