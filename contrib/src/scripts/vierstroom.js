@@ -38,11 +38,13 @@ $(function(){
 	$('.sort-date').change(function(){
 		var $searchText = getParameterByName('text');
 		var $category = getParameterByName('category');
-	
-		if(!empty($category)){
+		
+		console.log($category, $(this));
+		
+		if($category){
 			window.location.href = "?category=" + $category + "&sort=" + $('.sort-date option:selected').val();
 		}
-		else if(!empty($searchText)){
+		else if($searchText){
 			window.location.href = "?text=" + $searchText + "&sort=" + $('.sort-date option:selected').val();
 		} else {
 			window.location.href = "?sort=" + $('.sort-date option:selected').val();
@@ -53,7 +55,7 @@ $(function(){
 	$('.results-options #searchform').submit(function(event){
 		event.preventDefault();
 
-		if(!empty($(this).val()))
+		if($(this).val())
 		{
 			window.location.href = "?text=" + $(this).val();
 		}
