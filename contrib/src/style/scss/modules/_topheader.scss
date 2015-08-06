@@ -17,6 +17,13 @@
 			margin-top: -1px;
 		}
 		
+		@include media($desktop980) {
+			flex-grow: inherit;
+			position: absolute;
+			right: 15px;
+			margin-top: -1px;
+		}
+		
 		input[type="search"] {
 			height: 50px;
 			border-color:#fff;
@@ -24,6 +31,14 @@
 			max-width: 350px;
 			
 			@include media($mobile) {
+				position: absolute;
+				width: 220px;
+				//@extend %mobileHide;
+				@include transform(translate3d(-999px,0,0));
+				@include transition(transform .3s ease-in-out);
+			}
+			
+			@include media($desktop980) {
 				position: absolute;
 				width: 220px;
 				//@extend %mobileHide;
@@ -43,10 +58,27 @@
 					}
 				}
 			}
+			
+			@include media($desktop980) {
+				input[type="search"] {
+					@include transform(translate3d(-275px,0,0));
+					
+					&:focus + .btn--search {
+						color:#fff;
+					}
+				}
+			}
+
+			
 		}
 		
 		.btn--search {
 			@include media($mobile) {
+				margin-right: 15px;
+				color:#fff;
+			}
+			
+			@include media($desktop980) {
 				margin-right: 15px;
 				color:#fff;
 			}
