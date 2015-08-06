@@ -27,7 +27,7 @@
 				position: absolute;
 				width: 220px;
 				//@extend %mobileHide;
-				@include transform(translate3d(-400%,0,0));
+				@include transform(translate3d(-999px,0,0));
 				@include transition(transform .3s ease-in-out);
 			}
 		}

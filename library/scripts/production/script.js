@@ -630,7 +630,7 @@ $(function(){
 		});
 	};
 	
-   $('.sort-category').change(function(){
+    $('.sort-category').change(function(){
 		window.location.href = "?category=" + $('.sort-category option:selected').val();
 	});
 
