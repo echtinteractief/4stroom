@@ -341,7 +341,14 @@
 		bottom:$gutter;
 		content:$fa-var-arrow-right;
 	}
+	
 */
+
+	@include media($mobile) {
+		padding:0;
+		border-radius: 0;
+	}
+
 	.page-heading {
 		color:#fff;
 		
@@ -360,10 +367,10 @@
 		
 		@include media($mobile) {
 			width: 100%;
-			max-height: 150px;
+			//max-height: 150px;
 			overflow: hidden;
-			margin-top: 15px;
-			padding:0 15px;
+			margin-top: 0px;
+			padding:0 0px;
 			img {min-height: 0;width: 100%;height: auto;}
 		}
 	}

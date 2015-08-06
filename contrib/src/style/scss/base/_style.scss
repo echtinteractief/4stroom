@@ -195,6 +195,10 @@
 		padding-bottom: 0;
 		
 		.text {margin-bottom: 0;}
+		
+		@include media($mobile) {
+			border-radius: 0;
+		}
 	}
 	.map {
 		height: 280px;
