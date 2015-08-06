@@ -638,7 +638,7 @@ $(function(){
 		var $searchText = getParameterByName('text');
 		var $category = getParameterByName('category');
 		
-		console.log($category, $(this));
+		//console.log($category, $(this));
 		
 		if($category){
 			window.location.href = "?category=" + $category + "&sort=" + $('.sort-date option:selected').val();
