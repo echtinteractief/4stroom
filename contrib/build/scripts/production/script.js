@@ -651,13 +651,14 @@ $(function(){
 	});
 	
 	
-	$('.results-options #searchform').submit(function(event){
-		event.preventDefault();
-
-		if($(this).val())
+	$('.results-options #searchjobs').submit(function(event){
+		//console.log($(this).serializeArray()[0].value);
+		if($(this).serializeArray()[0].value)
 		{
-			window.location.href = "?text=" + $(this).val();
+			window.location.href = "?text=" + $(this).serializeArray()[0].value;
 		}
+		
+		event.preventDefault();
 	});
 	
 	if ($('.mobileNav h1').is(':visible')) {
