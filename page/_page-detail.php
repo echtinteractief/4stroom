@@ -21,8 +21,6 @@
 					}
 				
 				}
-
-				
 				the_content();
 				?>
 			</div>
@@ -32,11 +30,6 @@
 				<?php get_template_part('parts/_part-services-subnav'); ?>
 		</aside>
 		
-
-	
-
-
-
 	</div>
 <?php endwhile; endif; ?>
 </article>
