@@ -37,7 +37,7 @@
 							setup_postdata($post);
 							$title= get_field('teaser_titel', $post->ID)  ? get_field('teaser_titel', $post->ID) : get_the_title($post->ID);
 							$content= get_field('teaser_beschrijving', $post->ID) ? get_field('teaser_beschrijving', $post->ID) : get_the_content();
-							$img= get_field('teaser_afbeelding', $post->ID)['url'] ? get_field('teaser_afbeelding') : wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'thumb-300');
+							$img= get_field('teaser_afbeelding', $post->ID)['url'] ? get_field('teaser_afbeelding') : false;
 							//$img_array = wp_get_attachment_image_src($img, 'thumb-300'); //get image thumb
 							$uri =  get_page_link($post->ID); 
 					?>	

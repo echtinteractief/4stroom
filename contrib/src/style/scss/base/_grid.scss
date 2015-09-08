@@ -157,8 +157,8 @@
 			@include omega(8n);
 		}
 		@include media($mobile) {
-			 @include span-columns(6);	
-			 @include omega(2n); 
+			 @include span-columns(4);	
+			 @include omega(3n); 
 		}
 	}
 	
