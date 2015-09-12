@@ -10,6 +10,10 @@
 		margin-right: 15px;
 		
 		
+		@include media(new-breakpoint(max-width 1024px)) {
+			padding-left:22px;	
+		}
+		
 		@include media($mobile) {
 			flex-grow: inherit;
 			position: absolute;
@@ -17,12 +21,16 @@
 			margin-top: -1px;
 		}
 		
-		@include media($desktop980) {
+
+
+		@include media($desktopTab) {
 			flex-grow: inherit;
 			position: absolute;
 			right: 15px;
 			margin-top: -1px;
 		}
+
+
 		
 		input[type="search"] {
 			height: 50px;
@@ -38,6 +46,12 @@
 				@include transition(transform .3s ease-in-out);
 			}
 			
+			@include media($desktopTab) {
+				display: none;	
+				
+			}
+			
+/*
 			@include media($desktop980) {
 				position: absolute;
 				width: 220px;
@@ -45,6 +59,7 @@
 				@include transform(translate3d(-999px,0,0));
 				@include transition(transform .3s ease-in-out);
 			}
+*/
 		}
 		
 		&.active {
@@ -59,6 +74,7 @@
 				}
 			}
 			
+/*
 			@include media($desktop980) {
 				input[type="search"] {
 					@include transform(translate3d(-275px,0,0));
@@ -68,6 +84,7 @@
 					}
 				}
 			}
+*/
 
 			
 		}
@@ -78,10 +95,17 @@
 				color:#fff;
 			}
 			
+			@include media($desktopTab) {
+				background:#fff;
+				width: 56px;
+			}
+			
+/*
 			@include media($desktop980) {
 				margin-right: 15px;
 				color:#fff;
 			}
+*/
 		}		
 	}
 	
@@ -147,8 +171,8 @@
 	height: 142px;
 	display: inline-block;
 	background-repeat: no-repeat;
-	background-size:cover;
-	margin-right: $gutter;
+	background-size:100% auto;
+	margin-right:$gutter;
 	background-image: url('../gfx/logo-vierstroom.png');
 	
 	&:hover {
@@ -156,13 +180,15 @@
 	}
 	
 	@include media($desktop980) {
-		width: 96px;
-		height:120px;	
+		width: 83px;
+		height:104px;
+		margin-right: 15px;	
 	}
 	
 	@include media($tablet) {
-		width: 70px;
-		height: 80px;
+		width: 80px;
+		height: 100px;
+		margin-right: 15px;
 	}
 	
 	@include media($mobile) {
@@ -183,7 +209,13 @@
 .topNav {
 	display: inline-block;	
 	@extend %mobileHide;
-
+	
+	@include media($desktopTab) {
+		&.right {
+			margin-left:15px;
+		}	
+	}
+	
 	.menu-item {
 		display: inline;
 		a {

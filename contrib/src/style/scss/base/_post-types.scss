@@ -365,7 +365,7 @@
 		float: left;
 		padding:$gutter;
 		
-		img {float: left;min-height: 100%;}
+		img {float: left;}
 		
 		@include media($mobile) {
 			width: 30%;
@@ -585,6 +585,10 @@
 		
 		@include media($mobile) {
 			max-height: 53px;
+		}
+		
+		@include media($tablet) {
+			max-height: 57px;	
 		}
 	}
 }

@@ -8,6 +8,7 @@ $tablet: new-breakpoint(min-width 768px max-width 980px);
 $tablet-up: new-breakpoint(min-width 768px);
 $tablet-down: new-breakpoint(max-width 980px);
 $desktop-down:new-breakpoint(max-width 1390px);
+$desktopTab: new-breakpoint(min-width 768px max-width 980px);
 $desktop980: new-breakpoint(min-width 981px max-width 1200px);//used by slider home
 
 $gutter: em(20);

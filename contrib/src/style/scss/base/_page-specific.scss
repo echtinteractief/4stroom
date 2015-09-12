@@ -47,6 +47,7 @@
 .search-results  {
 	.search-options .search-box {
 		margin-top: 43px;
+		padding-left: 0;
 		
 		@include media($mobile) {
 			margin-top:0;
