@@ -65,6 +65,7 @@
 									$args['order'] = 'DESC';
 								}
 							}
+							
 
 							$wp_query = null;
 							$wp_query = new WP_Query( $args );
