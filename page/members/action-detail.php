@@ -21,7 +21,7 @@
 					<div class="banner action bg-brand-color">
 						<ul>
 							<?php while( have_rows('voordelen') ): the_row(); ?>
-								<li class=""><?echo the_sub_field('text') ?></li>
+								<li class=""><?php echo the_sub_field('text') ?></li>
 							<?php endwhile; ?>
 						</ul>
 						<?php if( get_field('nieuwe_prijs')): ?>
