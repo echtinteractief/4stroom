@@ -77,10 +77,11 @@ if ( ! isset( $content_width ) ) {
 
 // Thumbnail sizes
 // Thumbnail sizes 
-add_image_size( 'thumb-ident-homepage', 1900, 800, array('center','center' ));//homepage header img
-add_image_size( 'thumb-ident', 1900, 460, array('center','center' ));//default image header size
+add_image_size( 'header-slider', 1900, 700, array('center','center' ));//homepage header img
+add_image_size( 'header-img', 1900, 460, array('center','center' ));//default image header size
 add_image_size( 'thumb-square', 200, 200, true );//leden actie images
-add_image_size( 'thumb-400', 400, 160, true );//default diensten images
+add_image_size( 'thumb-square-500', 500, 500, true );
+add_image_size( 'thumb-600', 600, 280, true );//default diensten images
 add_image_size( 'thumb-280', 281, 199, true );//default adviseur
 
 
@@ -108,8 +109,9 @@ add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
 
 function bones_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        'bones-thumb-600' => __('600px by 150px'),
-        'bones-thumb-300' => __('300px by 100px'),
+        'header-slider' => __('1900px by 700px'),
+        'header-img' => __('1900px by 460px'),
+        'thumb-600' => __('600px by 280px')
     ) );
 }
 
@@ -238,5 +240,136 @@ function bones_comments( $comment, $args, $depth ) {
 <?php
 } // don't remove this bracket!
 
+/* Add extra location rule to the ACF plugin */
+add_filter('acf/location/rule_types', 'acf_location_rules_types');
+function acf_location_rules_types( $choices ) {
+	$choices['Page']['descendantof'] = 'Descendant of the page';
+	return $choices;
+}
+add_filter('acf/location/rule_values/descendantof', 'acf_location_rules_values_descendantof');
+function acf_location_rules_values_descendantof( $choices ) {
+	foreach(get_pages() as $p)
+		$choices[ $p->ID ] = $p->post_title;
+	return $choices;
+}
+add_filter('acf/location/rule_match/descendantof', 'acf_location_rules_match_descendantof', 10, 3);
+function acf_location_rules_match_descendantof( $match, $rule, $options ) {
+	global $post;
+	$match = false;
+	$selectedPageID = (int) $rule['value'];
+
+	foreach(get_post_ancestors( $post->ID ) as $ancestor) {
+		if($ancestor == $selectedPageID)
+			$match = true;
+	}
+	if($rule['operator'] == "==")
+		return $match;
+	elseif($rule['operator'] == "!=")
+		return !$match;
+}
+
+/* Vacatures custom post type */
+function custom_post_vacature() {
+	$labels = array(
+			'name'               => _x( 'Vacatures', 'post type general name' ),
+			'singular_name'      => _x( 'Vacature', 'post type singular name' ),
+			'add_new'            => _x( 'Nieuwe vacature', 'vacature' ),
+			'add_new_item'       => __( 'Voeg een vacature toe' ),
+			'edit_item'          => __( 'Bewerk vacature' ),
+			'new_item'           => __( 'Nieuwe vacature' ),
+			'all_items'          => __( 'Alle vacatures' ),
+			'view_item'          => __( 'Bekijk vacature' ),
+			'search_items'       => __( 'Zoek vacatures' ),
+			'not_found'          => __( 'Geen vacatures gevonden' ),
+			'not_found_in_trash' => __( 'Geen vacatures gevonden in de prullenbak' ),
+			'parent_item_colon'  => '',
+			'menu_name'          => 'Vacatures'
+	);
+	$args = array(
+			'labels'        => $labels,
+			'description'   => 'Vacatures van de vierstroom',
+			'public'        => true,
+			'menu_position' => 5,
+			'rewrite' => array('slug' => 'werkenbijdevierstroom/vacatures'),
+			'supports'      => array( 'title', 'editor'),
+			'has_archive'   => false,
+	);
+	register_post_type( 'vacature', $args );
+}
+add_action( 'init', 'custom_post_vacature' );
+
+function my_taxonomies_vacature() {
+	$labels = array(
+			'name'              => _x( 'Vacature categorieën', 'taxonomy general name' ),
+			'singular_name'     => _x( 'Vacature categorie', 'taxonomy singular name' ),
+			'search_items'      => __( 'Zoek vacature categorieën' ),
+			'all_items'         => __( 'Alle vacature Categorieën' ),
+			'parent_item'       => __( 'Ouder vacature categorieën' ),
+			'parent_item_colon' => __( 'Ouder vacature categorieën:' ),
+			'edit_item'         => __( 'Bewerk vacature cagtegorie' ),
+			'update_item'       => __( 'Update vacature categorie' ),
+			'add_new_item'      => __( 'Voeg nieuwe vacature categorie toe' ),
+			'new_item_name'     => __( 'Nieuwe vacature categorie' ),
+			'menu_name'         => __( 'Categorieën' ),
+	);
+	$args = array(
+			'labels' => $labels,
+			'hierarchical' => true,
+	);
+	register_taxonomy( 'vacature_category', 'vacature', $args );
+}
+add_action( 'init', 'my_taxonomies_vacature', 0 );
+
+/* Leden aanbiedingen custom post type */
+function custom_post_ledenaanbiedingen() {
+	$labels = array(
+			'name'               => _x( 'Ledenaanbiedingen', 'post type general name' ),
+			'singular_name'      => _x( 'Ledenaanbieding', 'post type singular name' ),
+			'add_new'            => _x( 'Nieuwe aanbieding', 'ledenaanbieding' ),
+			'add_new_item'       => __( 'Voeg een leden aanbieding toe' ),
+			'edit_item'          => __( 'Bewerk aanbieding' ),
+			'new_item'           => __( 'Nieuwe aanbieding' ),
+			'all_items'          => __( 'Alle aanbiedingen' ),
+			'view_item'          => __( 'Bekijk aanbieding' ),
+			'search_items'       => __( 'Zoek leden aanbiedingen' ),
+			'not_found'          => __( 'Geen aanbiedingen gevonden' ),
+			'not_found_in_trash' => __( 'Geen aanbiedingen gevonden in de prullenbak' ),
+			'parent_item_colon'  => '',
+			'menu_name'          => 'Leden aanbiedingen'
+	);
+	$args = array(
+			'labels'        => $labels,
+			'description'   => 'Leden aanbiedingen van de vierstroom',
+			'public'        => true,
+			'menu_position' => 5,
+			'rewrite' => array('slug' => 'leden/aanbod'),
+			'supports'      => array('title', 'editor'),
+			'has_archive'   => false,
+	);
+	register_post_type( 'ledenaanbieding', $args );
+}
+add_action( 'init', 'custom_post_ledenaanbiedingen' );
+
+function my_taxonomies_ledenaanbieding() {
+	$labels = array(
+			'name'              => _x( 'Leden aanbieding categorieën', 'taxonomy general name' ),
+			'singular_name'     => _x( 'Leden aanbieding categorie', 'taxonomy singular name' ),
+			'search_items'      => __( 'Zoek categorieën' ),
+			'all_items'         => __( 'Alle categorieën' ),
+			'parent_item'       => __( 'Ouder categorieën' ),
+			'parent_item_colon' => __( 'Ouder categorieën:' ),
+			'edit_item'         => __( 'Bewerk cagtegorie' ),
+			'update_item'       => __( 'Update categorie' ),
+			'add_new_item'      => __( 'Voeg nieuwe categorie toe' ),
+			'new_item_name'     => __( 'Nieuwe categorie' ),
+			'menu_name'         => __( 'Categorieën' ),
+	);
+	$args = array(
+			'labels' => $labels,
+			'hierarchical' => true,
+	);
+	register_taxonomy( 'ledenaanbieding_category', 'ledenaanbieding', $args );
+}
+add_action( 'init', 'my_taxonomies_ledenaanbieding', 0 );
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

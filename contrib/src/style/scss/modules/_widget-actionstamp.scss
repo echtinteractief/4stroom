@@ -5,17 +5,45 @@
 	overflow: hidden;
 	position: absolute;
 	top:100px;
-	right:50%;
-	margin-right:-550px;
+	right: 50%;
+	margin-right:-650px;
 	z-index: 200;
 	box-shadow: 5px 8px 2px rgba(#000, .6);
 	
 	@include transform(rotate(5deg));
+
+	@extend %mobileHide;
+	
+	@include media($tablet) {
+		height: 150px;
+		width: 150px;
+		margin:0;
+		right: 10px;
+		top:50px;
+	}
+	
+	@include media($desktop980) {
+		width: 240px;
+		height: 240px;
+		right: 20px;
+		margin:0;
+		top:60px;
+	}
 	
 	.action-table {
 		height: 280px;
 		width: 280px;
 		display: table;
+		
+		@include media($tablet) {
+			height: 150px;
+			width: 150px;
+		}
+		
+		@include media($desktop980) {
+			width: 240px;
+			height: 240px;
+		}
 	}
 	
 	.action-content {
@@ -24,6 +52,10 @@
 		vertical-align: middle;
 		text-align: center;
 		color:#fff;
+		
+		@include media($tablet) {
+			padding:15px;
+		}
 	}
 	
 	.action-title {
@@ -31,6 +63,11 @@
 		font-weight: 700;
 		font-size: em(22);
 		margin-bottom: 10px;
+		
+		@include media($tablet) {
+
+			font-size: em(20);
+		}
 	}
 	
 	.action-text {
@@ -40,6 +77,10 @@
 		sub {
 			font-size: em(11);
 			vertical-align:text-top;
+		}
+		
+		@include media($tablet) {
+			display: none;
 		}
 	}
 }

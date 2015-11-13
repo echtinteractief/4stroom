@@ -1,0 +1,130 @@
+[
+	{
+		"id": 239,
+		"title":"Goed geregeld",
+		"class":"goed-geregeld",
+		"teaser-img":"../images/zorgthuis.jpg",
+		"items":[
+			{
+				"title":"Lorem ipsum"
+			},
+			{
+				"title":"Lorem ipsum"
+			},
+			{
+				"title":"Lorem ipsum"
+			}
+		]	
+	},
+	{
+		"id": 239,
+		"title":"Erop uit",
+		"class":"erop-uit",
+		"teaser-img":"../images/zorgthuis.jpg",
+		"items":[
+			{
+				"title":"Lorem ipsum"
+			},
+			{
+				"title":"Lorem ipsum"
+			},
+			{
+				"title":"Lorem ipsum"
+			},
+				{
+				"title":"Lorem ipsum"
+			},
+			{
+				"title":"Lorem ipsum"
+			},
+			{
+				"title":"Lorem ipsum"
+			}
+		]	
+	},
+	{
+		"id": 239,
+		"title":"Aandacht voor jezelf",
+		"class":"aandacht-voor-jezelf",
+		"teaser-img":"../images/zorgthuis.jpg",
+		"items":[
+			{
+				"title":"Lorem ipsum"
+			},
+			{
+				"title":"Lorem ipsum"
+			},
+			{
+				"title":"Lorem ipsum"
+			}
+		]	
+	},
+	{
+		"id": 239,
+		"title":"Handige handjes",
+		"class":"handige-handjes",
+		"teaser-img":"../images/zorgthuis.jpg",
+		"items":[
+			{
+				"title":"Lorem ipsum"
+			},
+			{
+				"title":"Lorem ipsum"
+			},
+			{
+				"title":"Lorem ipsum"
+			}
+		]	
+	},
+	{
+		"id": 239,
+		"title":"Lekker Vitaal",
+		"class":"lekker-vitaal",
+		"teaser-img":"../images/zorgthuis.jpg",
+		"items":[
+			{
+				"title":"Lorem ipsum"
+			},
+			{
+				"title":"Lorem ipsum"
+			},
+			{
+				"title":"Lorem ipsum"
+			}
+		]	
+	},
+	{
+		"id": 239,
+		"title":"Met Ondersteuning",
+		"class":"met-ondersteuning",
+		"teaser-img":"../images/zorgthuis.jpg",
+		"items":[
+			{
+				"title":"Lorem ipsum"
+			},
+			{
+				"title":"Lorem ipsum"
+			},
+			{
+				"title":"Lorem ipsum"
+			}
+		]	
+	},
+	{
+		"id": 239,
+		"title":"Goed Geinformeerd",
+		"class":"goed-geinformeerd",
+		"teaser-img":"../images/zorgthuis.jpg",
+		"items":[
+			{
+				"title":"Lorem ipsum"
+			},
+			{
+				"title":"Lorem ipsum"
+			},
+			{
+				"title":"Lorem ipsum"
+			}
+		]	
+	}
+]

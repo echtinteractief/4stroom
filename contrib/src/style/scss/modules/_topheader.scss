@@ -8,15 +8,118 @@
 	.search-box {
 		flex-grow: 2;
 		margin-right: 15px;
+		
+		
+		@include media(new-breakpoint(max-width 1024px)) {
+			padding-left:22px;	
+		}
+		
+		@include media($mobile) {
+			flex-grow: inherit;
+			position: absolute;
+			right: 15px;
+			margin-top: -1px;
+		}
+		
+
+
+		@include media($desktopTab) {
+			flex-grow: inherit;
+			position: absolute;
+			right: 15px;
+			margin-top: -1px;
+		}
+
+
+		
 		input[type="search"] {
 			height: 50px;
 			border-color:#fff;
+			float: right;
+			//max-width: 350px;
+			
+			@include media($mobile) {
+				position: absolute;
+				width: 220px;
+				//@extend %mobileHide;
+				@include transform(translate3d(-999px,0,0));
+				@include transition(transform .3s ease-in-out);
+			}
+			
+			@include media($desktopTab) {
+				display: none;	
+				
+			}
+			
+/*
+			@include media($desktop980) {
+				position: absolute;
+				width: 220px;
+				//@extend %mobileHide;
+				@include transform(translate3d(-999px,0,0));
+				@include transition(transform .3s ease-in-out);
+			}
+*/
+		}
+		
+		&.active {
+			z-index: 50;
+			@include media($mobile) {
+				input[type="search"] {
+					@include transform(translate3d(-275px,0,0));
+					
+					&:focus + .btn--search {
+						color:#fff;
+					}
+				}
+			}
+			
+/*
+			@include media($desktop980) {
+				input[type="search"] {
+					@include transform(translate3d(-275px,0,0));
+					
+					&:focus + .btn--search {
+						color:#fff;
+					}
+				}
+			}
+*/
+
+			
+		}
+		
+		.btn--search {
+			@include media($mobile) {
+				margin-right: 15px;
+				color:#fff;
+			}
+			
+			@include media($desktopTab) {
+				background:#fff;
+				width: 56px;
+			}
+			
+/*
+			@include media($desktop980) {
+				margin-right: 15px;
+				color:#fff;
+			}
+*/
 		}		
 	}
 	
 	.row {
 		@include display(flex);
 		flex-direction: row ;
+	}
+	
+	@include media($mobile) {
+		position: fixed;
+		top:0;
+		z-index: 999;
+		background:$pink;
+		box-shadow: 1px 1px 4px rgba(#000,.4);
 	}
 }
 
@@ -33,8 +136,11 @@
 	}
 	
 	.search-box {
+		
+		
 		input[type="search"] {
-			background-color: rgba(#fff,.2);
+//			background-color: rgba(#fff,.2);
+			background-color:lighten($orange,7%);
 			border-color: transparent;
 			
 			@include placeholder {
@@ -65,33 +171,51 @@
 	height: 142px;
 	display: inline-block;
 	background-repeat: no-repeat;
-	background-size:cover;
-	margin-right: $gutter;
+	background-size:100% auto;
+	margin-right:$gutter;
 	background-image: url('../gfx/logo-vierstroom.png');
 	
 	&:hover {
 		@include tada($duration:.8s);
 	}
-}
-
-.ledenPage .logo {
-	&:before {
-		@extend %icon-fa;
-		content:$fa-var-arrow-left;
-		position: absolute;
-		top:12px;
-		left:0;
-		color:rgba(#fff,.7);
-		font-size: 22px;
+	
+	@include media($desktop980) {
+		width: 83px;
+		height:104px;
+		margin-right: 15px;	
+	}
+	
+	@include media($tablet) {
+		width: 80px;
+		height: 100px;
+		margin-right: 15px;
+	}
+	
+	@include media($mobile) {
+		width: 132px;
+		height: 45px;
+		z-index: 15;
+		background-image: url('../gfx/logo-mobile.png');
+		background-size: auto 100%;
 	}
 }
+
+
 
 .search-box {
 	height: 50px;
 }
 
 .topNav {
-	display: inline-block;
+	display: inline-block;	
+	@extend %mobileHide;
+	
+	@include media($desktopTab) {
+		&.right {
+			margin-left:15px;
+		}	
+	}
+	
 	.menu-item {
 		display: inline;
 		a {
@@ -101,7 +225,9 @@
 			font-weight: normal;
 			margin-left:10px;
 			position: relative;
-			&:before {
+						
+
+			&:after {
 				height: 2px;
 				background-color: $pink;
 				width: 0px;
@@ -114,35 +240,43 @@
 				
 				@include transition(width .2s .2s linear);
 			}
+
 			
 			&:hover{
-				&:before {
+				
+				&:after {
 					width: 100%;
 				}
 			}	
 		}
 		
-		&.highlight a {
+		&.highlight a,
+		&.menu-item-403 a {
 			background-color: $orange;
 			color:#fff;
-			padding: 15px;
+			padding: 15px 25px 15px 15px;
 			font-weight: 700;
 			
 			&:before {
-				background-color:darken($orange,20%);
+				@extend %icon-fa;
+				content:$fa-var-arrow-right;
+				margin-left: 10px;
+				position: absolute;
+				right: 5px;
 			}
 			
 			&:after {
-				content:$fa-var-arrow-right;
-				margin-left: 10px;
+				background-color: darken($orange, 10%);
 			}
 		}
 		
-		&.is--current {
+		&.is--current,
+		&.current-page-ancestor,
+		&.current-menu-item {
 			a {
 				font-weight: 700;
 				
-				&:before {
+				&:after {
 					width: 100%;
 				}
 			}

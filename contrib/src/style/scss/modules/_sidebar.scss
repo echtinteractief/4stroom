@@ -4,4 +4,7 @@
 	padding-right: $gutter;	
 	position: relative;
 
+	@include media($mobile) {
+		padding:0 10px;
+	}
 }

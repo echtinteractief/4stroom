@@ -1,0 +1,71 @@
+.ledenPage  {
+/*
+	.logo {
+		&:before {
+			@extend %icon-fa;
+			content:$fa-var-arrow-left;
+			position: absolute;
+			top:12px;
+			left:0;
+			color:rgba(#fff,.7);
+			font-size: 22px;
+		}
+		
+		@include media($mobile) {
+			&:before {
+				display: none;
+			}
+		}
+	}
+*/
+	
+	.topNav {
+		.menu-item-403 {display: none;}
+	}
+	
+	
+	@include media($tablet){
+		.bar .bar-title {display: none;}
+	}
+	
+	.bar.contact-bar {
+		@extend %mobileHide;
+	}
+	
+}
+
+.single-ledenaanbieding {
+	.visual-form-builder {
+		display: none;
+		
+		&.active {
+			display: block;
+		}
+	}
+}
+
+.search-results  {
+	.search-options .search-box {
+		margin-top: 43px;
+		padding-left: 0;
+		
+		@include media($mobile) {
+			margin-top:0;
+		}
+		
+		input.search {
+			height: 50px;
+		}
+	}
+	
+	h1.page-heading {
+		margin-bottom: 2*$gutter;
+	}
+}
+
+.home {
+	.topNav {
+		.menu-item-403 {display: none;}
+	}
+
+}

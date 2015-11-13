@@ -15,6 +15,9 @@
 }
 
 .main-nav {
+	
+	@extend %mobileHide;
+	
 	.menu-item {
 		color:#fff;
 		float: left;
@@ -37,9 +40,31 @@
 			}
 		}
 		
-		&.is--current {	
+		&.is--current,
+		&.current-menu-item,
+		&.current-page-ancestor {	
 			a {font-weight: 700;}
 		}
+		
+	}
+	
+	h1 {
+		display: inline-block;
+		color:#fff;
+		font-size: em(16);
+		font-weight: 300;
+		float: left;
+		padding:17px 10px 0 0;
+		
+		&.hide {
+			display: none;
+		}
+	}
+	
+	> ul {float: left;}
+	
+	&.services {
+		.menu-item a {font-weight: 500;}
 	}
 	
 	&.tabs {
@@ -51,15 +76,46 @@
 				border:1px solid rgba(#fff,.2);
 				border-width: 0 1px 0 0px;
 				
+				
+				
 				&:hover {
 					background-color:rgba(#fff,.1);
 				}
 			}
 			
-			&.is--current {
+			&:first-child a {
+				border-width: 0 1px 0 1px;
+			}
+			
+			&.is--current,
+			&.current-menu-item,
+			&.current-page-ancestor {
 				background-color:#fff;
 				color:$pink;
 				border-top:4px solid $pink;
+				font-weight: 700;
+			}
+		}
+	}
+	
+	&.member-nav {
+		width: auto;
+		display: inline-block;
+		.menu-item {
+			a {
+				padding:15px;
+			}
+			&.current-page-ancestor a {
+				font-weight: normal;
+			}
+		}
+	}
+}
+
+.single-ledenaanbieding {
+	.member-nav {
+		.menu-item-356 {
+			 a {
 				font-weight: 700;
 			}
 		}

@@ -129,7 +129,8 @@ function bones_scripts_and_styles() {
 
 		// register main stylesheet
 		
-		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/style/css/style.min.css', array(), '', 'all' );
+		$version = filemtime(get_stylesheet_directory() . '/library/style/css/style.min.css');
+		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/style/css/style.min.css?v='.$version, array(), '', 'all' );
 		// ie-only style sheet
 		//wp_register_style( 'bones-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
 
@@ -153,7 +154,9 @@ function bones_scripts_and_styles() {
 		using the google cdn. That way it stays cached
 		and your site will load faster.
 		*/
-		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/scripts/production/script.min.js', array(), '', true );
+		$version = filemtime(get_stylesheet_directory() . '/library/scripts/production/script.min.js');
+		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/scripts/production/script.min.js?v='.$version, array(), '', true );
+
 		//wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'bones-js' );
 
@@ -210,8 +213,11 @@ function bones_theme_support() {
 	// registering wp3+ menus
 	register_nav_menus(
 		array(
-			'main-nav' => __( 'The Main Menu', 'bonestheme' ),   // main nav in header
-			'footer-links' => __( 'Footer Links', 'bonestheme' ) // secondary nav in footer
+			'top-nav-left' => __( 'Top Navigatie Links', 'bonestheme' ),   // top nav left
+			'top-nav-right' => __( 'Top Navigatie Rechts', 'bonestheme' ),   // main nav in header
+			'footer-links' => __( 'Footer Links', 'bonestheme' ),
+			'leden-nav' => __( 'Leden navigatie', 'bonestheme' ),
+			'mobile-nav' => __( 'Mobile navigatie', 'bonestheme' )   // secondary nav in footer
 		)
 	);
 
@@ -223,6 +229,8 @@ function bones_theme_support() {
 	) );
 
 } /* end bones theme support */
+
+
 
 
 /*********************

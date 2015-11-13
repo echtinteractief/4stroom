@@ -31,6 +31,10 @@ body {
 		font-size: 90%;
 	}
 	
+	@include media($mobile) {
+		padding-top:50px;
+	}
+	
 	&.ledenPage {
 		background-color:lighten($grey,10%);
 		background-image: url('#{$gfxMap}/white-dot.png');
@@ -210,6 +214,28 @@ embed { height: 100%; }
 		> li {
 			list-style: none;
 		}
+	}
+	
+	table {
+		font-size: em(14);
+		border:1px solid #ccc;
+		width: 100%;
+		overflow: hidden;
+		overflow-x: auto;
+		-webkit-overflow-scrolling:touch;
+		display: block;
+		
+		td {
+			vertical-align: middle;
+			text-align: center;
+			border: 1px solid lighten($grey,20%);
+			padding:5px 10px;
+			&:first-child {
+				text-align: left;
+			}
+		}
+		
+		
 	}	
 }
 

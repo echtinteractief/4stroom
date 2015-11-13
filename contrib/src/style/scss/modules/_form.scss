@@ -10,7 +10,9 @@
 	  font-style: italic;
   }
   
-  &.error {
+  &.error,
+  &.vfb-error,
+  &.invalid {
 	  color:$red;
 	  border-color:$red;
   }  
@@ -75,7 +77,11 @@ input[type="checkbox"] {
 		margin-right: 10px;
 		line-height: 12px;
 		border:2px solid $grey;
-		
+		background: #fff;
+		content:'';
+		width: 15px;
+		height: 15px;
+		display: inline-block;
 		@include transition(border-color .3s ease-in-out);
 	}
 
@@ -102,6 +108,11 @@ input[type="radio"] {
 .search-box {
 	padding:0 0px 0 50px;
 	position: relative;
+	
+	@include media($mobile) {
+		padding:0;
+	}
+	
 	input[type="search"] {
 		width: 100%;
 		padding-right: 45px;
@@ -184,6 +195,7 @@ input[type="radio"] {
 		
 	}
 }
+/*
 
 label {
 	&.required:after {
@@ -193,8 +205,10 @@ label {
 		vertical-align: text-top;
 	}
 }
+*/
 
-.error {
+.error,
+.vfb-error {
 	color:$red;
 	
 	label:after {
@@ -212,15 +226,22 @@ label {
 	}
 }
 
-.form {
+.form,
+.visual-form-builder {
 	padding:1.5*$gutter 0 $gutter $gutter;
 	//background:lighten($grey,20%);
 	//@include background-image(linear-gradient(to bottom, #fff, lighten($grey,20%)));
 	border:1px solid lighten($grey,10%);
 	border-width: 2px 0;
 	
+	@include media($mobile) {
+		margin-bottom: 20px;
+		background: #fafafa;
+		padding: 10px;
+	}
+	
 	label {
-		vertical-align: middle;
+		vertical-align: top;
 		font-size: em(15);
 		padding-top: 5px;
 		text-align: right;
@@ -249,7 +270,9 @@ label {
 			display: block;
 			overflow: hidden;
 			min-height: 36px;
-			
+			@include media($mobile) {
+				margin-bottom: 5px;
+			}
 		}
 
 	}
@@ -259,11 +282,89 @@ label {
 		margin-left:.8*$gutter;
 	}
 	
-	.end-form {
+	.end-form,
+	.verification {
 		padding-top: $gutter/2;
+		
+		.vfb-legend {display: none;}
+		.vfb-section {
+			display: inline-block;
+			width: 65%;
+			float: right;
+			padding-left:10px;
+
+			@include media($mobile) {
+				width: 100%;
+				padding:0;
+			}
+		}
 	}
 	
 	.panel.note {
 		padding:10px;
+	}
+}
+
+.visual-form-builder {
+	
+	.vfb-legend {
+		h3 {
+			font-weight: 700;
+			margin: -10px 0 1.25em 0;
+		    font-family: $header-font;
+		    font-size: 1.25em;
+		    &:before {
+				content: '/';
+				margin-right: 8px;
+			    color: inherit;
+		    }
+		}
+	}
+	
+	.vfb-item {	
+		position: relative;
+		
+		.vfb-required-asterisk {
+			color:$pink;
+			font-size:em(14);
+			vertical-align:text-top;
+		}
+		
+		> .vfb-desc {
+			width: 35%;
+			padding-right: 20px;
+			display: inline-block;
+			text-align: left;
+			
+			@include media($mobile) {
+				width: 100%;
+			}
+		}
+		
+		> .vfb-medium {
+			width: 65%;
+			
+			@include media($mobile) {
+				width: 100%;
+			}
+		}
+		
+		&.vfb-item-textarea,
+		&.vfb-item-radio,
+		&.vfb-item-checkbox {
+			> div {
+				width: 65%;
+				display: inline-block;
+				@include media($mobile) {
+					width: 100%;
+				}
+			}
+		}
+		
+		label.vfb-error {
+			font-size: em(12);
+			font-style: italic;
+			display: block;
+		}
 	}
 }

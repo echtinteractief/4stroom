@@ -13,12 +13,74 @@
 	<?php
 		//body page class
 		$page_slug="";
-		if(is_page()) { $page_slug = 'page-'.$post->post_name; } 
+		if(is_page()) { 
+			$page_slug = 'page-'.$post->post_name; 
+		} 
 	?>
 	</head>
 	<body <?php body_class($page_slug); ?>>
 
+	<?php get_template_part('parts/common/topnav'); ?>
+	
 
+	<?php
+		//Headers
+		if (is_front_page()) {
+			get_template_part('parts/common/_part-slider-home');
+		} else {
+			get_template_part('parts/common/_part-header-img');
+		}	
+		
+	?>
+	<?php
+	
+	if (is_front_page()) {
+		get_template_part('page/common/home');
+	}
+		//check posttypes
+		switch (get_post_type()) {
+			case 'page' :
+			
+				if (is_front_page()) {
+					//get_template_part('page/common/home');
+				}
+				/*elseif(is_page('veiligthuis') || is_page('hulpthuis') || is_page('zorgthuis')){
+					get_template_part('page/services/overview');
+				}*/
+				elseif(is_page('winkels')){
+					get_template_part('page/homecareshops/overview');
+				}
+				elseif(is_page('vacatures')){
+					get_template_part('page/jobs/overview');
+				}
+				else {
+				get_template_part('page/common/detail');
+				}
+				
+			break;
+
+			case 'ledenaanbieding' :
+				get_template_part('page/members/action-detail');
+			break;
+
+			case 'vacature' :
+				get_template_part('page/jobs/detail');
+				break;
+
+			case 'post' :
+				if(is_single()) {
+					get_template_part('_part-post-detail');
+				}
+				else {
+					get_template_part('_part-archive');	
+				}
+				
+			break;
+			
+			
+		}
+	?>
+	
 	<?php get_footer(); ?>
 	</body>
 </html>
